@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEAK LABS — Studio oprogramowania | Peak Browser &amp; Peak Launcher</title>
+  <meta
+    name="description"
+    content="PEAK LABS to niezależne studio oprogramowania założone przez Mikołaja Grynienkę. Tworzymy czyste, szybkie aplikacje na Windows: przeglądarkę Peak Browser i Peak Launcher do Minecrafta."
+  />
+  <meta name="author" content="Mikołaj Grynienko" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PEAK LABS — Studio oprogramowania | Peak Browser &amp; Peak Launcher" />
+  <meta
+    property="og:description"
+    content="Niezależne studio oprogramowania PEAK LABS (peaklabs.vercel.app) — twórcy Peak Browser i Peak Launcher. Twórca: Mikołaj Grynienko."
+  />
+  <meta property="og:url" content="https://peaklabs.vercel.app" />
+  <link rel="icon" type="image/svg+xml" href="./assets/peaklabs-logo.svg" />
+  <link rel="alternate icon" type="image/png" sizes="64x64" href="./assets/launcher-icon-64.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#start" class="brand" aria-label="PEAK LABS — strona główna">
+        <img src="./assets/peaklabs-logo.svg" alt="PEAK LABS logo" class="brand-icon" />
+        <span class="brand-wordmark">
+          <span class="brand-name">PEAK LABS</span>
+          <span class="brand-tag">STUDIO</span>
+        </span>
+      </a>
+
+      <nav class="header-nav" aria-label="Nawigacja główna">
+        <a href="#o-firmie">O firmie</a>
+        <a href="#projekty">Projekty</a>
+        <a href="#ekosystem">Ekosystem</a>
+        <a href="#wydania">Wydania</a>
+        <a href="#tworca">Twórca</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          id="site-theme-toggle"
+          class="icon-toggle"
+          type="button"
+          title="Przełącz motyw strony (Ciemny / Jasny)"
+          aria-label="Przełącz motyw strony"
+        >
+          <svg id="theme-icon-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="8" cy="8" r="3" />
+            <path d="M8 1.6v1.3M8 13.1v1.3M1.6 8h1.3M13.1 8h1.3M3.5 3.5l.9.9M11.6 11.6l.9.9M12.5 3.5l-.9.9M4.4 11.6l-.9.9" />
+          </svg>
+          <svg id="theme-icon-moon" class="hidden" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13.3 9.7A5.6 5.6 0 0 1 6.3 2.7a5.7 5.7 0 1 0 7 7z" />
+          </svg>
+        </button>
+
+        <a
+          href="https://github.com/latajoncy82-svg"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="github-link"
+        >
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <button
+          id="mobile-menu-toggle"
+          class="icon-toggle mobile-only"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-drawer"
+          aria-label="Otwórz menu"
+        >
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer hidden" aria-hidden="true">
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-head">
+        <span class="brand-name">PEAK LABS</span>
+        <button id="mobile-drawer-close" class="icon-toggle" type="button" aria-label="Zamknij menu">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M4 4l8 8M12 4l-8 8" />
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav" aria-label="Menu mobilne">
+        <a href="#o-firmie" class="mobile-nav-link">O firmie</a>
+        <a href="#projekty" class="mobile-nav-link">Projekty</a>
+        <a href="#ekosystem" class="mobile-nav-link">Ekosystem</a>
+        <a href="#wydania" class="mobile-nav-link">Wydania</a>
+        <a href="#tworca" class="mobile-nav-link">Twórca</a>
+      </nav>
+      <div class="mobile-drawer-meta">
+        <span>peaklabs.vercel.app</span>
+        <span>Twórca: Mikołaj Grynienko</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="start" class="hero">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <canvas id="aurora-fx" aria-hidden="true"></canvas>
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <svg class="hero-topo" viewBox="0 0 1440 560" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M760,560 C870,410 980,355 1090,225 C1180,120 1300,60 1440,26" />
+        <path d="M840,560 C935,430 1035,380 1135,265 C1220,165 1325,110 1440,84" />
+        <path d="M920,560 C1005,450 1090,408 1180,308 C1260,218 1350,168 1440,144" />
+      </svg>
+
+      <svg class="hero-ridge" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
+        <path class="ridge-layer-1" d="M0,190 L0,124 L175,54 L340,116 L540,30 L730,102 L925,22 L1115,104 L1290,46 L1440,108 L1440,190 Z" />
+        <path class="ridge-layer-2" d="M0,190 L0,152 L240,92 L435,142 L655,66 L870,138 L1085,72 L1295,132 L1440,88 L1440,190 Z" />
+      </svg>
+
+      <div class="container hero-container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="status-pill">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <span>PEAK LABS · PEAKLABS.VERCEL.APP · TWÓRCA: MIKOŁAJ GRYNIENKO</span>
+            </div>
+
+            <h1 class="hero-title">PEAK LABS</h1>
+            <p class="hero-tagline">
+              Tworzymy szybkie, czyste aplikacje na Windows — na szczycie designu i wydajności.
+            </p>
+            <p class="hero-lead">
+              Niezależne laboratorium oprogramowania projektujące autorski ekosystem
+              <strong>Summit Glass</strong>: minimalistyczną przeglądarkę <strong>Peak Browser</strong>
+              z ochroną Peak Shield oraz zaawansowany launcher Minecrafta <strong>Peak Launcher</strong>
+              z katalogiem Modrinth, Auto-Javą i Fabriciem.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projekty" class="btn-aurora">
+                <span>Zobacz nasze projekty</span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3.5 8h9M8.5 4l4 4-4 4" />
+                </svg>
+              </a>
+              <a href="#wydania" class="btn-glass">
+                <span>Centrum pobrań</span>
+              </a>
+            </div>
+
+            <div class="quick-downloads">
+              <a
+                id="hero-quick-browser"
+                class="quick-pill"
+                href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe"
+                download="Peak-Browser-Setup-1.1.0.exe"
+              >
+                <img src="./assets/browser-icon-64.png" alt="" width="18" height="18" />
+                <span>Peak Browser <strong id="hero-quick-browser-ver">v1.1.0</strong></span>
+                <span class="quick-pill-ext">.exe</span>
+              </a>
+              <a
+                id="hero-quick-launcher"
+                class="quick-pill"
+                href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Setup-1.1.0.exe"
+                download="Peak-Launcher-Setup-1.1.0.exe"
+              >
+                <img src="./assets/launcher-icon-64.png" alt="" width="18" height="18" />
+                <span>Peak Launcher <strong id="hero-quick-launcher-ver">v1.1.0</strong></span>
+                <span class="quick-pill-ext">.exe</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive 3D Glass Hero Stage -->
+          <div class="hero-stage-wrap">
+            <div class="stage-aurora" aria-hidden="true"></div>
+            <div id="hero-stage-card" class="hero-stage spotlight-card">
+              <div class="stage-topbar">
+                <div class="stage-window-dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="stage-switcher" role="tablist" aria-label="Przełącz podgląd produktu">
+                  <button class="stage-tab active" type="button" role="tab" aria-selected="true" data-stage="browser">
+                    Peak Browser
+                  </button>
+                  <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="launcher">
+                    Peak Launcher
+                  </button>
+                </div>
+                <button id="stage-zoom-btn" class="stage-zoom-btn" type="button" title="Powiększ zrzut ekranu" aria-label="Powiększ zrzut ekranu">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2.5H2.5V6M10 2.5h3.5V6M6 13.5H2.5V10M10 13.5h3.5V10" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="stage-viewport">
+                <img
+                  id="stage-preview-img"
+                  src="./assets/browser-dark.webp"
+                  alt="Podgląd Peak Browser"
+                  class="stage-img"
+                />
+                <div class="stage-live-badge">
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span>WINDOWS 10 / 11 · X64</span>
+                </div>
+              </div>
+
+              <div class="stage-footer">
+                <div class="stage-product-meta">
+                  <img id="stage-product-icon" src="./assets/browser-icon-64.png" alt="Peak Browser" class="stage-icon" />
+                  <div>
+                    <div class="stage-title-row">
+                      <strong id="stage-product-name">Peak Browser</strong>
+                      <span id="stage-product-version" class="mono-badge">v1.1.0</span>
+                    </div>
+                    <p id="stage-product-summary">Czysta przeglądarka z Peak Shield i motywem Niebieskiej Góry.</p>
+                  </div>
+                </div>
+
+                <div id="stage-tags" class="stage-tags">
+                  <span>Peak Shield</span>
+                  <span>Drag &amp; Drop kart</span>
+                  <span>0 telemetrii</span>
+                </div>
+
+                <div class="stage-cta-row">
+                  <a
+                    id="stage-download-btn"
+                    class="btn-stage-dl"
+                    href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe"
+                    download="Peak-Browser-Setup-1.1.0.exe"
+                  >
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 2.5v7.5M5.2 7.4L8 10.2l2.8-2.8" />
+                      <path d="M3 12.2v1a.8.8 0 0 0 .8.8h8.4a.8.8 0 0 0 .8-.8v-1" />
+                    </svg>
+                    <span>Pobierz Setup</span>
+                    <span id="stage-download-size" class="btn-size-tag">117.0 MB</span>
+                  </a>
+                  <a id="stage-details-link" class="btn-stage-more" href="#projekt-browser">
+                    Szczegóły ↓
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studio Telemetry Strip -->
+        <div class="telemetry-strip">
+          <div class="telemetry-card spotlight-card reveal">
+            <span class="telemetry-value" data-count="2">2</span>
+            <span class="telemetry-label">Flagowe aplikacje</span>
+            <span class="telemetry-sub">Peak Browser &amp; Peak Launcher</span>
+          </div>
+          <div class="telemetry-card spotlight-card reveal">
+            <span class="telemetry-value" data-count="925" data-suffix="+">925+</span>
+            <span class="telemetry-label">Wersji Minecrafta</span>
+            <span class="telemetry-sub">Od Alpha i Beta po 26.3</span>
+          </div>
+          <div class="telemetry-card spotlight-card reveal">
+            <span class="telemetry-value" data-count="0">0</span>
+            <span class="telemetry-label">Telemetrii i reklam</span>
+            <span class="telemetry-sub">100% lokalne dane i prywatność</span>
+          </div>
+          <div class="telemetry-card spotlight-card reveal">
+            <span class="telemetry-value" data-count="100" data-suffix="%">100%</span>
+            <span class="telemetry-label">Open Source na GitHubie</span>
+            <span class="telemetry-sub">github.com/latajoncy82-svg</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="o-firmie" class="section section-about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">KIM JESTEŚMY · PEAK LABS</span>
+          <h2>Oprogramowanie tworzone bez kompromisów.</h2>
+          <p class="about-lead">
+            <strong>PEAK LABS</strong> to niezależne polskie studio i laboratorium software’owe założone przez
+            <strong>Mikołaja Grynienkę</strong>. Projektujemy lekkie, natywne aplikacje desktopowe na Windows 10 i 11
+            w autorskim języku wizualnym <em>Alpine Aurora &amp; Summit Glass</em> — stawiając na szybkość,
+            pełną kontrolę użytkownika, automatyzację i zero zaśmiecania systemu.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-wide spotlight-card reveal">
+            <div class="bento-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 15.5L7.8 5.2l3.4 5.4 2.2-2.9L18 15.5H2z" />
+              </svg>
+            </div>
+            <h3>Design Summit Glass &amp; Alpine Aurora</h3>
+            <p>
+              Każdy piksel w projektach PEAK LABS powstaje z myślą o czytelności i spójności: ciemne alpejskie tła
+              domyślnie, półprzezroczyste powierzchnie z lodową krawędzią, płynne animacje w 60 FPS oraz zero ciężkich,
+              rozpraszających banerów.
+            </p>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 2.5L16 5v4.5c0 3.9-2.5 6.5-6 7.8-3.5-1.3-6-3.9-6-7.8V5l6-2.5z" />
+                <path d="M7.3 10l1.8 1.8 3.6-3.7" />
+              </svg>
+            </div>
+            <h3>Prywatność i zero telemetrii</h3>
+            <p>
+              Nie zbieramy danych użytkowników, nie wymuszamy logowania i nie wstrzykujemy reklam. Peak Shield blokuje
+              trackery w locie, a wszystkie konfiguracje zostają na dysku.
+            </p>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11.2 2.5L4.8 11h5l-1 6.5 6.4-8.5h-5l1-6.5z" />
+              </svg>
+            </div>
+            <h3>Pełna automatyzacja</h3>
+            <p>
+              Od automatycznego pobierania Javy 8/17/21/25 (Eclipse Temurin) i Fabric Loadera, przez 1-klikowy Pakiet
+              Peak FPS Boost, aż po zsynchronizowane wydania z GitHub Releases.
+            </p>
+          </article>
+
+          <article class="bento-card bento-wide spotlight-card reveal">
+            <div class="bento-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 6L3 10l4 4M13 6l4 4-4 4M11 4.5L9 15.5" />
+              </svg>
+            </div>
+            <h3>Otwarty kod na GitHubie</h3>
+            <p>
+              Wszystkie flagowe aplikacje PEAK LABS są publicznie dostępne w serwisie GitHub pod profilem
+              <code>latajoncy82-svg</code>. Dostarczamy podpisane strukturalnie instalatory NSIS (<code>.exe</code>)
+              oraz wersje Portable działające natychmiast bez instalacji.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flagship Projects Section -->
+    <section id="projekty" class="section section-projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">NASZE PROJEKTY · FLAGOWE APLIKACJE</span>
+          <h2>Dwa dopracowane produkty na Windows</h2>
+          <p>Kliknij zakładki podglądu, powiększ zrzut ekranu w pełnym oknie albo pobierz wybraną wersję jednym kliknięciem.</p>
+        </div>
+
+        <div class="projects-stack">
+          <!-- Project 01: Peak Browser -->
+          <article id="projekt-browser" class="project-showcase spotlight-card reveal">
+            <div class="project-header">
+              <div class="project-identity">
+                <img src="./assets/browser-icon.png" alt="Ikona Peak Browser" class="project-icon" />
+                <div>
+                  <div class="project-badges">
+                    <span class="project-num">PROJEKT 01</span>
+                    <span class="project-cat">Przeglądarka internetowa</span>
+                    <span id="browser-version-badge" class="mono-badge">v1.1.0</span>
+                  </div>
+                  <h3>Peak Browser</h3>
+                </div>
+              </div>
+              <p class="project-summary">
+                Lekka, architektonicznie czysta przeglądarka z motywem Niebieskiej Góry, wbudowaną tarczą prywatności
+                <strong>Peak Shield</strong>, obsługą kart drag &amp; drop oraz spokojną przestrzenią nowej karty.
+              </p>
+            </div>
+
+            <div class="project-body">
+              <div class="project-gallery">
+                <div class="gallery-bar">
+                  <span class="gallery-caption">Podgląd interfejsu Peak Browser</span>
+                  <div class="gallery-tabs" role="group" aria-label="Motywy Peak Browser">
+                    <button class="project-preview-tab active" type="button" data-project="browser" data-preview="dark">Ciemny (Domyślny)</button>
+                    <button class="project-preview-tab" type="button" data-project="browser" data-preview="light">Jasny</button>
+                  </div>
+                </div>
+                <div class="gallery-frame">
+                  <img
+                    id="browser-preview-img"
+                    src="./assets/browser-dark.webp"
+                    alt="Peak Browser w domyślnym ciemnym motywie Niebieskiej Góry"
+                    class="gallery-img"
+                  />
+                  <button id="browser-zoom-btn" class="gallery-zoom-btn" type="button" title="Powiększ w Lightboxie" aria-label="Powiększ zrzut Peak Browser">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 2.5H2.5V6M10 2.5h3.5V6M6 13.5H2.5V10M10 13.5h3.5V10" />
+                    </svg>
+                    <span>Powiększ</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-details">
+                <div class="feature-pills-grid">
+                  <div class="feature-mini">
+                    <strong>Zwarty pasek 78 px</strong>
+                    <span>Połączona aktywna karta i przeciąganie kart myszką (drag &amp; drop).</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>Wbudowany Peak Shield</strong>
+                    <span>Blokowanie reklam i trackerów z licznikiem zablokowanych żądań na karcie.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>Inteligentny pasek adresu</strong>
+                    <span>Wyróżniona domena, podpowiedzi z historii i szybkie kopiowanie URL.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>Płaski panel boczny 324 px</strong>
+                    <span>Zakładki, historia, menedżer pobrań i opcje bez zasłaniania strony.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>3 motywy Niebieskiej Góry</strong>
+                    <span>Ciemny, Jasny i Niebieski z tapetami alpejskimi na <code>peak://newtab</code>.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>100% lokalna prywatność</strong>
+                    <span>Brak kont, brak telemetrii, wybór wyszukiwarki i czyszczenie danych 1 klikiem.</span>
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <div class="download-menu-wrap" id="browser-dl-wrap">
+                    <div class="split-download">
+                      <a
+                        id="browser-primary-dl"
+                        class="btn-primary"
+                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe"
+                        download="Peak-Browser-Setup-1.1.0.exe"
+                      >
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 2.5v7.5M5.2 7.4L8 10.2l2.8-2.8" />
+                          <path d="M3 12.2v1a.8.8 0 0 0 .8.8h8.4a.8.8 0 0 0 .8-.8v-1" />
+                        </svg>
+                        <span>Pobierz Peak Browser</span>
+                        <span id="browser-primary-meta" class="btn-meta">v1.1.0</span>
+                      </a>
+                      <button
+                        id="browser-dl-toggle"
+                        class="btn-split-chevron"
+                        type="button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        aria-controls="browser-dl-dropdown"
+                        title="Więcej opcji pobierania Peak Browser"
+                      >
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M4.2 6.2L8 10l3.8-3.8" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div id="browser-dl-dropdown" class="download-dropdown hidden" role="menu" aria-label="Opcje pobierania Peak Browser">
+                      <a
+                        id="browser-setup-link"
+                        class="dropdown-item"
+                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe"
+                        download="Peak-Browser-Setup-1.1.0.exe"
+                        role="menuitem"
+                      >
+                        <div class="dropdown-item-main">
+                          <span class="dropdown-title">Instalator Windows (.exe)</span>
+                          <span class="dropdown-sub">Zalecany · tworzy skróty i pełną instalację</span>
+                        </div>
+                        <span id="browser-setup-size" class="dropdown-size">117.0 MB</span>
+                      </a>
+                      <a
+                        id="browser-portable-link"
+                        class="dropdown-item"
+                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Portable-1.1.0.exe"
+                        download="Peak-Browser-Portable-1.1.0.exe"
+                        role="menuitem"
+                      >
+                        <div class="dropdown-item-main">
+                          <span class="dropdown-title">Wersja Portable (.exe)</span>
+                          <span class="dropdown-sub">Bez instalacji · działa od razu po uruchomieniu</span>
+                        </div>
+                        <span id="browser-portable-size" class="dropdown-size">106.2 MB</span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item compact"
+                        href="https://github.com/latajoncy82-svg/peak-browser/releases"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        role="menuitem"
+                      >
+                        <span class="dropdown-title">Wszystkie wydania na GitHubie</span>
+                        <span class="dropdown-arrow">↗</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a
+                    href="https://peakbrowser.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                  >
+                    <span>Strona projektu</span>
+                    <span class="ext-arrow">↗</span>
+                  </a>
+
+                  <a
+                    href="https://github.com/latajoncy82-svg/peak-browser"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                  >
+                    <span>GitHub</span>
+                    <span class="ext-arrow">↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02: Peak Launcher -->
+          <article id="projekt-launcher" class="project-showcase spotlight-card reveal">
+            <div class="project-header">
+              <div class="project-identity">
+                <img src="./assets/launcher-icon.png" alt="Ikona Peak Launcher" class="project-icon" />
+                <div>
+                  <div class="project-badges">
+                    <span class="project-num">PROJEKT 02</span>
+                    <span class="project-cat">Launcher Minecraft</span>
+                    <span id="launcher-version-badge" class="mono-badge">v1.1.0</span>
+                  </div>
+                  <h3>Peak Launcher</h3>
+                </div>
+              </div>
+              <p class="project-summary">
+                Nowoczesny launcher Minecraft z motywem Góry PEAK i interfejsem <strong>Alpine Aurora</strong>.
+                Ponad 925 wersji gry, katalog Modrinth z 1-klikowym Pakietem Peak FPS Boost oraz automatyczne
+                instalowanie Javy (8/17/21/25) i Fabric Loadera.
+              </p>
+            </div>
+
+            <div class="project-body">
+              <div class="project-gallery">
+                <div class="gallery-bar">
+                  <span class="gallery-caption">Podgląd Peak Launcher</span>
+                  <div class="gallery-tabs" role="group" aria-label="Widoki Peak Launcher">
+                    <button class="project-preview-tab active" type="button" data-project="launcher" data-preview="dark">Nocny Szczyt</button>
+                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="light">Lodowcowy Dzień</button>
+                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="mods">Mody Modrinth</button>
+                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="java">Java i Fabric</button>
+                  </div>
+                </div>
+                <div class="gallery-frame">
+                  <img
+                    id="launcher-preview-img"
+                    src="./assets/launcher-dark.png"
+                    alt="Peak Launcher w ciemnym motywie Nocny Szczyt"
+                    class="gallery-img"
+                  />
+                  <button id="launcher-zoom-btn" class="gallery-zoom-btn" type="button" title="Powiększ w Lightboxie" aria-label="Powiększ zrzut Peak Launcher">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 2.5H2.5V6M10 2.5h3.5V6M6 13.5H2.5V10M10 13.5h3.5V10" />
+                    </svg>
+                    <span>Powiększ</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-details">
+                <div class="feature-pills-grid">
+                  <div class="feature-mini">
+                    <strong>Alpine Aurora &amp; Summit Glass</strong>
+                    <span>Zorza, kontury topograficzne, dock startowy 5 etapów i awatar 3D gracza.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>925+ wersji Minecrafta</strong>
+                    <span>Oficjalne wydania Mojang od Alpha i Beta aż po 26.3 i snapshoty.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>Modrinth + Peak FPS Boost</strong>
+                    <span>Auto-zależności (Fabric API), paczka FPS 1 klikiem oraz Drag &amp; Drop <code>.jar</code>.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>Auto-Java 8 / 17 / 21 / 25</strong>
+                    <span>Automatyczne wykrywanie i pobieranie oficjalnych środowisk Eclipse Temurin.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>Fabric Loader 1 kliknięciem</strong>
+                    <span>Pełna instalacja loadera modów i bibliotek bez zewnętrznych instalatorów.</span>
+                  </div>
+                  <div class="feature-mini">
+                    <strong>Izolowane profile ekspedycji</strong>
+                    <span>Osobne foldery <code>mods/</code>, <code>config/</code>, światy i 4 motywy kolorystyczne.</span>
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <div class="download-menu-wrap" id="launcher-dl-wrap">
+                    <div class="split-download">
+                      <a
+                        id="launcher-primary-dl"
+                        class="btn-primary"
+                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Setup-1.1.0.exe"
+                        download="Peak-Launcher-Setup-1.1.0.exe"
+                      >
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 2.5v7.5M5.2 7.4L8 10.2l2.8-2.8" />
+                          <path d="M3 12.2v1a.8.8 0 0 0 .8.8h8.4a.8.8 0 0 0 .8-.8v-1" />
+                        </svg>
+                        <span>Pobierz Peak Launcher</span>
+                        <span id="launcher-primary-meta" class="btn-meta">v1.1.0</span>
+                      </a>
+                      <button
+                        id="launcher-dl-toggle"
+                        class="btn-split-chevron"
+                        type="button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        aria-controls="launcher-dl-dropdown"
+                        title="Więcej opcji pobierania Peak Launcher"
+                      >
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M4.2 6.2L8 10l3.8-3.8" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div id="launcher-dl-dropdown" class="download-dropdown hidden" role="menu" aria-label="Opcje pobierania Peak Launcher">
+                      <a
+                        id="launcher-setup-link"
+                        class="dropdown-item"
+                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Setup-1.1.0.exe"
+                        download="Peak-Launcher-Setup-1.1.0.exe"
+                        role="menuitem"
+                      >
+                        <div class="dropdown-item-main">
+                          <span class="dropdown-title">Instalator Windows (.exe)</span>
+                          <span class="dropdown-sub">Zalecany · tworzy skróty na pulpicie i w menu Start</span>
+                        </div>
+                        <span id="launcher-setup-size" class="dropdown-size">117.6 MB</span>
+                      </a>
+                      <a
+                        id="launcher-portable-link"
+                        class="dropdown-item"
+                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Portable-1.1.0.exe"
+                        download="Peak-Launcher-Portable-1.1.0.exe"
+                        role="menuitem"
+                      >
+                        <div class="dropdown-item-main">
+                          <span class="dropdown-title">Wersja Portable (.exe)</span>
+                          <span class="dropdown-sub">Bez instalacji · działa od razu po uruchomieniu</span>
+                        </div>
+                        <span id="launcher-portable-size" class="dropdown-size">106.8 MB</span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a
+                        class="dropdown-item compact"
+                        href="https://github.com/latajoncy82-svg/peak-launcher/releases"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        role="menuitem"
+                      >
+                        <span class="dropdown-title">Wszystkie wydania na GitHubie</span>
+                        <span class="dropdown-arrow">↗</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a
+                    href="https://latajoncy82-svg.github.io/peak-launcher/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                  >
+                    <span>Strona projektu</span>
+                    <span class="ext-arrow">↗</span>
+                  </a>
+
+                  <a
+                    href="https://github.com/latajoncy82-svg/peak-launcher"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline"
+                  >
+                    <span>GitHub</span>
+                    <span class="ext-arrow">↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ecosystem & Lab Roadmap -->
+    <section id="ekosystem" class="section section-ecosystem">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">ARCHITEKTURA I STANDARDY · EKOSYSTEM PEAK LABS</span>
+          <h2>Wspólny fundament technologiczny</h2>
+          <p>Obie aplikacje dzielą ten sam standard jakości, bezpieczeństwa oraz spójnej estetyki Niebieskiej Góry.</p>
+        </div>
+
+        <div class="ecosystem-grid">
+          <div class="eco-table-card spotlight-card reveal">
+            <div class="eco-table-head">
+              <span>Parametr ekosystemu</span>
+              <span>Peak Browser</span>
+              <span>Peak Launcher</span>
+            </div>
+            <div class="eco-row">
+              <span class="eco-key">System operacyjny</span>
+              <span>Windows 10 / 11 (64-bit)</span>
+              <span>Windows 10 / 11 (64-bit)</span>
+            </div>
+            <div class="eco-row">
+              <span class="eco-key">Format dystrybucji</span>
+              <span>Instalator NSIS + Portable (.exe)</span>
+              <span>Instalator NSIS + Portable (.exe)</span>
+            </div>
+            <div class="eco-row">
+              <span class="eco-key">System wizualny</span>
+              <span>Motywy Niebieskiej Góry</span>
+              <span>Alpine Aurora &amp; Summit Glass</span>
+            </div>
+            <div class="eco-row">
+              <span class="eco-key">Kluczowa funkcja</span>
+              <span>Peak Shield &amp; karty Drag &amp; Drop</span>
+              <span>Modrinth, Auto-Java &amp; Auto-Fabric</span>
+            </div>
+            <div class="eco-row">
+              <span class="eco-key">Kanał aktualizacji</span>
+              <span>GitHub Releases</span>
+              <span>GitHub Releases</span>
+            </div>
+            <div class="eco-row">
+              <span class="eco-key">Cena i telemetria</span>
+              <span class="eco-ok">Bezpłatna · 0 telemetrii</span>
+              <span class="eco-ok">Bezpłatny · 0 telemetrii</span>
+            </div>
+          </div>
+
+          <aside class="lab-future-card spotlight-card reveal">
+            <span class="lab-badge">LABORATORIUM PEAK LABS · W PRZYGOTOWANIU</span>
+            <h3>Rozwój ekosystemu na 2026+</h3>
+            <p>
+              PEAK LABS stale rozwija oba główne produkty oraz testuje nowe narzędzia użytkowe dla graczy
+              i twórców pracujących na Windows.
+            </p>
+            <ul class="lab-roadmap-list">
+              <li>
+                <span class="roadmap-dot active" aria-hidden="true"></span>
+                <div>
+                  <strong>Peak Browser 1.x+</strong>
+                  <span>Dalsza optymalizacja zużycia RAM, rozbudowa filtrów Peak Shield i jeszcze szybsze karty.</span>
+                </div>
+              </li>
+              <li>
+                <span class="roadmap-dot active" aria-hidden="true"></span>
+                <div>
+                  <strong>Peak Launcher 1.x+</strong>
+                  <span>Nowe zestawy wydajnościowe Modrinth, zarządzanie paczkami i telemetria startu.</span>
+                </div>
+              </li>
+              <li>
+                <span class="roadmap-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Kolejne narzędzia PEAK LABS</strong>
+                  <span>Lekkie programy systemowe w estetyce Summit Glass pod adresem <code>peaklabs.vercel.app</code>.</span>
+                </div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unified Releases Center -->
+    <section id="wydania" class="section section-releases">
+      <div class="container">
+        <div class="releases-top reveal">
+          <div class="section-head">
+            <span class="section-kicker">CENTRUM POBRAŃ · GITHUB RELEASES</span>
+            <h2>Wydania i lista zmian</h2>
+            <p>Bezpośrednie pliki instalacyjne <code>.exe</code> oraz przenośne wersje Portable obu produktów PEAK LABS.</p>
+          </div>
+
+          <div class="releases-controls">
+            <div class="release-filters" role="group" aria-label="Filtruj wydania po produkcie">
+              <button class="release-filter-btn active" type="button" data-filter="all">Wszystkie</button>
+              <button class="release-filter-btn" type="button" data-filter="browser">Peak Browser</button>
+              <button class="release-filter-btn" type="button" data-filter="launcher">Peak Launcher</button>
+            </div>
+            <span id="releases-source-note" class="source-note">Ładowanie wydań…</span>
+          </div>
+        </div>
+
+        <div id="releases-list" class="releases-list"></div>
+      </div>
+    </section>
+
+    <!-- Creator / Founder Section -->
+    <section id="tworca" class="section section-creator">
+      <div class="container">
+        <div class="creator-card spotlight-card reveal">
+          <svg class="creator-topo" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M460,300 C540,210 610,160 690,85 C740,40 770,18 800,10" />
+            <path d="M520,300 C590,225 650,185 720,120 C755,85 780,68 800,60" />
+          </svg>
+
+          <div class="creator-left">
+            <div class="creator-emblem">
+              <img src="./assets/peaklabs-logo.svg" alt="PEAK LABS emblem" />
+            </div>
+            <div class="creator-domain-chip">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <span>peaklabs.vercel.app</span>
+            </div>
+          </div>
+
+          <div class="creator-right">
+            <span class="section-kicker">ZAŁOŻYCIEL &amp; TWÓRCA PEAK LABS</span>
+            <h2>Mikołaj Grynienko</h2>
+            <div class="creator-roles">
+              <span>Founder · PEAK LABS</span>
+              <span>Desktop &amp; Web Developer</span>
+              <span>UI/UX Designer</span>
+            </div>
+            <p class="creator-bio">
+              Projektuje i tworzy od podstaw cały ekosystem <strong>PEAK LABS</strong> — od silnika launchera Minecrafta
+              z automatyczną instalacją Javy, Fabrica i integracją Modrinth, przez architekturę przeglądarki
+              <strong>Peak Browser</strong> i system prywatności <strong>Peak Shield</strong>, aż po spójny język
+              graficzny <em>Alpine Aurora &amp; Summit Glass</em>.
+            </p>
+            <div class="creator-actions">
+              <a
+                href="https://github.com/latajoncy82-svg"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-aurora"
+              >
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+                </svg>
+                <span>Profil GitHub (latajoncy82-svg)</span>
+              </a>
+              <a
+                href="https://github.com/latajoncy82-svg/peak-labs"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-glass"
+              >
+                <span>Repozytorium PEAK LABS</span>
+                <span class="ext-arrow">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="#start" class="brand">
+            <img src="./assets/peaklabs-logo.svg" alt="PEAK LABS" class="brand-icon" />
+            <span class="brand-wordmark">
+              <span class="brand-name">PEAK LABS</span>
+              <span class="brand-tag">STUDIO</span>
+            </span>
+          </a>
+          <p>
+            Niezależne studio oprogramowania tworzące czyste i szybkie aplikacje na Windows 10/11 w estetyce
+            Alpine Aurora &amp; Summit Glass.
+          </p>
+          <span class="footer-domain">peaklabs.vercel.app</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nawigacja</h4>
+          <a href="#o-firmie">O firmie</a>
+          <a href="#projekty">Projekty</a>
+          <a href="#ekosystem">Ekosystem</a>
+          <a href="#wydania">Wydania</a>
+          <a href="#tworca">Twórca</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Produkty</h4>
+          <a href="#projekt-browser">Peak Browser</a>
+          <a href="https://peakbrowser.vercel.app" target="_blank" rel="noopener noreferrer">peakbrowser.vercel.app ↗</a>
+          <a href="#projekt-launcher">Peak Launcher</a>
+          <a href="https://latajoncy82-svg.github.io/peak-launcher/" target="_blank" rel="noopener noreferrer">Strona Peak Launcher ↗</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>GitHub</h4>
+          <a href="https://github.com/latajoncy82-svg" target="_blank" rel="noopener noreferrer">Profil latajoncy82-svg ↗</a>
+          <a href="https://github.com/latajoncy82-svg/peak-labs" target="_blank" rel="noopener noreferrer">Repozytorium PEAK LABS ↗</a>
+          <a href="https://github.com/latajoncy82-svg/peak-browser" target="_blank" rel="noopener noreferrer">Repo Peak Browser ↗</a>
+          <a href="https://github.com/latajoncy82-svg/peak-launcher" target="_blank" rel="noopener noreferrer">Repo Peak Launcher ↗</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 PEAK LABS · Twórca: <strong>Mikołaj Grynienko</strong></span>
+        <span>Motyw Alpine Aurora &amp; Summit Glass</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox hidden" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+    <div id="lightbox-backdrop" class="lightbox-backdrop"></div>
+    <div class="lightbox-dialog">
+      <div class="lightbox-bar">
+        <div class="lightbox-meta">
+          <span id="lightbox-caption" class="lightbox-caption">Podgląd ekranu</span>
+          <span id="lightbox-counter" class="lightbox-counter">1 / 6</span>
+        </div>
+        <div class="lightbox-controls">
+          <button id="lightbox-prev" class="lightbox-btn" type="button" aria-label="Poprzedni zrzut ekranu">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 3.5L5.5 8 10 12.5" />
+            </svg>
+          </button>
+          <button id="lightbox-next" class="lightbox-btn" type="button" aria-label="Następny zrzut ekranu">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 3.5L10.5 8 6 12.5" />
+            </svg>
+          </button>
+          <button id="lightbox-close" class="lightbox-btn" type="button" aria-label="Zamknij podgląd">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+              <path d="M4 4l8 8M12 4l-8 8" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="lightbox-frame">
+        <img id="lightbox-img" src="./assets/browser-dark.webp" alt="Powiększony podgląd ekranu" />
+      </div>
+    </div>
+  </div>
+
+  <script src="./fx.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

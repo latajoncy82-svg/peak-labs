@@ -1,0 +1,186 @@
+{
+  "browser": [
+    {
+      "tag": "v1.1.0",
+      "name": "Peak Browser 1.1.0 — Domyślny ciemny interfejs i nowy pasek kart",
+      "publishedAt": "2026-11-19T22:26:00Z",
+      "body": "### Co się zmieniło w wersji 1.1.0\n- **Domyślny ciemny motyw Niebieskiej Góry (`Ciemny`)**: głęboki alpejski granat w całym interfejsie okna, na stronie nowej karty (`peak://newtab`), w oknie podpowiedzi oraz na ekranie błędu.\n- **Dopracowane połączone karty i zmiana kolejności**: płynne wyprofilowane łączenie aktywnej karty z paskiem narzędzi, zwarty górny pasek (`78 px`) oraz przeciąganie kart myszką (`drag & drop`).\n- **Czytelniejszy pasek adresu**: wyróżniona nazwa domeny przy wyciszonym protokole i ścieżce oraz szybki przycisk kopiowania adresu URL po najechaniu myszką.\n- **Odświeżona Nowa Karta i panel boczny**: równomierny rząd skrótów w jednym wierszu, satynowe oszklone karty na nocnej panoramie, smukłe paski przewijania oraz szybkie otwieranie zakładek i historii w nowej karcie.",
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.1.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Browser-Setup-1.1.0.exe",
+          "size": 122652005,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Browser-Portable-1.1.0.exe",
+          "size": 111351142,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Portable-1.1.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Browser-Setup-1.1.0.exe",
+            "size": 122652005,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Browser-Portable-1.1.0.exe",
+            "size": 111351142,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Portable-1.1.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.0.1",
+      "name": "Peak Browser 1.0.1 — Poprawka paska zadań",
+      "publishedAt": "2026-11-19T22:06:00Z",
+      "body": "### Co się zmieniło w wersji 1.0.1\n- **Poprawka przypinania do paska zadań Windows**: dodano jawne metadane aplikacji (`setAppDetails` / `AppUserModelID`, `relaunchCommand`, `appIconPath`, `relaunchDisplayName`), dzięki czemu przypięcie **Peak Browser** do paska zadań zachowuje logo Niebieskiej Góry oraz nazwę aplikacji zamiast przełączać się na domyślną ikonę Electrona.\n- **Bezpośrednie uruchamianie**: skrót uruchamiający oraz `start-peak.bat` uruchamiają bezpośrednio skompilowany plik `Peak Browser.exe`.",
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.0.1",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Browser-Setup-1.0.1.exe",
+          "size": 122649865,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.0.1/Peak-Browser-Setup-1.0.1.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Browser-Portable-1.0.1.exe",
+          "size": 111348667,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.0.1/Peak-Browser-Portable-1.0.1.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Browser-Setup-1.0.1.exe",
+            "size": 122649865,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.0.1/Peak-Browser-Setup-1.0.1.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Browser-Portable-1.0.1.exe",
+            "size": 111348667,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.0.1/Peak-Browser-Portable-1.0.1.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.0.0",
+      "name": "Peak Browser 1.0.0 — Pierwsze wydanie",
+      "publishedAt": "2026-11-19T21:50:00Z",
+      "body": "### Co się zmieniło\n- **Pierwsze wydanie Peak Browser** na Windows 10 i Windows 11 (64-bit) z dedykowanym instalatorem oraz wersją portable.\n- **Architektoniczny interfejs**: zwarty górny pasek `80 px`, połączona aktywna karta bez ciężkich cieni oraz czytelny pasek adresu.\n- **Trzy motywy Niebieskiej Góry**: **Jasny**, **Niebieski** oraz **Ciemny** wraz z minimalistycznymi tapetami alpejskimi na stronie nowej karty (`peak://newtab`).\n- **Peak Shield**: wbudowane blokowanie reklam i popularnych trackerów z licznikiem zablokowanych żądań dla każdej karty.\n- **Płaski panel boczny (`320 px`)**: zakładki, historia przeglądania, menedżer pobrań, wybór wyszukiwarki (Google, DuckDuckGo, Bing, Brave Search) oraz czyszczenie danych jednym kliknięciem.\n- **Pełna obsługa skrótów klawiszowych**: `Ctrl+T`, `Ctrl+W`, `Ctrl+Shift+T`, `Ctrl+L`, `Ctrl+F`, `Ctrl+D`, `Ctrl+H`, `Ctrl+J`, `Ctrl+Shift+B`, `F11`, `F12`.",
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.0.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Browser-Setup-1.0.0.exe",
+          "size": 122649886,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.0.0/Peak-Browser-Setup-1.0.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Browser-Portable-1.0.0.exe",
+          "size": 111349732,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.0.0/Peak-Browser-Portable-1.0.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Browser-Setup-1.0.0.exe",
+            "size": 122649886,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.0.0/Peak-Browser-Setup-1.0.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Browser-Portable-1.0.0.exe",
+            "size": 111349732,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.0.0/Peak-Browser-Portable-1.0.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    }
+  ],
+  "launcher": [
+    {
+      "tag": "v1.1.0",
+      "name": "Peak Launcher 1.1.0 — Alpine Aurora & Summit Glass GUI",
+      "publishedAt": "2026-11-20T21:30:00Z",
+      "body": "### Najważniejsze nowości w wersji 1.1.0\n- **Żywa atmosfera Góry PEAK (Alpine Aurora)**: płynąca zorza polarna, gwiazdozbiór i śnieg na lekkim płótnie z paralaksą oraz podświetlenie kart pod kursorem (`spotlight`).\n- **Nowy kokpit Szczytu i pływający dock**: kontury topograficzne, okno panoramy szczytu, pasek podglądu modów z przyciskiem **Boost FPS (1 klik)**, 5-etapowy wskaźnik startu oraz awatar głowy gracza.\n- **Personalizacja profili ekspedycji**: 4 motywy kolorystyczne profili (*Szczyt*, *Lodowiec*, *Grań*, *Zorza*) oraz szybki przycisk `▶ Graj` bezpośrednio na kartach.\n- **Ulepszone Mody, Wersje i Konsola**: tagi kategorii modów Modrinth, pigułki typów wersji oraz czytelna telemetria RAM i Javy w panelu bocznym.",
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.1.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.1.0.exe",
+          "size": 123342618,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Setup-1.1.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.1.0.exe",
+          "size": 112023960,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Portable-1.1.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.1.0.exe",
+            "size": 123342618,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Setup-1.1.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.1.0.exe",
+            "size": 112023960,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Portable-1.1.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.0.0",
+      "name": "Peak Launcher 1.0.0 — Pierwsze wydanie Szczytu Gór",
+      "publishedAt": "2026-11-20T20:00:00Z",
+      "body": "### Najważniejsze funkcje wydania 1.0.0\n- **Motyw Góry PEAK (Nocny Szczyt i Lodowcowy Dzień)**: spójny alpejski interfejs z panoramami szczytów i warstwami górskich grani.\n- **Wszystkie wersje Minecraft**: pełny katalog Mojang (`925+` wydań od Alphy i Bety po `26.3` oraz najnowsze snapshoty) wraz z izolowanymi profilami.\n- **Łatwe dodawanie modów**: wbudowany katalog Modrinth z automatycznym instalowaniem wymaganych zależności (`Fabric API`), **Pakiet Peak FPS Boost** jednym kliknięciem oraz wygodny **Drag & Drop** plików `.jar`.\n- **Automatyczna instalacja Javy (8 / 17 / 21 / 25) i Fabric Loadera**: launcher sam wykrywa brakującą wersję Javy dla wybranego Minecrafta i pobiera oficjalne pakiety Eclipse Temurin oraz Fabric.",
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.0.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.0.0.exe",
+          "size": 123336654,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.0.0/Peak-Launcher-Setup-1.0.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.0.0.exe",
+          "size": 112018841,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.0.0/Peak-Launcher-Portable-1.0.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.0.0.exe",
+            "size": 123336654,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.0.0/Peak-Launcher-Setup-1.0.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.0.0.exe",
+            "size": 112018841,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.0.0/Peak-Launcher-Portable-1.0.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg-grad" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b182e" />
+      <stop offset="100%" stop-color="#050b16" />
+    </linearGradient>
+    <linearGradient id="aurora-glow" x1="12" y1="8" x2="54" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.28" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.06" />
+    </linearGradient>
+    <linearGradient id="peak-left" x1="16" y1="14" x2="32" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e0f2fe" />
+      <stop offset="55%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="peak-right" x1="32" y1="14" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="crystal-prism" x1="25" y1="30" x2="39" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bg-grad)" />
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#aurora-glow)" />
+  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="14.25" stroke="#94c5ff" stroke-opacity="0.24" stroke-width="1.5" />
+
+  <!-- Secondary alpine ridge -->
+  <path d="M12 48L22 33L29 41L44 26L52 48H12Z" fill="#0f2547" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1" stroke-linejoin="round" />
+
+  <!-- Main crystalline peak left facet -->
+  <path d="M32 13L13 48H32V13Z" fill="url(#peak-left)" />
+  <!-- Main crystalline peak right facet -->
+  <path d="M32 13L51 48H32V13Z" fill="url(#peak-right)" fill-opacity="0.92" />
+
+  <!-- Lab crystal prism inset at core -->
+  <path d="M32 25L40 37L32 48L24 37L32 25Z" fill="#071122" fill-opacity="0.82" />
+  <path d="M32 25L40 37L32 48L24 37L32 25Z" stroke="url(#crystal-prism)" stroke-width="1.6" stroke-linejoin="round" />
+  <path d="M32 25V48M24 37H40" stroke="#e0f2fe" stroke-opacity="0.45" stroke-width="1" />
+
+  <!-- Summit highlight edge -->
+  <path d="M13 48L32 13L51 48" stroke="#e0f2fe" stroke-opacity="0.65" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
