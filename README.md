@@ -3,7 +3,7 @@
 Oficjalna strona studia oprogramowania **PEAK LABS** — niezależnego laboratorium software'owego tworzącego czyste, szybkie i prywatne aplikacje desktopowe na Windows 10/11 w autorskiej estetyce **Alpine Aurora & Summit Glass**.
 
 - **Twórca i założyciel:** Mikołaj Grynienko
-- **Adres docelowy:** `https://peaklabs.vercel.app`
+- **Adres docelowy:** `https://peaklabstudio.vercel.app`
 - **Podgląd GitHub Pages:** `https://latajoncy82-svg.github.io/peak-labs/`
 
 ## Nasze flagowe projekty
