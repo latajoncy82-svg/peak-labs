@@ -10,42 +10,42 @@
       project: 'browser',
       mode: 'dark',
       src: './assets/browser-dark.webp',
-      caption: 'Peak Browser — Motyw Ciemny (Domyślny)'
+      captionKey: 'shot.browserDark'
     },
     {
       id: 'browser-light',
       project: 'browser',
       mode: 'light',
       src: './assets/browser-light.webp',
-      caption: 'Peak Browser — Motyw Jasny'
+      captionKey: 'shot.browserLight'
     },
     {
       id: 'launcher-dark',
       project: 'launcher',
       mode: 'dark',
       src: './assets/launcher-dark.png',
-      caption: 'Peak Launcher — Nocny Szczyt (Alpine Aurora)'
+      captionKey: 'shot.launcherDark'
     },
     {
       id: 'launcher-light',
       project: 'launcher',
       mode: 'light',
       src: './assets/launcher-light.png',
-      caption: 'Peak Launcher — Lodowcowy Dzień'
+      captionKey: 'shot.launcherLight'
     },
     {
       id: 'launcher-mods',
       project: 'launcher',
       mode: 'mods',
       src: './assets/launcher-mods.png',
-      caption: 'Peak Launcher — Katalog Modrinth i Pakiet FPS Boost'
+      captionKey: 'shot.launcherMods'
     },
     {
       id: 'launcher-java',
       project: 'launcher',
       mode: 'java',
       src: './assets/launcher-java.png',
-      caption: 'Peak Launcher — Centrum Java i Fabric'
+      captionKey: 'shot.launcherJava'
     }
   ];
 
@@ -53,8 +53,8 @@
     browser: {
       name: 'Peak Browser',
       icon: './assets/browser-icon-64.png',
-      summary: 'Czysta przeglądarka z Peak Shield i motywem Niebieskiej Góry.',
-      tags: ['Peak Shield', 'Drag & Drop kart', '0 telemetrii'],
+      summaryKey: 'stage.browserSummary',
+      tagKeys: ['stage.browserTag1', 'stage.browserTag2', 'stage.browserTag3'],
       detailsHref: '#projekt-browser',
       previewSrc: './assets/browser-dark.webp',
       shotId: 'browser-dark'
@@ -62,8 +62,8 @@
     launcher: {
       name: 'Peak Launcher',
       icon: './assets/launcher-icon-64.png',
-      summary: 'Launcher Minecrafta z Alpine Aurora, Modrinth i Auto-Javą.',
-      tags: ['925+ wersji MC', 'Modrinth + FPS Boost', 'Auto-Java & Fabric'],
+      summaryKey: 'stage.launcherSummary',
+      tagKeys: ['stage.launcherTag1', 'stage.launcherTag2', 'stage.launcherTag3'],
       detailsHref: '#projekt-launcher',
       previewSrc: './assets/launcher-dark.png',
       shotId: 'launcher-dark'
@@ -76,6 +76,7 @@
     browserMode: 'dark',
     launcherMode: 'dark',
     lightboxIndex: 0,
+    releaseRenderSeq: 0,
     products: {
       browser: [],
       launcher: []
@@ -152,6 +153,14 @@
     lightboxCounter: document.getElementById('lightbox-counter')
   };
 
+  function tr(key) {
+    return window.PeakLabsI18n ? window.PeakLabsI18n.t(key) : key;
+  }
+
+  function getActiveLang() {
+    return window.PeakLabsI18n ? window.PeakLabsI18n.getState().activeLang : 'en';
+  }
+
   function isLocalhostOrFile() {
     return (
       window.location.protocol === 'file:' ||
@@ -170,10 +179,13 @@
   }
 
   function formatDate(iso) {
+    if (window.PeakLabsI18n) {
+      return window.PeakLabsI18n.formatDate(iso);
+    }
     if (!iso) return '';
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return '';
-    return d.toLocaleDateString('pl-PL', {
+    return d.toLocaleDateString('en', {
       day: 'numeric',
       month: 'long',
       year: 'numeric'
@@ -229,18 +241,18 @@
     });
 
     el.stagePreviewImg.src = meta.previewSrc;
-    el.stagePreviewImg.alt = `Podgląd ${meta.name}`;
+    el.stagePreviewImg.alt = `${tr('stage.previewAltPrefix')} ${meta.name}`;
     el.stageProductIcon.src = meta.icon;
     el.stageProductIcon.alt = meta.name;
     el.stageProductName.textContent = meta.name;
     el.stageProductVersion.textContent = tag;
-    el.stageProductSummary.textContent = meta.summary;
+    el.stageProductSummary.textContent = tr(meta.summaryKey);
     el.stageDetailsLink.href = meta.detailsHref;
 
     el.stageTags.replaceChildren(
-      ...meta.tags.map((text) => {
+      ...meta.tagKeys.map((tagKey) => {
         const span = document.createElement('span');
-        span.textContent = text;
+        span.textContent = tr(tagKey);
         return span;
       })
     );
@@ -263,11 +275,11 @@
     if (projectKey === 'browser') {
       state.browserMode = mode;
       el.browserPreviewImg.src = shot.src;
-      el.browserPreviewImg.alt = shot.caption;
+      el.browserPreviewImg.alt = tr(shot.captionKey);
     } else if (projectKey === 'launcher') {
       state.launcherMode = mode;
       el.launcherPreviewImg.src = shot.src;
-      el.launcherPreviewImg.alt = shot.caption;
+      el.launcherPreviewImg.alt = tr(shot.captionKey);
     }
 
     el.projectPreviewTabs
@@ -289,9 +301,10 @@
   function renderLightboxSlide() {
     const shot = GALLERY_SHOTS[state.lightboxIndex];
     if (!shot) return;
+    const caption = tr(shot.captionKey);
     el.lightboxImg.src = shot.src;
-    el.lightboxImg.alt = shot.caption;
-    el.lightboxCaption.textContent = shot.caption;
+    el.lightboxImg.alt = caption;
+    el.lightboxCaption.textContent = caption;
     el.lightboxCounter.textContent = `${state.lightboxIndex + 1} / ${GALLERY_SHOTS.length}`;
   }
 
@@ -440,7 +453,147 @@
     }
   }
 
-  function renderReleasesList() {
+  function resolveLocalizedReleaseBase(rel, lang) {
+    const i18n = window.PeakLabsI18n;
+
+    if (lang === 'pl') {
+      if (rel.locales?.pl) {
+        return { name: rel.locales.pl.name || rel.name, body: rel.locales.pl.body || rel.body, needsTranslate: false };
+      }
+      const knownPl = i18n?.getKnownReleaseTranslation(rel.productKey, rel.tag, 'pl');
+      if (knownPl) {
+        return { name: knownPl.name, body: knownPl.body, needsTranslate: false };
+      }
+      return { name: rel.name || rel.tag, body: rel.body || '', needsTranslate: false };
+    }
+
+    const knownEn = i18n?.getKnownReleaseTranslation(rel.productKey, rel.tag, 'en');
+    const enName = knownEn?.name || (rel.locales?.pl ? rel.name : null);
+    const enBody = knownEn?.body || (rel.locales?.pl ? rel.body : null);
+
+    if (lang === 'en') {
+      if (enName && enBody) {
+        return { name: enName, body: enBody, needsTranslate: false };
+      }
+      return {
+        name: rel.name || rel.tag,
+        body: rel.body || '',
+        needsTranslate: true,
+        sourceLang: 'auto'
+      };
+    }
+
+    return {
+      name: enName || rel.name || rel.tag,
+      body: enBody || rel.body || '',
+      needsTranslate: true,
+      sourceLang: enName && enBody ? 'en' : 'auto'
+    };
+  }
+
+  function buildReleaseCardsFragment(items) {
+    const frag = document.createDocumentFragment();
+
+    items.forEach((rel) => {
+      const card = document.createElement('article');
+      card.className = 'release-card spotlight-card';
+
+      const header = document.createElement('div');
+      header.className = 'release-header';
+
+      const titleGroup = document.createElement('div');
+      titleGroup.className = 'release-title-group';
+
+      const productPill = document.createElement('span');
+      productPill.className = `release-product-pill ${rel.productKey} notranslate`;
+      productPill.setAttribute('translate', 'no');
+      productPill.textContent = rel.productLabel;
+      titleGroup.appendChild(productPill);
+
+      const tagSpan = document.createElement('span');
+      tagSpan.className = 'release-tag notranslate';
+      tagSpan.setAttribute('translate', 'no');
+      tagSpan.textContent = rel.tag || 'v1.0.0';
+      titleGroup.appendChild(tagSpan);
+
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'release-name';
+      nameSpan.textContent = rel.displayName || rel.name || rel.tag;
+      titleGroup.appendChild(nameSpan);
+
+      if (rel.isLatestForProduct) {
+        const badge = document.createElement('span');
+        badge.className = 'release-badge';
+        badge.textContent = tr('releases.latestBadge');
+        titleGroup.appendChild(badge);
+      }
+
+      const dateSpan = document.createElement('span');
+      dateSpan.className = 'release-date';
+      dateSpan.textContent = formatDate(rel.publishedAt);
+
+      header.append(titleGroup, dateSpan);
+      card.appendChild(header);
+
+      const notesDiv = document.createElement('div');
+      notesDiv.className = 'release-notes';
+      renderMarkdownNotes(notesDiv, rel.displayBody ?? rel.body ?? '');
+      card.appendChild(notesDiv);
+
+      const downloadsRow = document.createElement('div');
+      downloadsRow.className = 'release-downloads';
+
+      const installer = rel.assets?.installer;
+      const portable = rel.assets?.portable;
+
+      if (installer?.downloadUrl) {
+        const link = document.createElement('a');
+        link.className = 'dl-chip primary';
+        link.href = installer.downloadUrl;
+        if (installer.name) link.setAttribute('download', installer.name);
+        const label = document.createElement('span');
+        label.textContent = tr('releases.dlSetup');
+        const size = document.createElement('span');
+        size.className = 'dl-chip-size notranslate';
+        size.setAttribute('translate', 'no');
+        size.textContent = formatSize(installer.size);
+        link.append(label, size);
+        downloadsRow.appendChild(link);
+      }
+
+      if (portable?.downloadUrl) {
+        const link = document.createElement('a');
+        link.className = 'dl-chip';
+        link.href = portable.downloadUrl;
+        if (portable.name) link.setAttribute('download', portable.name);
+        const label = document.createElement('span');
+        label.textContent = tr('releases.dlPortable');
+        const size = document.createElement('span');
+        size.className = 'dl-chip-size notranslate';
+        size.setAttribute('translate', 'no');
+        size.textContent = formatSize(portable.size);
+        link.append(label, size);
+        downloadsRow.appendChild(link);
+      }
+
+      const ghLink = document.createElement('a');
+      ghLink.className = 'dl-chip';
+      ghLink.href = rel.htmlUrl || `https://github.com/${REPOS[rel.productKey]}/releases`;
+      ghLink.target = '_blank';
+      ghLink.rel = 'noopener noreferrer';
+      ghLink.textContent = tr('releases.viewGithub');
+      downloadsRow.appendChild(ghLink);
+
+      card.appendChild(downloadsRow);
+      frag.appendChild(card);
+    });
+
+    return frag;
+  }
+
+  async function renderReleasesList() {
+    const seq = ++state.releaseRenderSeq;
+    const lang = getActiveLang();
     const combined = [];
     const latestBrowserTag = state.products.browser[0]?.tag;
     const latestLauncherTag = state.products.launcher[0]?.tag;
@@ -474,113 +627,63 @@
     });
 
     el.releasesSourceNote.textContent =
-      state.source === 'github'
-        ? 'Zsynchronizowano z GitHub Releases'
-        : 'Aktualny katalog wydań PEAK LABS';
+      state.source === 'github' ? tr('releases.synced') : tr('releases.catalog');
 
     if (combined.length === 0) {
       const emptyCard = document.createElement('div');
       emptyCard.className = 'release-card';
       const p = document.createElement('p');
-      p.textContent = 'Brak opublikowanych wydań dla wybranego filtra.';
+      p.textContent = tr('releases.empty');
       emptyCard.appendChild(p);
       el.releasesList.replaceChildren(emptyCard);
       return;
     }
 
-    const frag = document.createDocumentFragment();
+    const toTranslateEn = [];
+    const toTranslateAuto = [];
 
-    combined.forEach((rel) => {
-      const card = document.createElement('article');
-      card.className = 'release-card spotlight-card';
-
-      const header = document.createElement('div');
-      header.className = 'release-header';
-
-      const titleGroup = document.createElement('div');
-      titleGroup.className = 'release-title-group';
-
-      const productPill = document.createElement('span');
-      productPill.className = `release-product-pill ${rel.productKey}`;
-      productPill.textContent = rel.productLabel;
-      titleGroup.appendChild(productPill);
-
-      const tagSpan = document.createElement('span');
-      tagSpan.className = 'release-tag';
-      tagSpan.textContent = rel.tag || 'v1.0.0';
-      titleGroup.appendChild(tagSpan);
-
-      const nameSpan = document.createElement('span');
-      nameSpan.className = 'release-name';
-      nameSpan.textContent = rel.name || rel.tag;
-      titleGroup.appendChild(nameSpan);
-
-      if (rel.isLatestForProduct) {
-        const badge = document.createElement('span');
-        badge.className = 'release-badge';
-        badge.textContent = 'Najnowsza';
-        titleGroup.appendChild(badge);
+    const prepared = combined.map((rel) => {
+      const resolved = resolveLocalizedReleaseBase(rel, lang);
+      const entry = {
+        ...rel,
+        displayName: resolved.name,
+        displayBody: resolved.body
+      };
+      if (resolved.needsTranslate) {
+        const targetBucket = resolved.sourceLang === 'auto' ? toTranslateAuto : toTranslateEn;
+        targetBucket.push(entry);
       }
-
-      const dateSpan = document.createElement('span');
-      dateSpan.className = 'release-date';
-      dateSpan.textContent = formatDate(rel.publishedAt);
-
-      header.append(titleGroup, dateSpan);
-      card.appendChild(header);
-
-      const notesDiv = document.createElement('div');
-      notesDiv.className = 'release-notes';
-      renderMarkdownNotes(notesDiv, rel.body || '');
-      card.appendChild(notesDiv);
-
-      const downloadsRow = document.createElement('div');
-      downloadsRow.className = 'release-downloads';
-
-      const installer = rel.assets?.installer;
-      const portable = rel.assets?.portable;
-
-      if (installer?.downloadUrl) {
-        const link = document.createElement('a');
-        link.className = 'dl-chip primary';
-        link.href = installer.downloadUrl;
-        if (installer.name) link.setAttribute('download', installer.name);
-        const label = document.createElement('span');
-        label.textContent = 'Pobierz Instalator (.exe)';
-        const size = document.createElement('span');
-        size.className = 'dl-chip-size';
-        size.textContent = formatSize(installer.size);
-        link.append(label, size);
-        downloadsRow.appendChild(link);
-      }
-
-      if (portable?.downloadUrl) {
-        const link = document.createElement('a');
-        link.className = 'dl-chip';
-        link.href = portable.downloadUrl;
-        if (portable.name) link.setAttribute('download', portable.name);
-        const label = document.createElement('span');
-        label.textContent = 'Pobierz Portable (.exe)';
-        const size = document.createElement('span');
-        size.className = 'dl-chip-size';
-        size.textContent = formatSize(portable.size);
-        link.append(label, size);
-        downloadsRow.appendChild(link);
-      }
-
-      const ghLink = document.createElement('a');
-      ghLink.className = 'dl-chip';
-      ghLink.href = rel.htmlUrl || `https://github.com/${REPOS[rel.productKey]}/releases`;
-      ghLink.target = '_blank';
-      ghLink.rel = 'noopener noreferrer';
-      ghLink.textContent = 'Zobacz na GitHubie ↗';
-      downloadsRow.appendChild(ghLink);
-
-      card.appendChild(downloadsRow);
-      frag.appendChild(card);
+      return entry;
     });
 
-    el.releasesList.replaceChildren(frag);
+    // Immediate render first so there is zero blank flash
+    el.releasesList.replaceChildren(buildReleaseCardsFragment(prepared));
+
+    if ((toTranslateEn.length > 0 || toTranslateAuto.length > 0) && window.PeakLabsI18n) {
+      if (toTranslateEn.length > 0) {
+        const inputs = toTranslateEn.flatMap((item) => [item.displayName, item.displayBody]);
+        const outputs = await window.PeakLabsI18n.translateDynamicTexts(inputs, 'en');
+        if (seq !== state.releaseRenderSeq) return;
+        for (let i = 0; i < toTranslateEn.length; i++) {
+          toTranslateEn[i].displayName = outputs[i * 2] || toTranslateEn[i].displayName;
+          toTranslateEn[i].displayBody = outputs[i * 2 + 1] || toTranslateEn[i].displayBody;
+        }
+      }
+
+      if (toTranslateAuto.length > 0) {
+        const inputs = toTranslateAuto.flatMap((item) => [item.displayName, item.displayBody]);
+        const outputs = await window.PeakLabsI18n.translateDynamicTexts(inputs, 'auto');
+        if (seq !== state.releaseRenderSeq) return;
+        for (let i = 0; i < toTranslateAuto.length; i++) {
+          toTranslateAuto[i].displayName = outputs[i * 2] || toTranslateAuto[i].displayName;
+          toTranslateAuto[i].displayBody = outputs[i * 2 + 1] || toTranslateAuto[i].displayBody;
+        }
+      }
+
+      if (seq === state.releaseRenderSeq) {
+        el.releasesList.replaceChildren(buildReleaseCardsFragment(prepared));
+      }
+    }
   }
 
   function mapGithubRelease(repo, release) {
@@ -671,7 +774,6 @@
       }
     }
 
-    // Refresh from GitHub API in non-local environments when not already hydrated from /api/releases
     if (!isLocalhostOrFile() && state.source !== 'github') {
       const [ghBrowser, ghLauncher] = await Promise.all([
         fetchGithubDirect(REPOS.browser),
@@ -688,6 +790,18 @@
     applyProductDownloadData('launcher');
     switchHeroStage(state.activeStage);
     renderReleasesList();
+  }
+
+  function refreshLocalizedDynamicSections() {
+    switchHeroStage(state.activeStage);
+    switchProjectPreview('browser', state.browserMode);
+    switchProjectPreview('launcher', state.launcherMode);
+    if (!el.lightboxModal.classList.contains('hidden')) {
+      renderLightboxSlide();
+    }
+    if (state.products.browser.length > 0 || state.products.launcher.length > 0) {
+      renderReleasesList();
+    }
   }
 
   function bindEvents() {
@@ -787,11 +901,16 @@
       // Ignore storage errors
     }
 
+    if (window.PeakLabsI18n) {
+      window.PeakLabsI18n.init(refreshLocalizedDynamicSections);
+    }
+
     if (window.PeakLabsFX) {
       window.PeakLabsFX.init('aurora-fx');
     }
 
     bindEvents();
+    refreshLocalizedDynamicSections();
     loadReleases();
   }
 

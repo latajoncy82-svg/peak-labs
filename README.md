@@ -1,31 +1,30 @@
 # PEAK LABS
 
-Oficjalna strona studia oprogramowania **PEAK LABS** — niezależnego laboratorium software'owego tworzącego czyste, szybkie i prywatne aplikacje desktopowe na Windows 10/11 w autorskiej estetyce **Alpine Aurora & Summit Glass**.
+Official website of **PEAK LABS** — an independent software studio and laboratory building clean, fast, privacy-first Windows 10/11 desktop applications in the **Alpine Aurora & Summit Glass** aesthetic.
 
-- **Twórca i założyciel:** Mikołaj Grynienko
-- **Adres docelowy:** `https://peaklabstudio.vercel.app`
-- **Podgląd GitHub Pages:** `https://latajoncy82-svg.github.io/peak-labs/`
+- **Founder & Creator:** Mikołaj Grynienko
+- **Live Website (Vercel):** [`https://peaklabstudio.vercel.app`](https://peaklabstudio.vercel.app)
+- **GitHub Pages Mirror:** [`https://latajoncy82-svg.github.io/peak-labs/`](https://latajoncy82-svg.github.io/peak-labs/)
 
-## Nasze flagowe projekty
+## Flagship Projects
 
-| Projekt | Kategoria | Opis | Repozytorium | Wydania |
+| Project | Category | Description | Repository | Releases |
 | --- | --- | --- | --- | --- |
-| **Peak Browser** | Przeglądarka na Windows | Lekka przeglądarka z motywem Niebieskiej Góry, wbudowaną tarczą **Peak Shield**, paskiem 78 px i kartami drag & drop. | [latajoncy82-svg/peak-browser](https://github.com/latajoncy82-svg/peak-browser) | [Releases](https://github.com/latajoncy82-svg/peak-browser/releases) |
-| **Peak Launcher** | Launcher Minecraft | Nowoczesny launcher Minecraft z motywem Góry PEAK (**Alpine Aurora**), ponad 925 wersjami gry, katalogiem Modrinth, Pakietem FPS Boost oraz Auto-Javą i Fabriciem. | [latajoncy82-svg/peak-launcher](https://github.com/latajoncy82-svg/peak-launcher) | [Releases](https://github.com/latajoncy82-svg/peak-launcher/releases) |
+| **Peak Browser** | Windows Web Browser | Lightweight browser featuring the Blue Mountain theme, built-in **Peak Shield** ad/tracker blocking, 78 px top bar, and drag & drop tabs. | [latajoncy82-svg/peak-browser](https://github.com/latajoncy82-svg/peak-browser) | [Releases](https://github.com/latajoncy82-svg/peak-browser/releases) |
+| **Peak Launcher** | Minecraft Launcher | Modern Minecraft launcher with **Alpine Aurora** GUI, 925+ game versions, Modrinth catalog, 1-click Peak FPS Boost, and automatic Java (8/17/21/25) & Fabric installation. | [latajoncy82-svg/peak-launcher](https://github.com/latajoncy82-svg/peak-launcher) | [Releases](https://github.com/latajoncy82-svg/peak-launcher/releases) |
 
-## Struktura projektu
+## Multi-Language Support & Auto-Translation
 
-- `index.html`, `styles.css`, `fx.js`, `app.js` — responsywna strona statyczna w ciemnym (domyślnym) i jasnym motywie z płótnem Aurora, sceną 3D, galerią projektów i Lightboxem.
-- `api/releases.js` — funkcja serverless dla Vercel synchronizująca wydania obu produktów bezpośrednio z GitHub Releases API z cache (`s-maxage=120`) i lokalnym fallbackiem.
-- `data/releases.json` — zsynchronizowana baza wydań offline / fallback dla obu aplikacji.
-- `assets/` — logo **PEAK LABS** (`peaklabs-logo.svg`), ikony produktów, tapety alpejskie oraz autentyczne zrzuty ekranu.
-- `vercel.json` — konfiguracja nagłówków bezpieczeństwa, cache zasobów oraz `cleanUrls`.
+English (`en`) is the base language of the site. Automatic browser language detection and a built-in language switcher support all visitors:
 
-## Wdrożenie na Vercel
+- **10 Instant Built-in Languages:** English (`en`), Polish (`pl`), German (`de`), Spanish (`es`), French (`fr`), Ukrainian (`uk`), Italian (`it`), Portuguese (`pt`), Czech (`cs`), and Japanese (`ja`).
+- **Automatic Translation (`/api/translate`):** Serverless translation endpoint on Vercel (with `localStorage` caching and browser fallback) automatically translates the entire UI and GitHub release notes into any other detected or selected language (e.g. Swedish, Dutch, Turkish, Korean, Chinese, Arabic with RTL layout, etc.) while protecting brand names (`PEAK LABS`, `Peak Browser`, `Peak Launcher`, `Mikołaj Grynienko`, `peaklabstudio.vercel.app`).
 
-Projekt jest gotowy do uruchomienia na Vercel bez etapu budowania (statyczny frontend + Serverless Function `/api/releases`):
+## Project Structure
 
-1. Zaloguj się w [vercel.com/new](https://vercel.com/new) kontem GitHub.
-2. Zaimportuj repozytorium `latajoncy82-svg/peak-labs`.
-3. Pozostaw `Framework Preset: Other` oraz `Output Directory` puste (katalog główny `.`).
-4. Kliknij **Deploy**.
+- `index.html`, `styles.css`, `fx.js`, `i18n.js`, `app.js` — responsive static site with dark (default) and light themes, Aurora canvas, interactive 3D Hero stage, project galleries, Lightbox, and multi-language engine.
+- `api/releases.js` — Vercel Serverless Function fetching synchronized releases from both GitHub repositories with `s-maxage=120` caching and offline fallback.
+- `api/translate.js` — Vercel Serverless Function performing batched automatic translation with numeric marker safety, process cache, and provider fallback.
+- `data/releases.json` — localized English/Polish release catalog fallback.
+- `assets/` — **PEAK LABS** vector logo (`peaklabs-logo.svg`), app icons, alpine wallpapers, and screenshots.
+- `vercel.json` — security headers, asset caching, and `cleanUrls`.

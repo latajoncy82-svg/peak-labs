@@ -2,9 +2,15 @@
   "browser": [
     {
       "tag": "v1.1.0",
-      "name": "Peak Browser 1.1.0 — Domyślny ciemny interfejs i nowy pasek kart",
+      "name": "Peak Browser 1.1.0 — Default Dark Interface & Redesigned Tab Bar",
       "publishedAt": "2026-11-19T22:26:00Z",
-      "body": "### Co się zmieniło w wersji 1.1.0\n- **Domyślny ciemny motyw Niebieskiej Góry (`Ciemny`)**: głęboki alpejski granat w całym interfejsie okna, na stronie nowej karty (`peak://newtab`), w oknie podpowiedzi oraz na ekranie błędu.\n- **Dopracowane połączone karty i zmiana kolejności**: płynne wyprofilowane łączenie aktywnej karty z paskiem narzędzi, zwarty górny pasek (`78 px`) oraz przeciąganie kart myszką (`drag & drop`).\n- **Czytelniejszy pasek adresu**: wyróżniona nazwa domeny przy wyciszonym protokole i ścieżce oraz szybki przycisk kopiowania adresu URL po najechaniu myszką.\n- **Odświeżona Nowa Karta i panel boczny**: równomierny rząd skrótów w jednym wierszu, satynowe oszklone karty na nocnej panoramie, smukłe paski przewijania oraz szybkie otwieranie zakładek i historii w nowej karcie.",
+      "body": "### What's new in v1.1.0\n- **Default Blue Mountain Dark Theme (`Dark`)**: deep alpine navy across the entire window interface, the New Tab page (`peak://newtab`), suggestions popup, and error screen.\n- **Refined connected tabs & reordering**: seamless sculpted connection between the active tab and toolbar, compact top bar (`78 px`), and smooth mouse drag & drop tab reordering.\n- **Cleaner address bar**: highlighted domain name with muted protocol and path, plus a quick copy URL button on hover.\n- **Refreshed New Tab & sidebar**: single-row balanced shortcut grid, frosted glass cards over the night alpine backdrop, slim scrollbars, and quick opening of bookmarks and history in a new tab.",
+      "locales": {
+        "pl": {
+          "name": "Peak Browser 1.1.0 — Domyślny ciemny interfejs i nowy pasek kart",
+          "body": "### Co się zmieniło w wersji 1.1.0\n- **Domyślny ciemny motyw Niebieskiej Góry (`Ciemny`)**: głęboki alpejski granat w całym interfejsie okna, na stronie nowej karty (`peak://newtab`), w oknie podpowiedzi oraz na ekranie błędu.\n- **Dopracowane połączone karty i zmiana kolejności**: płynne wyprofilowane łączenie aktywnej karty z paskiem narzędzi, zwarty górny pasek (`78 px`) oraz przeciąganie kart myszką (`drag & drop`).\n- **Czytelniejszy pasek adresu**: wyróżniona nazwa domeny przy wyciszonym protokole i ścieżce oraz szybki przycisk kopiowania adresu URL po najechaniu myszką.\n- **Odświeżona Nowa Karta i panel boczny**: równomierny rząd skrótów w jednym wierszu, satynowe oszklone karty na nocnej panoramie, smukłe paski przewijania oraz szybkie otwieranie zakładek i historii w nowej karcie."
+        }
+      },
       "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.1.0",
       "prerelease": false,
       "assets": {
@@ -38,9 +44,15 @@
     },
     {
       "tag": "v1.0.1",
-      "name": "Peak Browser 1.0.1 — Poprawka paska zadań",
+      "name": "Peak Browser 1.0.1 — Windows Taskbar Pinning Fix",
       "publishedAt": "2026-11-19T22:06:00Z",
-      "body": "### Co się zmieniło w wersji 1.0.1\n- **Poprawka przypinania do paska zadań Windows**: dodano jawne metadane aplikacji (`setAppDetails` / `AppUserModelID`, `relaunchCommand`, `appIconPath`, `relaunchDisplayName`), dzięki czemu przypięcie **Peak Browser** do paska zadań zachowuje logo Niebieskiej Góry oraz nazwę aplikacji zamiast przełączać się na domyślną ikonę Electrona.\n- **Bezpośrednie uruchamianie**: skrót uruchamiający oraz `start-peak.bat` uruchamiają bezpośrednio skompilowany plik `Peak Browser.exe`.",
+      "body": "### What's new in v1.0.1\n- **Windows taskbar pinning fix**: added explicit application metadata (`setAppDetails` / `AppUserModelID`, `relaunchCommand`, `appIconPath`, `relaunchDisplayName`), ensuring pinning **Peak Browser** to the taskbar preserves the Blue Mountain logo and app name instead of reverting to the default Electron icon.\n- **Direct launch**: the launcher shortcut and `start-peak.bat` now run the compiled `Peak Browser.exe` binary directly.",
+      "locales": {
+        "pl": {
+          "name": "Peak Browser 1.0.1 — Poprawka paska zadań",
+          "body": "### Co się zmieniło w wersji 1.0.1\n- **Poprawka przypinania do paska zadań Windows**: dodano jawne metadane aplikacji (`setAppDetails` / `AppUserModelID`, `relaunchCommand`, `appIconPath`, `relaunchDisplayName`), dzięki czemu przypięcie **Peak Browser** do paska zadań zachowuje logo Niebieskiej Góry oraz nazwę aplikacji zamiast przełączać się na domyślną ikonę Electrona.\n- **Bezpośrednie uruchamianie**: skrót uruchamiający oraz `start-peak.bat` uruchamiają bezpośrednio skompilowany plik `Peak Browser.exe`."
+        }
+      },
       "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.0.1",
       "prerelease": false,
       "assets": {
@@ -74,9 +86,15 @@
     },
     {
       "tag": "v1.0.0",
-      "name": "Peak Browser 1.0.0 — Pierwsze wydanie",
+      "name": "Peak Browser 1.0.0 — Initial Release",
       "publishedAt": "2026-11-19T21:50:00Z",
-      "body": "### Co się zmieniło\n- **Pierwsze wydanie Peak Browser** na Windows 10 i Windows 11 (64-bit) z dedykowanym instalatorem oraz wersją portable.\n- **Architektoniczny interfejs**: zwarty górny pasek `80 px`, połączona aktywna karta bez ciężkich cieni oraz czytelny pasek adresu.\n- **Trzy motywy Niebieskiej Góry**: **Jasny**, **Niebieski** oraz **Ciemny** wraz z minimalistycznymi tapetami alpejskimi na stronie nowej karty (`peak://newtab`).\n- **Peak Shield**: wbudowane blokowanie reklam i popularnych trackerów z licznikiem zablokowanych żądań dla każdej karty.\n- **Płaski panel boczny (`320 px`)**: zakładki, historia przeglądania, menedżer pobrań, wybór wyszukiwarki (Google, DuckDuckGo, Bing, Brave Search) oraz czyszczenie danych jednym kliknięciem.\n- **Pełna obsługa skrótów klawiszowych**: `Ctrl+T`, `Ctrl+W`, `Ctrl+Shift+T`, `Ctrl+L`, `Ctrl+F`, `Ctrl+D`, `Ctrl+H`, `Ctrl+J`, `Ctrl+Shift+B`, `F11`, `F12`.",
+      "body": "### What's new\n- **Initial Peak Browser release** for Windows 10 and Windows 11 (64-bit) with a dedicated installer and portable edition.\n- **Architectural UI**: compact `80 px` top bar, seamlessly connected active tab without heavy shadows, and clean address bar.\n- **Three Blue Mountain themes**: **Light**, **Blue**, and **Dark**, paired with minimalist alpine wallpapers on the New Tab page (`peak://newtab`).\n- **Peak Shield**: built-in ad and tracker blocking with a per-tab blocked request counter.\n- **Flat sidebar (`320 px`)**: bookmarks, browsing history, download manager, search engine selector (Google, DuckDuckGo, Bing, Brave Search), and one-click data clearing.\n- **Full keyboard shortcut support**: `Ctrl+T`, `Ctrl+W`, `Ctrl+Shift+T`, `Ctrl+L`, `Ctrl+F`, `Ctrl+D`, `Ctrl+H`, `Ctrl+J`, `Ctrl+Shift+B`, `F11`, `F12`.",
+      "locales": {
+        "pl": {
+          "name": "Peak Browser 1.0.0 — Pierwsze wydanie",
+          "body": "### Co się zmieniło\n- **Pierwsze wydanie Peak Browser** na Windows 10 i Windows 11 (64-bit) z dedykowanym instalatorem oraz wersją portable.\n- **Architektoniczny interfejs**: zwarty górny pasek `80 px`, połączona aktywna karta bez ciężkich cieni oraz czytelny pasek adresu.\n- **Trzy motywy Niebieskiej Góry**: **Jasny**, **Niebieski** oraz **Ciemny** wraz z minimalistycznymi tapetami alpejskimi na stronie nowej karty (`peak://newtab`).\n- **Peak Shield**: wbudowane blokowanie reklam i popularnych trackerów z licznikiem zablokowanych żądań dla każdej karty.\n- **Płaski panel boczny (`320 px`)**: zakładki, historia przeglądania, menedżer pobrań, wybór wyszukiwarki (Google, DuckDuckGo, Bing, Brave Search) oraz czyszczenie danych jednym kliknięciem.\n- **Pełna obsługa skrótów klawiszowych**: `Ctrl+T`, `Ctrl+W`, `Ctrl+Shift+T`, `Ctrl+L`, `Ctrl+F`, `Ctrl+D`, `Ctrl+H`, `Ctrl+J`, `Ctrl+Shift+B`, `F11`, `F12`."
+        }
+      },
       "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.0.0",
       "prerelease": false,
       "assets": {
@@ -114,7 +132,13 @@
       "tag": "v1.1.0",
       "name": "Peak Launcher 1.1.0 — Alpine Aurora & Summit Glass GUI",
       "publishedAt": "2026-11-20T21:30:00Z",
-      "body": "### Najważniejsze nowości w wersji 1.1.0\n- **Żywa atmosfera Góry PEAK (Alpine Aurora)**: płynąca zorza polarna, gwiazdozbiór i śnieg na lekkim płótnie z paralaksą oraz podświetlenie kart pod kursorem (`spotlight`).\n- **Nowy kokpit Szczytu i pływający dock**: kontury topograficzne, okno panoramy szczytu, pasek podglądu modów z przyciskiem **Boost FPS (1 klik)**, 5-etapowy wskaźnik startu oraz awatar głowy gracza.\n- **Personalizacja profili ekspedycji**: 4 motywy kolorystyczne profili (*Szczyt*, *Lodowiec*, *Grań*, *Zorza*) oraz szybki przycisk `▶ Graj` bezpośrednio na kartach.\n- **Ulepszone Mody, Wersje i Konsola**: tagi kategorii modów Modrinth, pigułki typów wersji oraz czytelna telemetria RAM i Javy w panelu bocznym.",
+      "body": "### Highlights in v1.1.0\n- **Live PEAK Mountain Atmosphere (Alpine Aurora)**: flowing northern lights, starfield, and snowfall on a lightweight parallax canvas with cursor spotlight card glow (`spotlight`).\n- **New Summit Cockpit & Floating Dock**: topographic contour lines, mountain peak panorama window, mod preview bar with **FPS Boost (1 click)**, 5-stage launch indicator, and player head avatar.\n- **Expedition Profile Customization**: 4 profile color themes (*Summit*, *Glacier*, *Ridge*, *Aurora*) plus a quick `▶ Play` button directly on profile cards.\n- **Enhanced Mods, Versions & Console**: Modrinth category tags, version type pills, and clear RAM & Java telemetry in the sidebar.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.1.0 — Alpine Aurora & Summit Glass GUI",
+          "body": "### Najważniejsze nowości w wersji 1.1.0\n- **Żywa atmosfera Góry PEAK (Alpine Aurora)**: płynąca zorza polarna, gwiazdozbiór i śnieg na lekkim płótnie z paralaksą oraz podświetlenie kart pod kursorem (`spotlight`).\n- **Nowy kokpit Szczytu i pływający dock**: kontury topograficzne, okno panoramy szczytu, pasek podglądu modów z przyciskiem **Boost FPS (1 klik)**, 5-etapowy wskaźnik startu oraz awatar głowy gracza.\n- **Personalizacja profili ekspedycji**: 4 motywy kolorystyczne profili (*Szczyt*, *Lodowiec*, *Grań*, *Zorza*) oraz szybki przycisk `▶ Graj` bezpośrednio na kartach.\n- **Ulepszone Mody, Wersje i Konsola**: tagi kategorii modów Modrinth, pigułki typów wersji oraz czytelna telemetria RAM i Javy w panelu bocznym."
+        }
+      },
       "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.1.0",
       "prerelease": false,
       "assets": {
@@ -148,9 +172,15 @@
     },
     {
       "tag": "v1.0.0",
-      "name": "Peak Launcher 1.0.0 — Pierwsze wydanie Szczytu Gór",
+      "name": "Peak Launcher 1.0.0 — First Mountain Summit Release",
       "publishedAt": "2026-11-20T20:00:00Z",
-      "body": "### Najważniejsze funkcje wydania 1.0.0\n- **Motyw Góry PEAK (Nocny Szczyt i Lodowcowy Dzień)**: spójny alpejski interfejs z panoramami szczytów i warstwami górskich grani.\n- **Wszystkie wersje Minecraft**: pełny katalog Mojang (`925+` wydań od Alphy i Bety po `26.3` oraz najnowsze snapshoty) wraz z izolowanymi profilami.\n- **Łatwe dodawanie modów**: wbudowany katalog Modrinth z automatycznym instalowaniem wymaganych zależności (`Fabric API`), **Pakiet Peak FPS Boost** jednym kliknięciem oraz wygodny **Drag & Drop** plików `.jar`.\n- **Automatyczna instalacja Javy (8 / 17 / 21 / 25) i Fabric Loadera**: launcher sam wykrywa brakującą wersję Javy dla wybranego Minecrafta i pobiera oficjalne pakiety Eclipse Temurin oraz Fabric.",
+      "body": "### Key Features in v1.0.0\n- **PEAK Mountain Theme (Night Summit & Glacial Day)**: cohesive alpine interface with mountain panoramas and layered ridge silhouettes.\n- **All Minecraft Versions**: complete Mojang catalog (`925+` releases from Alpha and Beta to `26.3` and the latest snapshots) with isolated profiles.\n- **Easy Mod Management**: built-in Modrinth catalog with automatic dependency resolution (`Fabric API`), one-click **Peak FPS Boost Pack**, and convenient `.jar` **Drag & Drop**.\n- **Automatic Java (8 / 17 / 21 / 25) & Fabric Loader Installer**: automatically detects the required Java runtime for your Minecraft version and downloads official Eclipse Temurin and Fabric packages.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.0.0 — Pierwsze wydanie Szczytu Gór",
+          "body": "### Najważniejsze funkcje wydania 1.0.0\n- **Motyw Góry PEAK (Nocny Szczyt i Lodowcowy Dzień)**: spójny alpejski interfejs z panoramami szczytów i warstwami górskich grani.\n- **Wszystkie wersje Minecraft**: pełny katalog Mojang (`925+` wydań od Alphy i Bety po `26.3` oraz najnowsze snapshoty) wraz z izolowanymi profilami.\n- **Łatwe dodawanie modów**: wbudowany katalog Modrinth z automatycznym instalowaniem wymaganych zależności (`Fabric API`), **Pakiet Peak FPS Boost** jednym kliknięciem oraz wygodny **Drag & Drop** plików `.jar`.\n- **Automatyczna instalacja Javy (8 / 17 / 21 / 25) i Fabric Loadera**: launcher sam wykrywa brakującą wersję Javy dla wybranego Minecrafta i pobiera oficjalne pakiety Eclipse Temurin oraz Fabric."
+        }
+      },
       "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.0.0",
       "prerelease": false,
       "assets": {
