@@ -9,70 +9,131 @@
       id: 'browser-dark',
       project: 'browser',
       mode: 'dark',
-      src: './assets/browser-dark.webp',
+      src: './assets/browser-dark.webp?v=2',
       captionKey: 'shot.browserDark'
+    },
+    {
+      id: 'browser-settings',
+      project: 'browser',
+      mode: 'settings',
+      src: './assets/browser-settings.webp?v=2',
+      captionKey: 'shot.browserSettings'
     },
     {
       id: 'browser-light',
       project: 'browser',
       mode: 'light',
-      src: './assets/browser-light.webp',
+      src: './assets/browser-light.webp?v=2',
       captionKey: 'shot.browserLight'
     },
     {
       id: 'launcher-dark',
       project: 'launcher',
       mode: 'dark',
-      src: './assets/launcher-dark.png',
+      src: './assets/launcher-dark.png?v=2',
       captionKey: 'shot.launcherDark'
     },
     {
-      id: 'launcher-light',
+      id: 'launcher-hosting',
       project: 'launcher',
-      mode: 'light',
-      src: './assets/launcher-light.png',
-      captionKey: 'shot.launcherLight'
+      mode: 'hosting',
+      src: './assets/launcher-hosting.png?v=2',
+      captionKey: 'shot.launcherHosting'
+    },
+    {
+      id: 'launcher-skins',
+      project: 'launcher',
+      mode: 'skins',
+      src: './assets/launcher-skins.png?v=2',
+      captionKey: 'shot.launcherSkins'
     },
     {
       id: 'launcher-mods',
       project: 'launcher',
       mode: 'mods',
-      src: './assets/launcher-mods.png',
+      src: './assets/launcher-mods.png?v=2',
       captionKey: 'shot.launcherMods'
     },
     {
       id: 'launcher-java',
       project: 'launcher',
       mode: 'java',
-      src: './assets/launcher-java.png',
+      src: './assets/launcher-java.png?v=2',
       captionKey: 'shot.launcherJava'
+    },
+    {
+      id: 'launcher-light',
+      project: 'launcher',
+      mode: 'light',
+      src: './assets/launcher-light.png?v=2',
+      captionKey: 'shot.launcherLight'
     }
   ];
 
   const STAGE_META = {
-    browser: {
+    'launcher-cinema': {
+      product: 'launcher',
+      name: 'Peak Launcher',
+      fallbackTag: 'v1.5.1',
+      icon: './assets/launcher-icon-64.png',
+      summaryKey: 'stage.launcherCinemaSummary',
+      tagKeys: ['stage.launcherCinemaTag1', 'stage.launcherCinemaTag2', 'stage.launcherCinemaTag3'],
+      detailsHref: '#projekt-launcher',
+      previewSrc: './assets/launcher-dark.png?v=2',
+      shotId: 'launcher-dark'
+    },
+    'launcher-hosting': {
+      product: 'launcher',
+      name: 'Peak Launcher · Hosting .peak',
+      fallbackTag: 'v1.5.1',
+      icon: './assets/launcher-icon-64.png',
+      summaryKey: 'stage.hostingSummary',
+      tagKeys: ['stage.hostingTag1', 'stage.hostingTag2', 'stage.hostingTag3'],
+      detailsHref: '#projekt-launcher',
+      previewSrc: './assets/launcher-hosting.png?v=2',
+      shotId: 'launcher-hosting'
+    },
+    'launcher-skins': {
+      product: 'launcher',
+      name: 'Peak Launcher · 3D Skin Studio',
+      fallbackTag: 'v1.5.1',
+      icon: './assets/launcher-icon-64.png',
+      summaryKey: 'stage.skinsSummary',
+      tagKeys: ['stage.skinsTag1', 'stage.skinsTag2', 'stage.skinsTag3'],
+      detailsHref: '#projekt-launcher',
+      previewSrc: './assets/launcher-skins.png?v=2',
+      shotId: 'launcher-skins'
+    },
+    'browser-dark': {
+      product: 'browser',
       name: 'Peak Browser',
+      fallbackTag: 'v1.2.1',
       icon: './assets/browser-icon-64.png',
-      summaryKey: 'stage.browserSummary',
-      tagKeys: ['stage.browserTag1', 'stage.browserTag2', 'stage.browserTag3'],
+      summaryKey: 'stage.browserDarkSummary',
+      tagKeys: ['stage.browserDarkTag1', 'stage.browserDarkTag2', 'stage.browserDarkTag3'],
       detailsHref: '#projekt-browser',
-      previewSrc: './assets/browser-dark.webp',
+      previewSrc: './assets/browser-dark.webp?v=2',
       shotId: 'browser-dark'
     },
-    launcher: {
-      name: 'Peak Launcher',
-      icon: './assets/launcher-icon-64.png',
-      summaryKey: 'stage.launcherSummary',
-      tagKeys: ['stage.launcherTag1', 'stage.launcherTag2', 'stage.launcherTag3'],
-      detailsHref: '#projekt-launcher',
-      previewSrc: './assets/launcher-dark.png',
-      shotId: 'launcher-dark'
+    'browser-settings': {
+      product: 'browser',
+      name: 'Peak Browser · Peak Shield',
+      fallbackTag: 'v1.2.1',
+      icon: './assets/browser-icon-64.png',
+      summaryKey: 'stage.browserSettingsSummary',
+      tagKeys: ['stage.browserSettingsTag1', 'stage.browserSettingsTag2', 'stage.browserSettingsTag3'],
+      detailsHref: '#projekt-browser',
+      previewSrc: './assets/browser-settings.webp?v=2',
+      shotId: 'browser-settings'
     }
   };
 
+  const DEFAULT_RELEASES_LIMIT = 4;
+
   const state = {
-    activeStage: 'browser',
+    activeStage: 'launcher-cinema',
     activeFilter: 'all',
+    showAllReleases: false,
     browserMode: 'dark',
     launcherMode: 'dark',
     lightboxIndex: 0,
@@ -106,10 +167,13 @@
     stageDownloadSize: document.getElementById('stage-download-size'),
     stageDetailsLink: document.getElementById('stage-details-link'),
 
+    heroPillBrowserVer: document.getElementById('hero-pill-browser-ver'),
+    heroPillLauncherVer: document.getElementById('hero-pill-launcher-ver'),
     heroQuickBrowser: document.getElementById('hero-quick-browser'),
     heroQuickBrowserVer: document.getElementById('hero-quick-browser-ver'),
     heroQuickLauncher: document.getElementById('hero-quick-launcher'),
     heroQuickLauncherVer: document.getElementById('hero-quick-launcher-ver'),
+    metricReleasesCount: document.getElementById('metric-releases-count'),
 
     projectPreviewTabs: Array.from(document.querySelectorAll('.project-preview-tab')),
     browserPreviewImg: document.getElementById('browser-preview-img'),
@@ -140,8 +204,13 @@
     launcherPortableSize: document.getElementById('launcher-portable-size'),
 
     releaseFilterBtns: Array.from(document.querySelectorAll('.release-filter-btn')),
+    filterCountAll: document.getElementById('filter-count-all'),
+    filterCountBrowser: document.getElementById('filter-count-browser'),
+    filterCountLauncher: document.getElementById('filter-count-launcher'),
     releasesSourceNote: document.getElementById('releases-source-note'),
     releasesList: document.getElementById('releases-list'),
+    releasesToggleWrap: document.getElementById('releases-toggle-wrap'),
+    releasesToggleBtn: document.getElementById('releases-toggle-btn'),
 
     lightboxModal: document.getElementById('lightbox-modal'),
     lightboxBackdrop: document.getElementById('lightbox-backdrop'),
@@ -226,16 +295,17 @@
     }
   }
 
-  function switchHeroStage(productKey) {
-    if (!STAGE_META[productKey]) return;
-    state.activeStage = productKey;
-    const meta = STAGE_META[productKey];
+  function switchHeroStage(stageKey) {
+    if (!STAGE_META[stageKey]) return;
+    state.activeStage = stageKey;
+    const meta = STAGE_META[stageKey];
+    const productKey = meta.product;
     const latest = state.products[productKey]?.[0] || null;
-    const tag = latest?.tag || 'v1.1.0';
+    const tag = latest?.tag || meta.fallbackTag;
     const installer = latest?.assets?.installer;
 
     el.stageTabs.forEach((btn) => {
-      const active = btn.dataset.stage === productKey;
+      const active = btn.dataset.stage === stageKey;
       btn.classList.toggle('active', active);
       btn.setAttribute('aria-selected', String(active));
     });
@@ -404,11 +474,26 @@
     flushList();
   }
 
+  function updateCountsDisplay() {
+    const browserCount = state.products.browser.length;
+    const launcherCount = state.products.launcher.length;
+    const totalCount = browserCount + launcherCount;
+
+    if (el.filterCountAll) el.filterCountAll.textContent = `(${totalCount})`;
+    if (el.filterCountBrowser) el.filterCountBrowser.textContent = `(${browserCount})`;
+    if (el.filterCountLauncher) el.filterCountLauncher.textContent = `(${launcherCount})`;
+
+    if (totalCount > 0 && el.metricReleasesCount) {
+      el.metricReleasesCount.dataset.count = String(totalCount);
+      el.metricReleasesCount.textContent = String(totalCount);
+    }
+  }
+
   function applyProductDownloadData(productKey) {
     const latest = state.products[productKey]?.[0];
     if (!latest) return;
 
-    const tag = latest.tag || 'v1.1.0';
+    const tag = latest.tag || (productKey === 'browser' ? 'v1.2.1' : 'v1.5.1');
     const installer = latest.assets?.installer;
     const portable = latest.assets?.portable;
     const fallbackUrl = latest.htmlUrl || `https://github.com/${REPOS[productKey]}/releases`;
@@ -417,6 +502,7 @@
     const portableUrl = portable?.downloadUrl || fallbackUrl;
 
     if (productKey === 'browser') {
+      if (el.heroPillBrowserVer) el.heroPillBrowserVer.textContent = tag;
       el.heroQuickBrowser.href = installerUrl;
       if (installer?.name) el.heroQuickBrowser.setAttribute('download', installer.name);
       el.heroQuickBrowserVer.textContent = tag;
@@ -434,6 +520,7 @@
       if (portable?.name) el.browserPortableLink.setAttribute('download', portable.name);
       el.browserPortableSize.textContent = formatSize(portable?.size);
     } else if (productKey === 'launcher') {
+      if (el.heroPillLauncherVer) el.heroPillLauncherVer.textContent = tag;
       el.heroQuickLauncher.href = installerUrl;
       if (installer?.name) el.heroQuickLauncher.setAttribute('download', installer.name);
       el.heroQuickLauncherVer.textContent = tag;
@@ -598,6 +685,8 @@
     const latestBrowserTag = state.products.browser[0]?.tag;
     const latestLauncherTag = state.products.launcher[0]?.tag;
 
+    updateCountsDisplay();
+
     if (state.activeFilter === 'all' || state.activeFilter === 'browser') {
       state.products.browser.forEach((rel) => {
         combined.push({
@@ -630,6 +719,7 @@
       state.source === 'github' ? tr('releases.synced') : tr('releases.catalog');
 
     if (combined.length === 0) {
+      el.releasesToggleWrap?.classList.add('hidden');
       const emptyCard = document.createElement('div');
       emptyCard.className = 'release-card';
       const p = document.createElement('p');
@@ -639,10 +729,26 @@
       return;
     }
 
+    const visibleItems = state.showAllReleases
+      ? combined
+      : combined.slice(0, DEFAULT_RELEASES_LIMIT);
+
+    if (el.releasesToggleWrap && el.releasesToggleBtn) {
+      if (combined.length > DEFAULT_RELEASES_LIMIT) {
+        el.releasesToggleWrap.classList.remove('hidden');
+        el.releasesToggleBtn.textContent = state.showAllReleases
+          ? tr('releases.showFewer')
+          : tr('releases.showAll').replace('{n}', String(combined.length));
+        el.releasesToggleBtn.setAttribute('aria-expanded', String(state.showAllReleases));
+      } else {
+        el.releasesToggleWrap.classList.add('hidden');
+      }
+    }
+
     const toTranslateEn = [];
     const toTranslateAuto = [];
 
-    const prepared = combined.map((rel) => {
+    const prepared = visibleItems.map((rel) => {
       const resolved = resolveLocalizedReleaseBase(rel, lang);
       const entry = {
         ...rel,
@@ -723,7 +829,7 @@
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 3500);
     try {
-      const res = await fetch(`https://api.github.com/repos/${repo}/releases?per_page=20`, {
+      const res = await fetch(`https://api.github.com/repos/${repo}/releases?per_page=30`, {
         headers: { Accept: 'application/vnd.github+json' },
         signal: controller.signal
       });
@@ -824,7 +930,7 @@
     });
 
     el.stageZoomBtn?.addEventListener('click', () => {
-      const shotId = STAGE_META[state.activeStage]?.shotId || 'browser-dark';
+      const shotId = STAGE_META[state.activeStage]?.shotId || 'launcher-dark';
       openLightboxByShotId(shotId);
     });
 
@@ -861,9 +967,15 @@
     el.releaseFilterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         state.activeFilter = btn.dataset.filter || 'all';
+        state.showAllReleases = false;
         el.releaseFilterBtns.forEach((b) => b.classList.toggle('active', b === btn));
         renderReleasesList();
       });
+    });
+
+    el.releasesToggleBtn?.addEventListener('click', () => {
+      state.showAllReleases = !state.showAllReleases;
+      renderReleasesList();
     });
 
     el.lightboxBackdrop?.addEventListener('click', closeLightbox);

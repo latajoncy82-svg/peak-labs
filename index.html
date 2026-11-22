@@ -6,14 +6,14 @@
   <title>PEAK LABS — Software Studio | Peak Browser &amp; Peak Launcher</title>
   <meta
     name="description"
-    content="PEAK LABS is an independent software studio founded by Mikołaj Grynienko. We build clean, fast Windows applications: Peak Browser and Peak Launcher for Minecraft."
+    content="PEAK LABS is an independent software studio founded by Mikołaj Grynienko. Creators of Peak Browser (v1.2.1 with 148,604 adblock rules) and Peak Launcher (v1.5.1 with .peak hosting and 3D skins)."
   />
   <meta name="author" content="Mikołaj Grynienko" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="PEAK LABS — Software Studio | Peak Browser &amp; Peak Launcher" />
   <meta
     property="og:description"
-    content="Independent software studio PEAK LABS (peaklabstudio.vercel.app) — creators of Peak Browser and Peak Launcher. Creator: Mikołaj Grynienko."
+    content="Independent software studio PEAK LABS (peaklabstudio.vercel.app) — creators of Peak Browser v1.2.1 and Peak Launcher v1.5.1. Founder: Mikołaj Grynienko."
   />
   <meta property="og:url" content="https://peaklabstudio.vercel.app" />
   <link rel="icon" type="image/svg+xml" href="./assets/peaklabs-logo.svg" />
@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="./styles.css" />
@@ -29,7 +29,7 @@
 <body>
   <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Header -->
+  <!-- Minimalist Floating Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="#start" class="brand" aria-label="PEAK LABS — home page" data-i18n-aria="brand.ariaLabel">
@@ -164,157 +164,163 @@
   </div>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero Section (Centered Peak Cinema Luxury) -->
     <section id="start" class="hero">
       <div class="hero-backdrop" aria-hidden="true"></div>
       <canvas id="aurora-fx" aria-hidden="true"></canvas>
       <div class="hero-scrim" aria-hidden="true"></div>
 
-      <svg class="hero-topo" viewBox="0 0 1440 560" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M760,560 C870,410 980,355 1090,225 C1180,120 1300,60 1440,26" />
-        <path d="M840,560 C935,430 1035,380 1135,265 C1220,165 1325,110 1440,84" />
-        <path d="M920,560 C1005,450 1090,408 1180,308 C1260,218 1350,168 1440,144" />
-      </svg>
-
-      <svg class="hero-ridge" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
-        <path class="ridge-layer-1" d="M0,190 L0,124 L175,54 L340,116 L540,30 L730,102 L925,22 L1115,104 L1290,46 L1440,108 L1440,190 Z" />
-        <path class="ridge-layer-2" d="M0,190 L0,152 L240,92 L435,142 L655,66 L870,138 L1085,72 L1295,132 L1440,88 L1440,190 Z" />
-      </svg>
-
       <div class="container hero-container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <div class="status-pill">
-              <span class="pulse-dot" aria-hidden="true"></span>
-              <span data-i18n="hero.statusPill">
-                <span class="notranslate" translate="no">PEAK LABS</span> · <span class="notranslate" translate="no">PEAKLABSTUDIO.VERCEL.APP</span> · CREATOR: <span class="notranslate" translate="no">MIKOŁAJ GRYNIENKO</span>
-              </span>
-            </div>
+        <div class="hero-editorial">
+          <a
+            id="hero-release-pill"
+            href="#wydania"
+            class="hero-release-pill"
+            aria-label="Latest releases: Peak Browser v1.2.1 and Peak Launcher v1.5.1"
+            data-i18n-aria="hero.releasePillAria"
+          >
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span class="pill-items notranslate" translate="no">
+              <span class="pill-pair">Peak Browser <strong id="hero-pill-browser-ver">v1.2.1</strong></span>
+              <span class="pill-sep" aria-hidden="true">·</span>
+              <span class="pill-pair">Peak Launcher <strong id="hero-pill-launcher-ver">v1.5.1</strong></span>
+            </span>
+            <span class="pill-arrow" aria-hidden="true">→</span>
+          </a>
 
-            <h1 class="hero-title notranslate" translate="no">PEAK LABS</h1>
-            <p class="hero-tagline" data-i18n="hero.tagline">
-              We build fast, clean Windows apps — at the peak of design and performance.
-            </p>
-            <p class="hero-lead" data-i18n="hero.lead">
-              Independent software laboratory crafting the original
-              <strong class="notranslate" translate="no">Summit Glass</strong> ecosystem: the minimalist <strong class="notranslate" translate="no">Peak Browser</strong>
-              with <span class="notranslate" translate="no">Peak Shield</span> protection and the advanced Minecraft launcher <strong class="notranslate" translate="no">Peak Launcher</strong>
-              with <span class="notranslate" translate="no">Modrinth</span> catalog, Auto-Java, and <span class="notranslate" translate="no">Fabric</span>.
-            </p>
+          <h1 class="hero-title notranslate" translate="no">PEAK LABS</h1>
 
-            <div class="hero-actions">
-              <a href="#projekty" class="btn-aurora">
-                <span data-i18n="hero.ctaProjects">Explore our projects</span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M3.5 8h9M8.5 4l4 4-4 4" />
-                </svg>
-              </a>
-              <a href="#wydania" class="btn-glass">
-                <span data-i18n="hero.ctaReleases">Download center</span>
-              </a>
-            </div>
+          <p class="hero-tagline" data-i18n="hero.tagline">
+            Independent software at the summit of design, speed, and privacy.
+          </p>
 
-            <div class="quick-downloads">
-              <a
-                id="hero-quick-browser"
-                class="quick-pill"
-                href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe"
-                download="Peak-Browser-Setup-1.1.0.exe"
-              >
-                <img src="./assets/browser-icon-64.png" alt="" width="18" height="18" />
-                <span class="notranslate" translate="no">Peak Browser <strong id="hero-quick-browser-ver">v1.1.0</strong></span>
-                <span class="quick-pill-ext notranslate" translate="no">.exe</span>
-              </a>
-              <a
-                id="hero-quick-launcher"
-                class="quick-pill"
-                href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Setup-1.1.0.exe"
-                download="Peak-Launcher-Setup-1.1.0.exe"
-              >
-                <img src="./assets/launcher-icon-64.png" alt="" width="18" height="18" />
-                <span class="notranslate" translate="no">Peak Launcher <strong id="hero-quick-launcher-ver">v1.1.0</strong></span>
-                <span class="quick-pill-ext notranslate" translate="no">.exe</span>
-              </a>
-            </div>
+          <p class="hero-lead" data-i18n="hero.lead">
+            Founded by <strong class="notranslate" translate="no">Mikołaj Grynienko</strong>, we craft native Windows applications in the <strong class="notranslate" translate="no">Peak Cinema</strong> &amp; <strong class="notranslate" translate="no">Summit Glass</strong> aesthetic — <strong class="notranslate" translate="no">Peak Browser</strong> with <span class="notranslate" translate="no">148,604</span> adblock rules and <strong class="notranslate" translate="no">Peak Launcher</strong> with <span class="notranslate" translate="no">.peak</span> server hosting and 3D skins.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projekty" class="btn-cinema-primary">
+              <span data-i18n="hero.ctaProjects">Explore our projects</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3.5 8h9M8.5 4l4 4-4 4" />
+              </svg>
+            </a>
+            <a href="#wydania" class="btn-glass">
+              <span data-i18n="hero.ctaReleases">Download center</span>
+            </a>
           </div>
 
-          <!-- Interactive 3D Glass Hero Stage -->
-          <div class="hero-stage-wrap">
-            <div class="stage-aurora" aria-hidden="true"></div>
-            <div id="hero-stage-card" class="hero-stage spotlight-card">
-              <div class="stage-topbar">
-                <div class="stage-window-dots" aria-hidden="true">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="stage-switcher" role="tablist" aria-label="Switch product preview" data-i18n-aria="hero.stageAria">
-                  <button class="stage-tab active notranslate" translate="no" type="button" role="tab" aria-selected="true" data-stage="browser">
-                    Peak Browser
-                  </button>
-                  <button class="stage-tab notranslate" translate="no" type="button" role="tab" aria-selected="false" data-stage="launcher">
-                    Peak Launcher
-                  </button>
-                </div>
-                <button
-                  id="stage-zoom-btn"
-                  class="stage-zoom-btn"
-                  type="button"
-                  title="Enlarge screenshot"
-                  data-i18n-title="hero.zoomTitle"
-                  aria-label="Enlarge screenshot"
-                  data-i18n-aria="hero.zoomTitle"
-                >
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 2.5H2.5V6M10 2.5h3.5V6M6 13.5H2.5V10M10 13.5h3.5V10" />
-                  </svg>
+          <div class="quick-downloads">
+            <a
+              id="hero-quick-browser"
+              class="quick-pill"
+              href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.1/Peak-Browser-Setup-1.2.1.exe"
+              download="Peak-Browser-Setup-1.2.1.exe"
+            >
+              <img src="./assets/browser-icon-64.png" alt="" width="18" height="18" />
+              <span class="notranslate" translate="no">Peak Browser <strong id="hero-quick-browser-ver">v1.2.1</strong></span>
+              <span class="quick-pill-ext notranslate" translate="no">.exe</span>
+            </a>
+            <a
+              id="hero-quick-launcher"
+              class="quick-pill"
+              href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Setup-1.5.1.exe"
+              download="Peak-Launcher-Setup-1.5.1.exe"
+            >
+              <img src="./assets/launcher-icon-64.png" alt="" width="18" height="18" />
+              <span class="notranslate" translate="no">Peak Launcher <strong id="hero-quick-launcher-ver">v1.5.1</strong></span>
+              <span class="quick-pill-ext notranslate" translate="no">.exe</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Wide Cinematic App Showcase Stage -->
+        <div class="cinema-stage-wrap">
+          <div class="stage-glow" aria-hidden="true"></div>
+          <div id="hero-stage-card" class="cinema-stage spotlight-card">
+            <div class="stage-topbar">
+              <div class="stage-window-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="stage-switcher" role="tablist" aria-label="Switch product preview" data-i18n-aria="hero.stageAria">
+                <button class="stage-tab active" type="button" role="tab" aria-selected="true" data-stage="launcher-cinema" data-i18n="hero.stageLauncherCinema">
+                  Peak Launcher · Cinema
+                </button>
+                <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="launcher-hosting" data-i18n="hero.stageHosting">
+                  Hosting .peak
+                </button>
+                <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="launcher-skins" data-i18n="hero.stageSkins">
+                  3D Skin Studio
+                </button>
+                <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="browser-dark" data-i18n="hero.stageBrowserDark">
+                  Peak Browser · Dark
+                </button>
+                <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="browser-settings" data-i18n="hero.stageBrowserSettings">
+                  Peak Shield · 148K
                 </button>
               </div>
+              <button
+                id="stage-zoom-btn"
+                class="stage-zoom-btn"
+                type="button"
+                title="Enlarge screenshot"
+                data-i18n-title="hero.zoomTitle"
+                aria-label="Enlarge screenshot"
+                data-i18n-aria="hero.zoomTitle"
+              >
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2.5H2.5V6M10 2.5h3.5V6M6 13.5H2.5V10M10 13.5h3.5V10" />
+                </svg>
+              </button>
+            </div>
 
-              <div class="stage-viewport">
-                <img
-                  id="stage-preview-img"
-                  src="./assets/browser-dark.webp"
-                  alt="Preview of Peak Browser"
-                  class="stage-img"
-                />
-                <div class="stage-live-badge notranslate" translate="no">
-                  <span class="pulse-dot" aria-hidden="true"></span>
-                  <span>WINDOWS 10 / 11 · X64</span>
+            <div class="stage-viewport">
+              <img
+                id="stage-preview-img"
+                src="./assets/launcher-dark.png?v=2"
+                alt="Preview of Peak Launcher"
+                class="stage-img"
+              />
+              <div class="stage-live-badge notranslate" translate="no">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span>WINDOWS 10 / 11 · X64</span>
+              </div>
+            </div>
+
+            <div class="stage-footer">
+              <div class="stage-product-meta">
+                <img id="stage-product-icon" src="./assets/launcher-icon-64.png" alt="Peak Launcher" class="stage-icon" />
+                <div class="stage-meta-copy">
+                  <div class="stage-title-row">
+                    <strong id="stage-product-name" class="notranslate" translate="no">Peak Launcher</strong>
+                    <span id="stage-product-version" class="mono-badge notranslate" translate="no">v1.5.1</span>
+                  </div>
+                  <p id="stage-product-summary">Cinematic Minecraft launcher with .peak server hosting and 3D Skin Studio.</p>
                 </div>
               </div>
 
-              <div class="stage-footer">
-                <div class="stage-product-meta">
-                  <img id="stage-product-icon" src="./assets/browser-icon-64.png" alt="Peak Browser" class="stage-icon" />
-                  <div>
-                    <div class="stage-title-row">
-                      <strong id="stage-product-name" class="notranslate" translate="no">Peak Browser</strong>
-                      <span id="stage-product-version" class="mono-badge notranslate" translate="no">v1.1.0</span>
-                    </div>
-                    <p id="stage-product-summary">Clean browser with Peak Shield and Blue Mountain theme.</p>
-                  </div>
-                </div>
-
+              <div class="stage-footer-right">
                 <div id="stage-tags" class="stage-tags">
-                  <span>Peak Shield</span>
-                  <span>Drag &amp; Drop tabs</span>
-                  <span>0 telemetry</span>
+                  <span>Hosting .peak</span>
+                  <span>3D Skin Studio</span>
+                  <span>925+ versions</span>
                 </div>
 
                 <div class="stage-cta-row">
                   <a
                     id="stage-download-btn"
                     class="btn-stage-dl"
-                    href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe"
-                    download="Peak-Browser-Setup-1.1.0.exe"
+                    href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Setup-1.5.1.exe"
+                    download="Peak-Launcher-Setup-1.5.1.exe"
                   >
                     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M8 2.5v7.5M5.2 7.4L8 10.2l2.8-2.8" />
                       <path d="M3 12.2v1a.8.8 0 0 0 .8.8h8.4a.8.8 0 0 0 .8-.8v-1" />
                     </svg>
                     <span data-i18n="hero.stageDownload">Download Installer</span>
-                    <span id="stage-download-size" class="btn-size-tag notranslate" translate="no">117.0 MB</span>
+                    <span id="stage-download-size" class="btn-size-tag notranslate" translate="no">117.7 MB</span>
                   </a>
-                  <a id="stage-details-link" class="btn-stage-more" href="#projekt-browser" data-i18n="hero.stageDetails">
+                  <a id="stage-details-link" class="btn-stage-more" href="#projekt-launcher" data-i18n="hero.stageDetails">
                     Details ↓
                   </a>
                 </div>
@@ -323,57 +329,88 @@
           </div>
         </div>
 
-        <!-- Studio Telemetry Strip -->
-        <div class="telemetry-strip">
-          <div class="telemetry-card spotlight-card reveal">
-            <span class="telemetry-value" data-count="2">2</span>
-            <span class="telemetry-label" data-i18n="hero.stat1Label">Flagship apps</span>
-            <span class="telemetry-sub" data-i18n="hero.stat1Sub">Peak Browser &amp; Peak Launcher</span>
+        <!-- Architectural Metrics Bar -->
+        <div class="metrics-bar reveal">
+          <div class="metric-cell spotlight-card">
+            <span class="metric-value" data-count="148604">148,604</span>
+            <span class="metric-label" data-i18n="hero.stat1Label">Ad &amp; tracker filter rules</span>
+            <span class="metric-sub" data-i18n="hero.stat1Sub">Peak Shield · Peak Browser v1.2.1</span>
           </div>
-          <div class="telemetry-card spotlight-card reveal">
-            <span class="telemetry-value" data-count="925" data-suffix="+">925+</span>
-            <span class="telemetry-label" data-i18n="hero.stat2Label">Minecraft versions</span>
-            <span class="telemetry-sub" data-i18n="hero.stat2Sub">From Alpha &amp; Beta to 26.3</span>
+          <div class="metric-cell spotlight-card">
+            <span class="metric-value" data-count="925" data-suffix="+">925+</span>
+            <span class="metric-label" data-i18n="hero.stat2Label">Minecraft versions &amp; .peak</span>
+            <span class="metric-sub" data-i18n="hero.stat2Sub">Peak Launcher v1.5.1 · Alpha to 26.3</span>
           </div>
-          <div class="telemetry-card spotlight-card reveal">
-            <span class="telemetry-value" data-count="0">0</span>
-            <span class="telemetry-label" data-i18n="hero.stat3Label">Telemetry &amp; ads</span>
-            <span class="telemetry-sub" data-i18n="hero.stat3Sub">100% local data &amp; privacy</span>
+          <div class="metric-cell spotlight-card">
+            <span id="metric-releases-count" class="metric-value" data-count="15">15</span>
+            <span class="metric-label" data-i18n="hero.stat3Label">Published GitHub releases</span>
+            <span class="metric-sub" data-i18n="hero.stat3Sub">Peak Browser &amp; Peak Launcher</span>
           </div>
-          <div class="telemetry-card spotlight-card reveal">
-            <span class="telemetry-value" data-count="100" data-suffix="%">100%</span>
-            <span class="telemetry-label" data-i18n="hero.stat4Label">Open Source on GitHub</span>
-            <span class="telemetry-sub notranslate" translate="no">github.com/latajoncy82-svg</span>
+          <div class="metric-cell spotlight-card">
+            <span class="metric-value" data-count="0">0</span>
+            <span class="metric-label" data-i18n="hero.stat4Label">Telemetry, accounts, or ads</span>
+            <span class="metric-sub" data-i18n="hero.stat4Sub">100% local &amp; open source</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (#o-firmie — Peak Browser 1.2.1 Startup Landing) -->
     <section id="o-firmie" class="section section-about">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="section-kicker" data-i18n="about.kicker">WHO WE ARE · PEAK LABS</span>
-          <h2 data-i18n="about.title">Software built without compromises.</h2>
-          <p class="about-lead" data-i18n="about.lead">
-            <strong class="notranslate" translate="no">PEAK LABS</strong> is an independent Polish software studio and laboratory founded by
-            <strong class="notranslate" translate="no">Mikołaj Grynienko</strong>. We design lightweight, native Windows 10 and 11 desktop applications
-            in our signature <em class="notranslate" translate="no">Alpine Aurora &amp; Summit Glass</em> visual language — focused on speed,
-            full user control, automation, and zero system bloat.
-          </p>
+        <div class="about-header-grid reveal">
+          <div class="section-head">
+            <span class="section-kicker" data-i18n="about.kicker">PEAK LABS · INDEPENDENT SOFTWARE STUDIO</span>
+            <h2 data-i18n="about.title">Software crafted at the summit.</h2>
+            <p class="about-lead" data-i18n="about.lead">
+              <strong class="notranslate" translate="no">PEAK LABS</strong> is an independent Polish software studio and laboratory founded by
+              <strong class="notranslate" translate="no">Mikołaj Grynienko</strong>. Every tool in our ecosystem is engineered for calm clarity, zero tracking, and effortless performance on Windows 10 and 11 — combining the distraction-free <em class="notranslate" translate="no">Peak Cinema</em> interface with deep technical automation.
+            </p>
+          </div>
+
+          <div class="about-jump-rail">
+            <a href="#projekt-browser" class="jump-card spotlight-card">
+              <img src="./assets/browser-icon-64.png" alt="" width="34" height="34" />
+              <div>
+                <strong class="notranslate" translate="no">Peak Browser</strong>
+                <span data-i18n="about.jumpBrowser">v1.2.1 · 148K Adblock &amp; HTTPS-First</span>
+              </div>
+              <span class="jump-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#projekt-launcher" class="jump-card spotlight-card">
+              <img src="./assets/launcher-icon-64.png" alt="" width="34" height="34" />
+              <div>
+                <strong class="notranslate" translate="no">Peak Launcher</strong>
+                <span data-i18n="about.jumpLauncher">v1.5.1 · .peak Hosting &amp; 3D Skins</span>
+              </div>
+              <span class="jump-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#wydania" class="jump-card spotlight-card">
+              <div class="jump-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 2.5v7.5M5.2 7.4L8 10.2l2.8-2.8" />
+                  <path d="M3 12.2v1a.8.8 0 0 0 .8.8h8.4a.8.8 0 0 0 .8-.8v-1" />
+                </svg>
+              </div>
+              <div>
+                <strong data-i18n="nav.releases">Releases</strong>
+                <span data-i18n="about.jumpReleases">15 direct .exe installers &amp; changelogs</span>
+              </div>
+              <span class="jump-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
 
-        <div class="bento-grid">
-          <article class="bento-card bento-wide spotlight-card reveal">
+        <div class="bento-grid-2">
+          <article class="bento-card spotlight-card reveal">
             <div class="bento-icon" aria-hidden="true">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M2 15.5L7.8 5.2l3.4 5.4 2.2-2.9L18 15.5H2z" />
               </svg>
             </div>
-            <h3 data-i18n="about.card1Title">Summit Glass &amp; Alpine Aurora Design</h3>
+            <h3 data-i18n="about.card1Title">Peak Cinema &amp; Summit Glass Design</h3>
             <p data-i18n="about.card1Desc">
-              Every pixel in <span class="notranslate" translate="no">PEAK LABS</span> projects is built for clarity and consistency: dark alpine surfaces
-              by default, frosted glass with icy borders, smooth 60 FPS animations, and zero distracting banners.
+              Full-bleed alpine vistas, dark obsidian surfaces, hairline borders, and frosted glass panels replace noisy boxes — putting your web page or game launch front and center.
             </p>
           </article>
 
@@ -384,10 +421,9 @@
                 <path d="M7.3 10l1.8 1.8 3.6-3.7" />
               </svg>
             </div>
-            <h3 data-i18n="about.card2Title">Privacy &amp; zero telemetry</h3>
+            <h3 data-i18n="about.card2Title">Peak Shield 148K &amp; HTTPS-First</h3>
             <p data-i18n="about.card2Desc">
-              We do not collect user data, force logins, or inject ads. <span class="notranslate" translate="no">Peak Shield</span> blocks
-              trackers on the fly, and all configuration stays on your disk.
+              Real network and cosmetic adblocking powered by <span class="notranslate" translate="no">148,604</span> filter rules, YouTube ad removal, encrypted <span class="notranslate" translate="no">HTTPS-First</span> upgrades, and tracking parameter stripping.
             </p>
           </article>
 
@@ -397,24 +433,21 @@
                 <path d="M11.2 2.5L4.8 11h5l-1 6.5 6.4-8.5h-5l1-6.5z" />
               </svg>
             </div>
-            <h3 data-i18n="about.card3Title">Full automation</h3>
+            <h3 data-i18n="about.card3Title">Hosting .peak &amp; 3D WebGL Skins</h3>
             <p data-i18n="about.card3Desc">
-              From automatic downloads of Java 8/17/21/25 (<span class="notranslate" translate="no">Eclipse Temurin</span>) and <span class="notranslate" translate="no">Fabric Loader</span>,
-              through 1-click <strong class="notranslate" translate="no">Peak FPS Boost</strong>, to synchronized updates from <span class="notranslate" translate="no">GitHub Releases</span>.
+              Host local Fabric or Vanilla Minecraft servers with live <code class="notranslate" translate="no">&lt;name&gt;.peak</code> domains over the internet, customize characters in a 3D skin studio, and auto-install Java and mods.
             </p>
           </article>
 
-          <article class="bento-card bento-wide spotlight-card reveal">
+          <article class="bento-card spotlight-card reveal">
             <div class="bento-icon" aria-hidden="true">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 6L3 10l4 4M13 6l4 4-4 4M11 4.5L9 15.5" />
               </svg>
             </div>
-            <h3 data-i18n="about.card4Title">Open source on GitHub</h3>
+            <h3 data-i18n="about.card4Title">100% Open Source &amp; Zero Telemetry</h3>
             <p data-i18n="about.card4Desc">
-              All flagship <span class="notranslate" translate="no">PEAK LABS</span> applications are publicly available on <span class="notranslate" translate="no">GitHub</span> under
-              <code class="notranslate" translate="no">latajoncy82-svg</code>. We deliver clean NSIS installers (<code class="notranslate" translate="no">.exe</code>)
-              and Portable editions that run immediately without installation.
+              No accounts, no telemetry, and no locked ecosystems. Every release of <span class="notranslate" translate="no">Peak Browser</span> and <span class="notranslate" translate="no">Peak Launcher</span> is published openly on <span class="notranslate" translate="no">GitHub</span> with NSIS (<code class="notranslate" translate="no">.exe</code>) and Portable builds.
             </p>
           </article>
         </div>
@@ -426,12 +459,12 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="section-kicker" data-i18n="projects.kicker">OUR PROJECTS · FLAGSHIP APPLICATIONS</span>
-          <h2 data-i18n="projects.title">Two crafted products for Windows</h2>
-          <p data-i18n="projects.lead">Switch preview tabs, enlarge screenshots in full screen, or download your preferred edition in one click.</p>
+          <h2 data-i18n="projects.title">Two flagship applications for Windows</h2>
+          <p data-i18n="projects.lead">Switch live product views, enlarge any screenshot in the fullscreen Lightbox, or download the latest release directly.</p>
         </div>
 
         <div class="projects-stack">
-          <!-- Project 01: Peak Browser -->
+          <!-- Project 01: Peak Browser v1.2.1 -->
           <article id="projekt-browser" class="project-showcase spotlight-card reveal">
             <div class="project-header">
               <div class="project-identity">
@@ -440,14 +473,13 @@
                   <div class="project-badges">
                     <span class="project-num" data-i18n="browser.num">PROJECT 01</span>
                     <span class="project-cat" data-i18n="browser.cat">Web browser</span>
-                    <span id="browser-version-badge" class="mono-badge notranslate" translate="no">v1.1.0</span>
+                    <span id="browser-version-badge" class="mono-badge notranslate" translate="no">v1.2.1</span>
                   </div>
                   <h3 class="notranslate" translate="no">Peak Browser</h3>
                 </div>
               </div>
               <p class="project-summary" data-i18n="browser.summary">
-                A lightweight, architecturally clean browser featuring the Blue Mountain theme, built-in
-                <strong class="notranslate" translate="no">Peak Shield</strong> privacy protection, drag &amp; drop tabs, and a calm New Tab workspace.
+                A clean, fast Windows browser with the Blue Mountain aesthetic, a full <strong class="notranslate" translate="no">148,604</strong>-rule <strong class="notranslate" translate="no">Peak Shield</strong> adblocker, <strong class="notranslate" translate="no">HTTPS-First</strong> security, and redesigned full-screen settings.
               </p>
             </div>
 
@@ -457,13 +489,14 @@
                   <span class="gallery-caption" data-i18n="browser.galleryCaption">Peak Browser interface preview</span>
                   <div class="gallery-tabs" role="group" aria-label="Peak Browser themes" data-i18n-aria="browser.themesAria">
                     <button class="project-preview-tab active" type="button" data-project="browser" data-preview="dark" data-i18n="browser.tabDark">Dark (Default)</button>
+                    <button class="project-preview-tab" type="button" data-project="browser" data-preview="settings" data-i18n="browser.tabSettings">Settings &amp; Shield</button>
                     <button class="project-preview-tab" type="button" data-project="browser" data-preview="light" data-i18n="browser.tabLight">Light</button>
                   </div>
                 </div>
                 <div class="gallery-frame">
                   <img
                     id="browser-preview-img"
-                    src="./assets/browser-dark.webp"
+                    src="./assets/browser-dark.webp?v=2"
                     alt="Peak Browser — Dark Theme (Default)"
                     class="gallery-img"
                   />
@@ -487,28 +520,28 @@
               <div class="project-details">
                 <div class="feature-pills-grid">
                   <div class="feature-mini">
-                    <strong data-i18n="browser.f1Title">Compact 78 px bar</strong>
-                    <span data-i18n="browser.f1Desc">Seamlessly connected active tab and mouse drag &amp; drop tab reordering.</span>
+                    <strong data-i18n="browser.f1Title">Peak Shield · 148,604 rules</strong>
+                    <span data-i18n="browser.f1Desc">@ghostery/adblocker with EasyList, EasyPrivacy, uBlock &amp; YouTube ad stripping.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="browser.f2Title">Built-in Peak Shield</strong>
-                    <span data-i18n="browser.f2Desc">Ad and tracker blocking with a per-tab blocked requests counter.</span>
+                    <strong data-i18n="browser.f2Title">HTTPS-First &amp; Privacy</strong>
+                    <span data-i18n="browser.f2Desc">Enforces HTTPS upgrades, strips URL trackers (utm, fbclid), sends Sec-GPC &amp; DNT.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="browser.f3Title">Smart address bar</strong>
-                    <span data-i18n="browser.f3Desc">Highlighted domain, history suggestions, and instant URL copy on hover.</span>
+                    <strong data-i18n="browser.f3Title">Redesigned peak://settings</strong>
+                    <span data-i18n="browser.f3Desc">Two-column settings workspace with search, allowlist &amp; Shield domain inspector.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="browser.f4Title">Flat 324 px sidebar</strong>
-                    <span data-i18n="browser.f4Desc">Bookmarks, history, download manager, and settings without covering the page.</span>
+                    <strong data-i18n="browser.f4Title">Compact 78 px Bar &amp; Tabs</strong>
+                    <span data-i18n="browser.f4Desc">Sculpted active tab, drag &amp; drop tab reordering, smart URL bar &amp; quick copy.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="browser.f5Title">3 Blue Mountain themes</strong>
-                    <span data-i18n="browser.f5Desc">Dark, Light, and Blue with alpine wallpapers on <code class="notranslate" translate="no">peak://newtab</code>.</span>
+                    <strong data-i18n="browser.f5Title">3 Blue Mountain Themes</strong>
+                    <span data-i18n="browser.f5Desc">Dark, Blue &amp; Light across window UI, [0], and opens PEAK LABS on startup.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="browser.f6Title">100% local privacy</strong>
-                    <span data-i18n="browser.f6Desc">No accounts, no telemetry, search engine choice, and 1-click data clearing.</span>
+                    <strong data-i18n="browser.f6Title">Zero Accounts · 100% Local</strong>
+                    <span data-i18n="browser.f6Desc">No telemetry, search engine choice, and granular history/cookie/cache clearing.</span>
                   </div>
                 </div>
 
@@ -518,15 +551,15 @@
                       <a
                         id="browser-primary-dl"
                         class="btn-primary"
-                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe"
-                        download="Peak-Browser-Setup-1.1.0.exe"
+                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.1/Peak-Browser-Setup-1.2.1.exe"
+                        download="Peak-Browser-Setup-1.2.1.exe"
                       >
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <path d="M8 2.5v7.5M5.2 7.4L8 10.2l2.8-2.8" />
                           <path d="M3 12.2v1a.8.8 0 0 0 .8.8h8.4a.8.8 0 0 0 .8-.8v-1" />
                         </svg>
                         <span data-i18n="browser.dlBtn">Download Peak Browser</span>
-                        <span id="browser-primary-meta" class="btn-meta notranslate" translate="no">v1.1.0</span>
+                        <span id="browser-primary-meta" class="btn-meta notranslate" translate="no">v1.2.1</span>
                       </a>
                       <button
                         id="browser-dl-toggle"
@@ -554,28 +587,28 @@
                       <a
                         id="browser-setup-link"
                         class="dropdown-item"
-                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Setup-1.1.0.exe"
-                        download="Peak-Browser-Setup-1.1.0.exe"
+                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.1/Peak-Browser-Setup-1.2.1.exe"
+                        download="Peak-Browser-Setup-1.2.1.exe"
                         role="menuitem"
                       >
                         <div class="dropdown-item-main">
                           <span class="dropdown-title" data-i18n="dl.setupTitle">Windows Installer (.exe)</span>
                           <span class="dropdown-sub" data-i18n="dl.setupSubBrowser">Recommended · creates shortcuts and full installation</span>
                         </div>
-                        <span id="browser-setup-size" class="dropdown-size notranslate" translate="no">117.0 MB</span>
+                        <span id="browser-setup-size" class="dropdown-size notranslate" translate="no">119.6 MB</span>
                       </a>
                       <a
                         id="browser-portable-link"
                         class="dropdown-item"
-                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.1.0/Peak-Browser-Portable-1.1.0.exe"
-                        download="Peak-Browser-Portable-1.1.0.exe"
+                        href="https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.1/Peak-Browser-Portable-1.2.1.exe"
+                        download="Peak-Browser-Portable-1.2.1.exe"
                         role="menuitem"
                       >
                         <div class="dropdown-item-main">
                           <span class="dropdown-title" data-i18n="dl.portableTitle">Portable Edition (.exe)</span>
                           <span class="dropdown-sub" data-i18n="dl.portableSub">No installation · runs immediately on launch</span>
                         </div>
-                        <span id="browser-portable-size" class="dropdown-size notranslate" translate="no">106.2 MB</span>
+                        <span id="browser-portable-size" class="dropdown-size notranslate" translate="no">108.7 MB</span>
                       </a>
                       <div class="dropdown-divider"></div>
                       <a
@@ -615,7 +648,7 @@
             </div>
           </article>
 
-          <!-- Project 02: Peak Launcher -->
+          <!-- Project 02: Peak Launcher v1.5.1 -->
           <article id="projekt-launcher" class="project-showcase spotlight-card reveal">
             <div class="project-header">
               <div class="project-identity">
@@ -624,15 +657,13 @@
                   <div class="project-badges">
                     <span class="project-num" data-i18n="launcher.num">PROJECT 02</span>
                     <span class="project-cat" data-i18n="launcher.cat">Minecraft launcher</span>
-                    <span id="launcher-version-badge" class="mono-badge notranslate" translate="no">v1.1.0</span>
+                    <span id="launcher-version-badge" class="mono-badge notranslate" translate="no">v1.5.1</span>
                   </div>
                   <h3 class="notranslate" translate="no">Peak Launcher</h3>
                 </div>
               </div>
               <p class="project-summary" data-i18n="launcher.summary">
-                Modern Minecraft launcher with the PEAK Mountain theme and <strong class="notranslate" translate="no">Alpine Aurora</strong> UI.
-                Over 925 game versions, <span class="notranslate" translate="no">Modrinth</span> catalog with 1-click <strong class="notranslate" translate="no">Peak FPS Boost</strong>, plus automatic
-                Java (8/17/21/25) and <span class="notranslate" translate="no">Fabric Loader</span> installation.
+                Cinematic Minecraft launcher featuring the <strong class="notranslate" translate="no">Peak Cinema</strong> interface, self-hosted <strong class="notranslate" translate="no">.peak</strong> servers over the internet, a <strong class="notranslate" translate="no">3D Skin Studio</strong>, <span class="notranslate" translate="no">Modrinth</span> mods &amp; shaders, and automatic Java and Fabric setup.
               </p>
             </div>
 
@@ -642,16 +673,18 @@
                   <span class="gallery-caption" data-i18n="launcher.galleryCaption">Peak Launcher preview</span>
                   <div class="gallery-tabs" role="group" aria-label="Peak Launcher views" data-i18n-aria="launcher.viewsAria">
                     <button class="project-preview-tab active" type="button" data-project="launcher" data-preview="dark" data-i18n="launcher.tabDark">Night Summit</button>
-                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="light" data-i18n="launcher.tabLight">Glacial Day</button>
-                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="mods" data-i18n="launcher.tabMods">Modrinth Mods</button>
+                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="hosting" data-i18n="launcher.tabHosting">Hosting .peak</button>
+                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="skins" data-i18n="launcher.tabSkins">3D Skins</button>
+                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="mods" data-i18n="launcher.tabMods">Mods &amp; Shaders</button>
                     <button class="project-preview-tab" type="button" data-project="launcher" data-preview="java" data-i18n="launcher.tabJava">Java &amp; Fabric</button>
+                    <button class="project-preview-tab" type="button" data-project="launcher" data-preview="light" data-i18n="launcher.tabLight">Glacial Day</button>
                   </div>
                 </div>
                 <div class="gallery-frame">
                   <img
                     id="launcher-preview-img"
-                    src="./assets/launcher-dark.png"
-                    alt="Peak Launcher — Night Summit (Alpine Aurora)"
+                    src="./assets/launcher-dark.png?v=2"
+                    alt="Peak Launcher — Night Summit (Peak Cinema)"
                     class="gallery-img"
                   />
                   <button
@@ -674,28 +707,28 @@
               <div class="project-details">
                 <div class="feature-pills-grid">
                   <div class="feature-mini">
-                    <strong data-i18n="launcher.f1Title">Alpine Aurora &amp; Summit Glass</strong>
-                    <span data-i18n="launcher.f1Desc">Aurora sky, topographic contours, 5-stage launch dock, and 3D player avatar.</span>
+                    <strong data-i18n="launcher.f1Title">Hosting .peak &amp; Global Tunnel</strong>
+                    <span data-i18n="launcher.f1Desc">Run local Fabric/Vanilla servers with [0], Java DNS SPI &amp; public tunnel.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="launcher.f2Title">925+ Minecraft versions</strong>
-                    <span data-i18n="launcher.f2Desc">Official Mojang releases from Alpha and Beta up to 26.3 and latest snapshots.</span>
+                    <strong data-i18n="launcher.f2Title">3D Skin Studio (WebGL)</strong>
+                    <span data-i18n="launcher.f2Desc">Interactive 3D preview, .png upload, username lookup &amp; live Yggdrasil in-game skins.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="launcher.f3Title">Modrinth + Peak FPS Boost</strong>
-                    <span data-i18n="launcher.f3Desc">Auto dependencies (Fabric API), 1-click FPS pack, and <code class="notranslate" translate="no">.jar</code> Drag &amp; Drop.</span>
+                    <strong data-i18n="launcher.f3Title">Peak Cinema &amp; Multi-Account</strong>
+                    <span data-i18n="launcher.f3Desc">Full-bleed mountain GUI, top-bar account switcher, 6 languages &amp; Pro Options.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="launcher.f4Title">Auto-Java 8 / 17 / 21 / 25</strong>
-                    <span data-i18n="launcher.f4Desc">Automatic detection and download of official Eclipse Temurin runtimes.</span>
+                    <strong data-i18n="launcher.f4Title">Modrinth Pro: Mods &amp; Shaders</strong>
+                    <span data-i18n="launcher.f4Desc">Mods, Shaders &amp; Resource Packs, 1-click updates &amp; 3 starter packs.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="launcher.f5Title">1-click Fabric Loader</strong>
-                    <span data-i18n="launcher.f5Desc">Complete mod loader and library installation without external installers.</span>
+                    <strong data-i18n="launcher.f5Title">925+ Versions · Auto-Java/Fabric</strong>
+                    <span data-i18n="launcher.f5Desc">Mojang catalog from Alpha to 26.3, Eclipse Temurin Java 8/17/21/25 &amp; Fabric.</span>
                   </div>
                   <div class="feature-mini">
-                    <strong data-i18n="launcher.f6Title">Isolated expedition profiles</strong>
-                    <span data-i18n="launcher.f6Desc">Separate <code class="notranslate" translate="no">mods/</code>, <code class="notranslate" translate="no">config/</code>, worlds, and 4 profile color themes.</span>
+                    <strong data-i18n="launcher.f6Title">Isolated Profiles &amp; .peak Invites</strong>
+                    <span data-i18n="launcher.f6Desc">Separate [0], [1], worlds &amp; shareable .peak invite files with mods.</span>
                   </div>
                 </div>
 
@@ -705,15 +738,15 @@
                       <a
                         id="launcher-primary-dl"
                         class="btn-primary"
-                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Setup-1.1.0.exe"
-                        download="Peak-Launcher-Setup-1.1.0.exe"
+                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Setup-1.5.1.exe"
+                        download="Peak-Launcher-Setup-1.5.1.exe"
                       >
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                           <path d="M8 2.5v7.5M5.2 7.4L8 10.2l2.8-2.8" />
                           <path d="M3 12.2v1a.8.8 0 0 0 .8.8h8.4a.8.8 0 0 0 .8-.8v-1" />
                         </svg>
                         <span data-i18n="launcher.dlBtn">Download Peak Launcher</span>
-                        <span id="launcher-primary-meta" class="btn-meta notranslate" translate="no">v1.1.0</span>
+                        <span id="launcher-primary-meta" class="btn-meta notranslate" translate="no">v1.5.1</span>
                       </a>
                       <button
                         id="launcher-dl-toggle"
@@ -741,28 +774,28 @@
                       <a
                         id="launcher-setup-link"
                         class="dropdown-item"
-                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Setup-1.1.0.exe"
-                        download="Peak-Launcher-Setup-1.1.0.exe"
+                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Setup-1.5.1.exe"
+                        download="Peak-Launcher-Setup-1.5.1.exe"
                         role="menuitem"
                       >
                         <div class="dropdown-item-main">
                           <span class="dropdown-title" data-i18n="dl.setupTitle">Windows Installer (.exe)</span>
                           <span class="dropdown-sub" data-i18n="dl.setupSubLauncher">Recommended · creates desktop &amp; Start menu shortcuts</span>
                         </div>
-                        <span id="launcher-setup-size" class="dropdown-size notranslate" translate="no">117.6 MB</span>
+                        <span id="launcher-setup-size" class="dropdown-size notranslate" translate="no">117.7 MB</span>
                       </a>
                       <a
                         id="launcher-portable-link"
                         class="dropdown-item"
-                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.1.0/Peak-Launcher-Portable-1.1.0.exe"
-                        download="Peak-Launcher-Portable-1.1.0.exe"
+                        href="https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Portable-1.5.1.exe"
+                        download="Peak-Launcher-Portable-1.5.1.exe"
                         role="menuitem"
                       >
                         <div class="dropdown-item-main">
                           <span class="dropdown-title" data-i18n="dl.portableTitle">Portable Edition (.exe)</span>
                           <span class="dropdown-sub" data-i18n="dl.portableSub">No installation · runs immediately on launch</span>
                         </div>
-                        <span id="launcher-portable-size" class="dropdown-size notranslate" translate="no">106.8 MB</span>
+                        <span id="launcher-portable-size" class="dropdown-size notranslate" translate="no">106.9 MB</span>
                       </a>
                       <div class="dropdown-divider"></div>
                       <a
@@ -811,7 +844,7 @@
         <div class="section-head reveal">
           <span class="section-kicker" data-i18n="eco.kicker">ARCHITECTURE &amp; STANDARDS · PEAK LABS ECOSYSTEM</span>
           <h2 data-i18n="eco.title">Shared technological foundation</h2>
-          <p data-i18n="eco.lead">Both applications share the same standard of quality, security, and cohesive Blue Mountain aesthetics.</p>
+          <p data-i18n="eco.lead">Both applications share the same engineering standard, zero-telemetry architecture, and alpine Peak Cinema aesthetics.</p>
         </div>
 
         <div class="ecosystem-grid">
@@ -832,14 +865,14 @@
               <span data-i18n="eco.row2Val">NSIS Installer + Portable (.exe)</span>
             </div>
             <div class="eco-row">
-              <span class="eco-key" data-i18n="eco.row3Key">Visual system</span>
-              <span data-i18n="eco.row3Browser">Blue Mountain Themes</span>
-              <span class="notranslate" translate="no">Alpine Aurora &amp; Summit Glass</span>
+              <span class="eco-key" data-i18n="eco.row3Key">Visual &amp; UI system</span>
+              <span data-i18n="eco.row3Browser">Blue Mountain · peak://settings</span>
+              <span data-i18n="eco.row3Launcher">Peak Cinema · 6 languages</span>
             </div>
             <div class="eco-row">
-              <span class="eco-key" data-i18n="eco.row4Key">Key feature</span>
-              <span data-i18n="eco.row4Browser">Peak Shield &amp; Drag &amp; Drop tabs</span>
-              <span data-i18n="eco.row4Launcher">Modrinth, Auto-Java &amp; Auto-Fabric</span>
+              <span class="eco-key" data-i18n="eco.row4Key">Flagship capabilities</span>
+              <span data-i18n="eco.row4Browser">Peak Shield 148K &amp; HTTPS-First</span>
+              <span data-i18n="eco.row4Launcher">Hosting .peak, 3D Skins &amp; Modrinth Pro</span>
             </div>
             <div class="eco-row">
               <span class="eco-key" data-i18n="eco.row5Key">Update channel</span>
@@ -854,31 +887,31 @@
           </div>
 
           <aside class="lab-future-card spotlight-card reveal">
-            <span class="lab-badge" data-i18n="eco.labBadge">PEAK LABS LABORATORY · IN PROGRESS</span>
-            <h3 data-i18n="eco.labTitle">Ecosystem roadmap for 2026+</h3>
+            <span class="lab-badge" data-i18n="eco.labBadge">PEAK LABS LABORATORY · ROADMAP</span>
+            <h3 data-i18n="eco.labTitle">Continuous evolution in 2026+</h3>
             <p data-i18n="eco.labLead">
-              <span class="notranslate" translate="no">PEAK LABS</span> continuously improves both flagship products and builds new desktop utilities for Windows gamers and creators.
+              <span class="notranslate" translate="no">PEAK LABS</span> rapidly ships weekly upgrades to both flagship apps while researching new lightweight Windows utilities.
             </p>
             <ul class="lab-roadmap-list">
               <li>
                 <span class="roadmap-dot active" aria-hidden="true"></span>
                 <div>
-                  <strong class="notranslate" translate="no">Peak Browser 1.x+</strong>
-                  <span data-i18n="eco.road1Desc">Further RAM optimization, expanded Peak Shield filters, and even snappier tabs.</span>
+                  <strong class="notranslate" translate="no">Peak Browser v1.2+</strong>
+                  <span data-i18n="eco.road1Desc">Even faster filter updates, deeper Peak Shield insights, and tab workspace refinements.</span>
                 </div>
               </li>
               <li>
                 <span class="roadmap-dot active" aria-hidden="true"></span>
                 <div>
-                  <strong class="notranslate" translate="no">Peak Launcher 1.x+</strong>
-                  <span data-i18n="eco.road2Desc">New Modrinth performance packs, modpack management, and launch telemetry.</span>
+                  <strong class="notranslate" translate="no">Peak Launcher v1.5+</strong>
+                  <span data-i18n="eco.road2Desc">Enhanced .peak global server discovery, multiplayer diagnostics, and WebGL skin tools.</span>
                 </div>
               </li>
               <li>
                 <span class="roadmap-dot" aria-hidden="true"></span>
                 <div>
                   <strong data-i18n="eco.road3Title">Upcoming PEAK LABS tools</strong>
-                  <span data-i18n="eco.road3Desc">Lightweight Summit Glass system utilities hosted at <code class="notranslate" translate="no">peaklabstudio.vercel.app</code>.</span>
+                  <span data-i18n="eco.road3Desc">Lightweight Peak Cinema desktop utilities published at [0].</span>
                 </div>
               </li>
             </ul>
@@ -894,20 +927,33 @@
           <div class="section-head">
             <span class="section-kicker" data-i18n="releases.kicker">DOWNLOAD CENTER · GITHUB RELEASES</span>
             <h2 data-i18n="releases.title">Releases &amp; changelog</h2>
-            <p data-i18n="releases.lead">Direct <code class="notranslate" translate="no">.exe</code> installers and Portable editions for both <span class="notranslate" translate="no">PEAK LABS</span> products.</p>
+            <p data-i18n="releases.lead">Direct <code class="notranslate" translate="no">.exe</code> installers and Portable builds across all <span class="notranslate" translate="no">PEAK LABS</span> versions.</p>
           </div>
 
           <div class="releases-controls">
             <div class="release-filters" role="group" aria-label="Filter releases by product" data-i18n-aria="releases.filterAria">
-              <button class="release-filter-btn active" type="button" data-filter="all" data-i18n="releases.filterAll">All</button>
-              <button class="release-filter-btn notranslate" translate="no" type="button" data-filter="browser">Peak Browser</button>
-              <button class="release-filter-btn notranslate" translate="no" type="button" data-filter="launcher">Peak Launcher</button>
+              <button class="release-filter-btn active" type="button" data-filter="all">
+                <span data-i18n="releases.filterAll">All</span>
+                <span id="filter-count-all" class="filter-count notranslate" translate="no">(15)</span>
+              </button>
+              <button class="release-filter-btn" type="button" data-filter="browser">
+                <span class="notranslate" translate="no">Peak Browser</span>
+                <span id="filter-count-browser" class="filter-count notranslate" translate="no">(5)</span>
+              </button>
+              <button class="release-filter-btn" type="button" data-filter="launcher">
+                <span class="notranslate" translate="no">Peak Launcher</span>
+                <span id="filter-count-launcher" class="filter-count notranslate" translate="no">(10)</span>
+              </button>
             </div>
             <span id="releases-source-note" class="source-note" data-i18n="releases.loading">Loading releases…</span>
           </div>
         </div>
 
         <div id="releases-list" class="releases-list"></div>
+
+        <div id="releases-toggle-wrap" class="releases-toggle-wrap hidden">
+          <button id="releases-toggle-btn" class="btn-glass releases-toggle-btn" type="button"></button>
+        </div>
       </div>
     </section>
 
@@ -915,11 +961,6 @@
     <section id="tworca" class="section section-creator">
       <div class="container">
         <div class="creator-card spotlight-card reveal">
-          <svg class="creator-topo" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M460,300 C540,210 610,160 690,85 C740,40 770,18 800,10" />
-            <path d="M520,300 C590,225 650,185 720,120 C755,85 780,68 800,60" />
-          </svg>
-
           <div class="creator-left">
             <div class="creator-emblem">
               <img src="./assets/peaklabs-logo.svg" alt="PEAK LABS emblem" />
@@ -939,16 +980,14 @@
               <span data-i18n="creator.role3">UI/UX Designer</span>
             </div>
             <p class="creator-bio" data-i18n="creator.bio">
-              Designs and builds the entire <strong class="notranslate" translate="no">PEAK LABS</strong> ecosystem from the ground up — from the Minecraft launcher engine
-              with automatic Java, Fabric, and Modrinth integration, through the <strong class="notranslate" translate="no">Peak Browser</strong> architecture
-              and <strong class="notranslate" translate="no">Peak Shield</strong> privacy engine, to the cohesive <em class="notranslate" translate="no">Alpine Aurora &amp; Summit Glass</em> visual language.
+              Architects and builds the entire <strong class="notranslate" translate="no">PEAK LABS</strong> ecosystem from scratch — from the <strong class="notranslate" translate="no">Peak Launcher</strong> engine with self-hosted <span class="notranslate" translate="no">.peak</span> servers, Java DNS SPI routing, and a 3D WebGL Skin Studio, to <strong class="notranslate" translate="no">Peak Browser</strong> with <span class="notranslate" translate="no">Peak Shield</span> (148,604 adblock rules) and the cohesive <em class="notranslate" translate="no">Peak Cinema</em> visual system.
             </p>
             <div class="creator-actions">
               <a
                 href="https://github.com/latajoncy82-svg"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn-aurora"
+                class="btn-cinema-primary"
               >
                 <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                   <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
@@ -984,7 +1023,7 @@
             </span>
           </a>
           <p data-i18n="footer.about">
-            Independent software studio crafting clean, fast Windows 10/11 apps in the Alpine Aurora &amp; Summit Glass aesthetic.
+            Independent software studio crafting clean, fast Windows 10/11 apps in the Peak Cinema &amp; Summit Glass aesthetic.
           </p>
           <span class="footer-domain notranslate" translate="no">peaklabstudio.vercel.app</span>
         </div>
@@ -1017,7 +1056,7 @@
 
       <div class="footer-bottom">
         <span data-i18n="footer.copyright">&copy; 2026 PEAK LABS · Creator: <strong class="notranslate" translate="no">Mikołaj Grynienko</strong></span>
-        <span data-i18n="footer.themeCredit">Alpine Aurora &amp; Summit Glass Theme</span>
+        <span data-i18n="footer.themeCredit">Peak Cinema &amp; Summit Glass Aesthetic</span>
       </div>
     </div>
   </footer>
@@ -1029,7 +1068,7 @@
       <div class="lightbox-bar">
         <div class="lightbox-meta">
           <span id="lightbox-caption" class="lightbox-caption" data-i18n="lightbox.defaultCaption">Screen preview</span>
-          <span id="lightbox-counter" class="lightbox-counter notranslate" translate="no">1 / 6</span>
+          <span id="lightbox-counter" class="lightbox-counter notranslate" translate="no">1 / 9</span>
         </div>
         <div class="lightbox-controls">
           <button
@@ -1068,7 +1107,7 @@
         </div>
       </div>
       <div class="lightbox-frame">
-        <img id="lightbox-img" src="./assets/browser-dark.webp" alt="Enlarged screen preview" />
+        <img id="lightbox-img" src="./assets/launcher-dark.png?v=2" alt="Enlarged screen preview" />
       </div>
     </div>
   </div>

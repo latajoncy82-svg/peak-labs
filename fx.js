@@ -1,8 +1,6 @@
 (() => {
   const prefersReducedMotion =
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const hasFinePointer =
-    window.matchMedia && window.matchMedia('(pointer: fine)').matches;
 
   let canvas = null;
   let ctx = null;
@@ -17,9 +15,9 @@
   const stars = [];
   const snow = [];
   const ribbons = [
-    { baseY: 0.22, amp: 42, freq: 0.002, speed: 0.24, color: 'rgba(16, 185, 129, 0.18)', offset: 0.3 },
-    { baseY: 0.31, amp: 50, freq: 0.0016, speed: -0.19, color: 'rgba(56, 189, 248, 0.19)', offset: 2.1 },
-    { baseY: 0.17, amp: 34, freq: 0.0024, speed: 0.16, color: 'rgba(37, 99, 235, 0.15)', offset: 3.9 }
+    { baseY: 0.24, amp: 36, freq: 0.0018, speed: 0.18, color: 'rgba(16, 185, 129, 0.12)', offset: 0.4 },
+    { baseY: 0.34, amp: 44, freq: 0.0014, speed: -0.15, color: 'rgba(56, 189, 248, 0.13)', offset: 2.2 },
+    { baseY: 0.19, amp: 30, freq: 0.0021, speed: 0.12, color: 'rgba(37, 99, 235, 0.10)', offset: 4.1 }
   ];
 
   function rand(min, max) {
@@ -30,27 +28,27 @@
     stars.length = 0;
     snow.length = 0;
 
-    for (let i = 0; i < 76; i++) {
+    for (let i = 0; i < 64; i++) {
       stars.push({
         x: Math.random(),
-        y: rand(0.02, 0.68),
-        r: rand(0.6, 1.65),
+        y: rand(0.02, 0.62),
+        r: rand(0.55, 1.45),
         phase: rand(0, Math.PI * 2),
-        speed: rand(0.8, 2.1)
+        speed: rand(0.6, 1.7)
       });
     }
 
-    for (let i = 0; i < 54; i++) {
+    for (let i = 0; i < 36; i++) {
       const depth = rand(0.35, 1);
       snow.push({
         x: Math.random(),
         y: Math.random(),
         depth,
-        r: rand(0.9, 2.2) * depth,
-        vy: rand(0.0002, 0.00055) * depth,
-        vx: rand(-0.00008, 0.00014) * depth,
+        r: rand(0.8, 1.8) * depth,
+        vy: rand(0.00014, 0.00038) * depth,
+        vx: rand(-0.00005, 0.00009) * depth,
         wobble: rand(0, Math.PI * 2),
-        alpha: rand(0.18, 0.52) * depth
+        alpha: rand(0.14, 0.38) * depth
       });
     }
   }
@@ -75,8 +73,8 @@
 
     if (theme === 'dark') {
       for (const s of stars) {
-        const twinkle = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(t * s.speed + s.phase));
-        ctx.globalAlpha = twinkle * 0.7;
+        const twinkle = 0.3 + 0.7 * (0.5 + 0.5 * Math.sin(t * s.speed + s.phase));
+        ctx.globalAlpha = twinkle * 0.62;
         ctx.fillStyle = '#e0f2fe';
         ctx.beginPath();
         ctx.arc(s.x * width, s.y * height, s.r, 0, Math.PI * 2);
@@ -86,23 +84,23 @@
 
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
-      const mx = (pointerX - 0.5) * 30;
+      const mx = (pointerX - 0.5) * 24;
       for (const rib of ribbons) {
         const basePx = height * rib.baseY;
-        const grad = ctx.createLinearGradient(0, basePx - 95, 0, basePx + 120);
+        const grad = ctx.createLinearGradient(0, basePx - 90, 0, basePx + 115);
         grad.addColorStop(0, 'rgba(0,0,0,0)');
         grad.addColorStop(0.45, rib.color);
         grad.addColorStop(1, 'rgba(0,0,0,0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.moveTo(0, basePx + 135);
+        ctx.moveTo(0, basePx + 130);
         for (let x = 0; x <= width + 48; x += 48) {
           const wave =
             Math.sin((x + mx) * rib.freq + t * rib.speed + rib.offset) * rib.amp +
-            Math.cos((x - mx) * rib.freq * 1.6 - t * rib.speed * 0.7) * (rib.amp * 0.4);
+            Math.cos((x - mx) * rib.freq * 1.5 - t * rib.speed * 0.7) * (rib.amp * 0.35);
           ctx.lineTo(x, basePx + wave);
         }
-        ctx.lineTo(width + 48, basePx + 140);
+        ctx.lineTo(width + 48, basePx + 135);
         ctx.closePath();
         ctx.fill();
       }
@@ -112,14 +110,14 @@
     for (const p of snow) {
       if (!prefersReducedMotion) {
         p.y += p.vy;
-        p.x += p.vx + Math.sin(t * 0.8 + p.wobble) * 0.0001;
+        p.x += p.vx + Math.sin(t * 0.7 + p.wobble) * 0.00008;
         if (p.y > 1.03) {
           p.y = -0.02;
           p.x = Math.random();
         }
       }
-      ctx.globalAlpha = theme === 'dark' ? p.alpha : p.alpha * 0.6;
-      ctx.fillStyle = theme === 'dark' ? '#ffffff' : '#38bdf8';
+      ctx.globalAlpha = theme === 'dark' ? p.alpha : p.alpha * 0.5;
+      ctx.fillStyle = theme === 'dark' ? '#e2f1ff' : '#38bdf8';
       ctx.beginPath();
       ctx.arc(p.x * width, p.y * height, p.r, 0, Math.PI * 2);
       ctx.fill();
@@ -160,24 +158,6 @@
     );
   }
 
-  function setupHeroTilt() {
-    const stageCard = document.getElementById('hero-stage-card');
-    if (!stageCard || prefersReducedMotion || !hasFinePointer) return;
-
-    stageCard.addEventListener('pointermove', (e) => {
-      const rect = stageCard.getBoundingClientRect();
-      const nx = (e.clientX - rect.left) / Math.max(1, rect.width) - 0.5;
-      const ny = (e.clientY - rect.top) / Math.max(1, rect.height) - 0.5;
-      const rotateY = nx * 5.5;
-      const rotateX = -ny * 5.5;
-      stageCard.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
-    });
-
-    stageCard.addEventListener('pointerleave', () => {
-      stageCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
-  }
-
   function setupScrollProgress() {
     const bar = document.getElementById('scroll-progress');
     if (!bar) return;
@@ -192,29 +172,36 @@
     update();
   }
 
+  function formatCounterValue(val, useGrouping) {
+    if (!useGrouping) return String(val);
+    return val.toLocaleString('en-US');
+  }
+
   function animateCounter(el) {
     if (el.dataset.animated === '1') return;
     el.dataset.animated = '1';
 
     const target = Number(el.dataset.count || 0);
     const suffix = el.dataset.suffix || '';
+    const useGrouping = target >= 1000;
+
     if (prefersReducedMotion || target === 0) {
-      el.textContent = `${target}${suffix}`;
+      el.textContent = `${formatCounterValue(target, useGrouping)}${suffix}`;
       return;
     }
 
-    const duration = 850;
+    const duration = 900;
     const start = performance.now();
 
     const step = (now) => {
       const progress = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - progress, 3);
       const value = Math.round(eased * target);
-      el.textContent = `${value}${suffix}`;
+      el.textContent = `${formatCounterValue(value, useGrouping)}${suffix}`;
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
-        el.textContent = `${target}${suffix}`;
+        el.textContent = `${formatCounterValue(target, useGrouping)}${suffix}`;
       }
     };
 
@@ -281,7 +268,6 @@
       }
 
       setupSpotlights();
-      setupHeroTilt();
       setupScrollProgress();
       setupReveals();
     },

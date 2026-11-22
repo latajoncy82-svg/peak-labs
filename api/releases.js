@@ -53,7 +53,7 @@ async function fetchRepoReleases(repo) {
       headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
     }
 
-    const url = `https://api.github.com/repos/${repo}/releases?per_page=20`;
+    const url = `https://api.github.com/repos/${repo}/releases?per_page=30`;
     const res = await fetch(url, { headers, signal: controller.signal });
     if (!res.ok) {
       return null;

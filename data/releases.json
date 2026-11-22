@@ -1,9 +1,93 @@
 {
   "browser": [
     {
+      "tag": "v1.2.1",
+      "name": "Peak Browser 1.2.1 — Studio Homepage on Launch",
+      "publishedAt": "2026-11-21T11:15:10Z",
+      "body": "### What's new in v1.2.1\n- **Company homepage as initial startup tab**: launching the browser now opens `https://peaklabstudio.vercel.app/#o-firmie` in the first tab.\n- **New tabs unchanged**: pressing `Ctrl+T` or clicking `+` continues to open the clean alpine New Tab page (`peak://newtab`).",
+      "locales": {
+        "pl": {
+          "name": "Peak Browser 1.2.1 — Strona firmowa na start",
+          "body": "### Co się zmieniło w wersji 1.2.1\n\n- **Strona firmowa jako pierwsza karta startowa**: po uruchomieniu przeglądarki pierwsza karta automatycznie otwiera stronę firmową `https://peaklabstudio.vercel.app/#o-firmie`.\n- **Nowe karty bez zmian**: skrót `Ctrl+T` oraz przycisk `+` nadal otwierają czystą alpejską stronę nowej karty (`peak://newtab`)."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.2.1",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Browser-Setup-1.2.1.exe",
+          "size": 125380643,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.1/Peak-Browser-Setup-1.2.1.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Browser-Portable-1.2.1.exe",
+          "size": 113978150,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.1/Peak-Browser-Portable-1.2.1.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Browser-Setup-1.2.1.exe",
+            "size": 125380643,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.1/Peak-Browser-Setup-1.2.1.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Browser-Portable-1.2.1.exe",
+            "size": 113978150,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.1/Peak-Browser-Portable-1.2.1.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.2.0",
+      "name": "Peak Browser 1.2.0 — Full Adblocker, HTTPS-First & Redesigned Settings",
+      "publishedAt": "2026-11-20T23:36:04Z",
+      "body": "### What's new in v1.2.0\n- **Full Peak Shield Adblock Engine (`148,604` rules)**: built-in `@ghostery/adblocker` powered by EasyList, EasyPrivacy, Peter Lowe, uBlock Origin Filters & Privacy, and Polish Ad Filters (`MajkiIT`) with 1-click filter list updates.\n- **Cosmetic filtering & YouTube protection**: automatically hides empty ad containers, blocks trackers and cryptominers in Aggressive mode, and strips ad banners and overlays on YouTube.\n- **Hardened privacy**: enforces `HTTPS-First` encrypted connections with safe fallback on certificate errors, strips tracking URL parameters (`utm_*`, `fbclid`, `gclid`, `msclkid`), sends `Sec-GPC` and `DNT` headers, removes `X-Client-Data`, trims cross-site `Referer`, and blocks intrusive push, USB, MIDI, and HID prompts.\n- **Redesigned full-page Settings (`peak://settings`) & Shield panel**: two-column workspace with search, live theme previews, site allowlist, blocked domain inspector, and granular clearing of history, cookies, and cache.",
+      "locales": {
+        "pl": {
+          "name": "Peak Browser 1.2.0 — Pełny Adblock, HTTPS-First i nowe Ustawienia",
+          "body": "### Co się zmieniło w wersji 1.2.0\n\n- **Pełny silnik blokowania reklam Peak Shield (`148 604` reguły)**: wbudowany silnik `@ghostery/adblocker` oparty na listach EasyList, EasyPrivacy, Peter Lowe, uBlock Origin Filters & Privacy oraz Polskich filtrach reklamowych (`MajkiIT`) wraz z możliwością aktualizacji list jednym kliknięciem.\n- **Filtrowanie kosmetyczne i ochrona YouTube**: automatyczne ukrywanie pustych ramek po reklamach, blokowanie trackerów i skryptów koparek w trybie agresywnym oraz usuwanie banerów i nakładek reklamowych na YouTube.\n- **Wzmocniona ochrona prywatności**: wymuszanie szyfrowanych połączeń `HTTPS-First` z bezpiecznym powrotem przy błędzie certyfikatu, czyszczenie parametrów śledzących URL (`utm_*`, `fbclid`, `gclid`, `msclkid`), wysyłanie nagłówków `Sec-GPC` i `DNT`, usuwanie `X-Client-Data`, skracanie `Referer` między witrynami oraz automatyczne blokowanie natrętnych powiadomień push, USB, MIDI i HID.\n- **Przeprojektowane pełnoekranowe Ustawienia (`peak://settings`) i panel Ochrony**: dwukolumnowy układ z wyszukiwarką opcji, podglądem motywów na żywo, listą wyjątków dla witryn, podglądem zablokowanych domen w panelu `Ochrona` oraz granulowanym czyszczeniem historii, cookies i pamięci podręcznej."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.2.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Browser-Setup-1.2.0.exe",
+          "size": 125380640,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.0/Peak-Browser-Setup-1.2.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Browser-Portable-1.2.0.exe",
+          "size": 113980643,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.0/Peak-Browser-Portable-1.2.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Browser-Setup-1.2.0.exe",
+            "size": 125380640,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.0/Peak-Browser-Setup-1.2.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Browser-Portable-1.2.0.exe",
+            "size": 113980643,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/download/v1.2.0/Peak-Browser-Portable-1.2.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
       "tag": "v1.1.0",
       "name": "Peak Browser 1.1.0 — Default Dark Interface & Redesigned Tab Bar",
-      "publishedAt": "2026-11-19T22:26:00Z",
+      "publishedAt": "2026-11-19T22:27:48Z",
       "body": "### What's new in v1.1.0\n- **Default Blue Mountain Dark Theme (`Dark`)**: deep alpine navy across the entire window interface, the New Tab page (`peak://newtab`), suggestions popup, and error screen.\n- **Refined connected tabs & reordering**: seamless sculpted connection between the active tab and toolbar, compact top bar (`78 px`), and smooth mouse drag & drop tab reordering.\n- **Cleaner address bar**: highlighted domain name with muted protocol and path, plus a quick copy URL button on hover.\n- **Refreshed New Tab & sidebar**: single-row balanced shortcut grid, frosted glass cards over the night alpine backdrop, slim scrollbars, and quick opening of bookmarks and history in a new tab.",
       "locales": {
         "pl": {
@@ -45,7 +129,7 @@
     {
       "tag": "v1.0.1",
       "name": "Peak Browser 1.0.1 — Windows Taskbar Pinning Fix",
-      "publishedAt": "2026-11-19T22:06:00Z",
+      "publishedAt": "2026-11-19T22:07:26Z",
       "body": "### What's new in v1.0.1\n- **Windows taskbar pinning fix**: added explicit application metadata (`setAppDetails` / `AppUserModelID`, `relaunchCommand`, `appIconPath`, `relaunchDisplayName`), ensuring pinning **Peak Browser** to the taskbar preserves the Blue Mountain logo and app name instead of reverting to the default Electron icon.\n- **Direct launch**: the launcher shortcut and `start-peak.bat` now run the compiled `Peak Browser.exe` binary directly.",
       "locales": {
         "pl": {
@@ -87,12 +171,12 @@
     {
       "tag": "v1.0.0",
       "name": "Peak Browser 1.0.0 — Initial Release",
-      "publishedAt": "2026-11-19T21:50:00Z",
-      "body": "### What's new\n- **Initial Peak Browser release** for Windows 10 and Windows 11 (64-bit) with a dedicated installer and portable edition.\n- **Architectural UI**: compact `80 px` top bar, seamlessly connected active tab without heavy shadows, and clean address bar.\n- **Three Blue Mountain themes**: **Light**, **Blue**, and **Dark**, paired with minimalist alpine wallpapers on the New Tab page (`peak://newtab`).\n- **Peak Shield**: built-in ad and tracker blocking with a per-tab blocked request counter.\n- **Flat sidebar (`320 px`)**: bookmarks, browsing history, download manager, search engine selector (Google, DuckDuckGo, Bing, Brave Search), and one-click data clearing.\n- **Full keyboard shortcut support**: `Ctrl+T`, `Ctrl+W`, `Ctrl+Shift+T`, `Ctrl+L`, `Ctrl+F`, `Ctrl+D`, `Ctrl+H`, `Ctrl+J`, `Ctrl+Shift+B`, `F11`, `F12`.",
+      "publishedAt": "2026-11-19T22:00:13Z",
+      "body": "### What's new in v1.0.0\n- **Initial Peak Browser release** for Windows 10 and Windows 11 (x64) with dedicated installer, icon, and Blue Mountain theme.\n- **Architectural UI**: compact tab bar (`38 px`) joined with the active tab and toolbar (`42 px`) with clean address bar.\n- **Three color themes**: **Light**, **Blue**, and **Dark** paired with minimalist alpine wallpapers on the New Tab page (`peak://newtab`).\n- **Peak Shield**: built-in ad and tracker blocking with a toolbar blocked request counter.\n- **Flat sidebar (`320 px`)**: bookmarks, browsing history, download manager, search engine settings (Google, DuckDuckGo, Bing, Brave Search), and browsing data cleaner.\n- **Full keyboard shortcut support**: `Ctrl+T`, `Ctrl+W`, `Ctrl+Shift+T`, `Ctrl+L`, `Ctrl+F`, `Ctrl+D`, `Ctrl+H`, `Ctrl+J`, `Ctrl+Shift+B`, `F11`, `F12`.",
       "locales": {
         "pl": {
           "name": "Peak Browser 1.0.0 — Pierwsze wydanie",
-          "body": "### Co się zmieniło\n- **Pierwsze wydanie Peak Browser** na Windows 10 i Windows 11 (64-bit) z dedykowanym instalatorem oraz wersją portable.\n- **Architektoniczny interfejs**: zwarty górny pasek `80 px`, połączona aktywna karta bez ciężkich cieni oraz czytelny pasek adresu.\n- **Trzy motywy Niebieskiej Góry**: **Jasny**, **Niebieski** oraz **Ciemny** wraz z minimalistycznymi tapetami alpejskimi na stronie nowej karty (`peak://newtab`).\n- **Peak Shield**: wbudowane blokowanie reklam i popularnych trackerów z licznikiem zablokowanych żądań dla każdej karty.\n- **Płaski panel boczny (`320 px`)**: zakładki, historia przeglądania, menedżer pobrań, wybór wyszukiwarki (Google, DuckDuckGo, Bing, Brave Search) oraz czyszczenie danych jednym kliknięciem.\n- **Pełna obsługa skrótów klawiszowych**: `Ctrl+T`, `Ctrl+W`, `Ctrl+Shift+T`, `Ctrl+L`, `Ctrl+F`, `Ctrl+D`, `Ctrl+H`, `Ctrl+J`, `Ctrl+Shift+B`, `F11`, `F12`."
+          "body": "### Co się zmieniło w wersji 1.0.0\n\n- **Pierwsze wydanie Peak Browser** na Windows 10 i Windows 11 (x64) z dedykowaną ikoną i motywem Niebieskiej Góry.\n- **Architektoniczny interfejs**: zwarty pasek kart (`38 px`) połączony z aktywną kartą oraz pasek narzędzi (`42 px`) z czytelnym paskiem adresu.\n- **Trzy motywy kolorystyczne**: **Jasny**, **Niebieski** oraz **Ciemny** wraz z minimalistycznymi tapetami alpejskimi na stronie nowej karty (`peak://newtab`).\n- **Peak Shield**: wbudowane blokowanie popularnych domen reklamowych i trackerów z licznikiem zablokowanych żądań na pasku.\n- **Panel boczny (`320 px`)**: zakładki, historia przeglądania, menedżer pobrań oraz ustawienia wyszukiwarki (Google, DuckDuckGo, Bing, Brave Search) i czyszczenie danych przeglądania.\n- **Pełna obsługa skrótów klawiszowych**: `Ctrl+T`, `Ctrl+W`, `Ctrl+Shift+T`, `Ctrl+L`, `Ctrl+F`, `Ctrl+D`, `Ctrl+H`, `Ctrl+J`, `Ctrl+Shift+B`, `F11`, `F12`."
         }
       },
       "htmlUrl": "https://github.com/latajoncy82-svg/peak-browser/releases/tag/v1.0.0",
@@ -129,14 +213,350 @@
   ],
   "launcher": [
     {
+      "tag": "v1.5.1",
+      "name": "Peak Launcher 1.5.1 — True <address>.peak Domain Locally & Over the Internet",
+      "publishedAt": "2026-11-22T21:34:10Z",
+      "body": "### Highlights in v1.5.1\n- **Global Public Tunnel with `<address>.peak`**: enabling the tunnel in `Server .peak` registers your branded domain (e.g. `szczyt.peak`) in the global `.peak` directory, allowing friends in Peak Launcher to join using clean `<address>.peak` addresses (with an optional Pinggy TCP address for vanilla clients).\n- **Live `<address>.peak` domains directly inside Minecraft**: built-in Java DNS SPI resolver (`peak-dns.jar` for Java 18+, MC 1.18–26.x) resolves `*.peak` in Multiplayer, Direct Connection, and `--quickPlayMultiplayer` while keeping full compatibility with Yggdrasil skins (`authlib-injector`) and Mojang/Modrinth queries.\n- **Built-in `.peak` Handshake Router (`0.0.0.0:25565`) & Domain Registry**: TCP router forwards Minecraft Handshake packets to local servers, friends' global tunnels, and custom `.peak` entries — showing a clean offline status on the server list when stopped.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.5.1 — Prawdziwa Domena <adres>.peak Lokalnie i Przez Internet",
+          "body": "### Najważniejsze nowości w wersji 1.5.1\n- **Globalny Tunel Publiczny `.peak`**: karta **Tunel publiczny (Internet)** pokazuje i kopiuje Twoją domenę `<adres>.peak` zamiast surowego hosta Pinggy, publikując trasę dla znajomych korzystających z Peak Launchera (oraz udostępniając zapasowy adres TCP dla zwykłych klientów).\n- **Prawdziwa domena `<adres>.peak` bezpośrednio w grze**: wbudowany provider Java DNS SPI (`peak-dns.jar` dla Java 18+) rozwiązuje `szczyt.peak` i wszystkie domeny `*.peak` w trybie Multiplayer i Quick Play, zachowując pełną kompatybilność ze skinami Yggdrasil i zapytaniami Mojang/Modrinth.\n- **Wbudowany Router Handshake `.peak` (`0.0.0.0:25565`) i Rejestr domen**: router TCP kieruje ruch z pakietu Handshake Minecrafta do lokalnych serwerów, aktywnych globalnych domen znajomych oraz własnych wpisów w `Udostępnianie .peak`."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.5.1",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.5.1.exe",
+          "size": 123419948,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Setup-1.5.1.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.5.1.exe",
+          "size": 112100759,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Portable-1.5.1.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.5.1.exe",
+            "size": 123419948,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Setup-1.5.1.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.5.1.exe",
+            "size": 112100759,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.1/Peak-Launcher-Portable-1.5.1.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.5.0",
+      "name": "Peak Launcher 1.5.0 — Self-Hosted .peak Servers & Server Mods",
+      "publishedAt": "2026-11-22T18:19:12Z",
+      "body": "### Highlights in v1.5.0\n- **Self-Hosted `.peak` Server (`Server .peak`)**: run local **Fabric** and **Vanilla** Minecraft servers on your PC with a branded `<name>.peak` domain, automatic server JAR downloads, live console, `server.properties` editor, and EULA acceptance.\n- **1-Click Server Mods & Profile Sync**: Modrinth catalog filtered to server-compatible mods (`server_side: required/optional`), preset server packs (`Lithium`, `FerriteCore`, `Krypton`, `spark`, `Chunky`, `Simple Voice Chat`), `.jar` Drag & Drop, and mod syncing between profile and server.\n- **Public Tunnel & `.peak` Invites**: optional free TCP tunnel without router port forwarding, one-click saving to `servers.dat`, **Join Game** button, and `.peak` invite file export/import.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.5.0 — Własny Hosting .peak i Mody Serwerowe",
+          "body": "### Najważniejsze nowości w wersji 1.5.0\n- **Własny Hosting `.peak` na komputerze (`Serwer .peak`)**: uruchamiaj lokalne serwery Minecraft **Fabric** i **Vanilla** z markowym adresem `<nazwa>.peak`, automatycznym pobieraniem JAR serwera, konsolą na żywo, edytorem `server.properties` i akceptacją EULA.\n- **Mody serwerowe 1 kliknięciem & synchronizacja**: katalog Modrinth odfiltrowany do modów serwerowych (`server_side: required/optional`), paczki serwerowe (`Lithium`, `FerriteCore`, `Krypton`, `spark`, `Chunky`, `Simple Voice Chat`), Drag & Drop `.jar` oraz kopiowanie modów między profilem a serwerem.\n- **Tunel publiczny i zaproszenia `.peak`**: opcjonalny darmowy tunel TCP bez przekierowania portów routera, zapis do `servers.dat`, przycisk **Dołącz do gry** i eksport/import plików `.peak`."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.5.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.5.0.exe",
+          "size": 123406811,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.0/Peak-Launcher-Setup-1.5.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.5.0.exe",
+          "size": 112087494,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.0/Peak-Launcher-Portable-1.5.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.5.0.exe",
+            "size": 123406811,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.0/Peak-Launcher-Setup-1.5.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.5.0.exe",
+            "size": 112087494,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.5.0/Peak-Launcher-Portable-1.5.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.4.1",
+      "name": "Peak Launcher 1.4.1 — Refined Top Bar & 3D Skin Studio",
+      "publishedAt": "2026-11-22T17:50:26Z",
+      "body": "### Highlights in v1.4.1\n- **Fixed theme toggle & upgraded top bar**: fixed CSS styling on the dark/light toggle button, added a custom **6-language** selector dropdown with globe icon, and unified toolbar geometry with crisp pixel-art skin avatar.\n- **Custom vector dropdowns**: replaced native OS select arrows with cohesive vector chevrons for dark and light themes.\n- **Includes all v1.4.0 features**: interactive **3D Skin Studio (WebGL)**, `.png` uploads, lookup by nickname, **4 Peak presets**, and in-game skin rendering via `authlib-injector v1.2.8`.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.4.1 — Dopracowany Pasek Górny i Studio Skinów 3D",
+          "body": "### Najważniejsze nowości w wersji 1.4.1\n- **Naprawiony przycisk motywu i nowy pasek górny**: usunięto błąd składni CSS na przycisku trybu nocnego/dziennego, dodano niestandardowe menu wyboru **6 języków** z ikoną globusa oraz spójny układ paska narzędziowego z ostrym pikselowym awatarem skina.\n- **Wektorowe selektory w całej aplikacji**: usunięto surowe systemowe strzałki z list rozwijanych na rzecz czystych chevronów dla trybu ciemnego i jasnego.\n- **Zawiera wszystkie nowości 1.4.0**: interaktywne **Studio Skinów 3D (WebGL)**, wgrywanie `.png`, pobieranie po nicku, **4 presety Peak** oraz wyświetlanie skina w grze przez `authlib-injector v1.2.8`."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.4.1",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.4.1.exe",
+          "size": 123378455,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.4.1/Peak-Launcher-Setup-1.4.1.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.4.1.exe",
+          "size": 112060479,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.4.1/Peak-Launcher-Portable-1.4.1.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.4.1.exe",
+            "size": 123378455,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.4.1/Peak-Launcher-Setup-1.4.1.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.4.1.exe",
+            "size": 112060479,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.4.1/Peak-Launcher-Portable-1.4.1.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.4.0",
+      "name": "Peak Launcher 1.4.0 — 3D Skin Studio & In-Game Skins",
+      "publishedAt": "2026-11-22T17:35:47Z",
+      "body": "### Highlights in v1.4.0\n- **3D Skin Studio (WebGL)**: interactive 3D character viewer with orbit controls, walk animation, second-layer toggle, `.png` Drag & Drop upload, Minecraft username fetch, **4 Peak Presets (Offline)**, and personal skin library.\n- **Classic / Slim model & avatars**: choose `4px / 3px` arms and automatically display your custom skin head in account avatars.\n- **Visible in-game (`authlib-injector 1.2.8` + local Yggdrasil)**: your selected skin renders directly inside both Vanilla and Fabric Minecraft.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.4.0 — Studio Skinów 3D i Skiny w Grze",
+          "body": "### Najważniejsze nowości w wersji 1.4.0\n- **Studio Skinów 3D (WebGL)**: interaktywny podgląd postaci w 3D z obrotem, animacją chodu i przełącznikiem 2. warstwy oraz wgrywaniem `.png` (Drag & Drop), pobieraniem po nicku Minecraft, **4 presetami Peak (Offline)** i biblioteką skinów.\n- **Model Classic / Slim i awatary**: wybór sylwetki `4px / 3px` i automatyczne wyświetlanie głowy własnego skina w awatarach kont.\n- **Widoczne w grze (`authlib-injector 1.2.8` + lokalny Yggdrasil)**: wybrany skin działa bezpośrednio w Minecraft Vanilla i Fabric."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.4.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.4.0.exe",
+          "size": 123377958,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.4.0/Peak-Launcher-Setup-1.4.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.4.0.exe",
+          "size": 112059291,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.4.0/Peak-Launcher-Portable-1.4.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.4.0.exe",
+            "size": 123377958,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.4.0/Peak-Launcher-Setup-1.4.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.4.0.exe",
+            "size": 112059291,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.4.0/Peak-Launcher-Portable-1.4.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.3.2",
+      "name": "Peak Launcher 1.3.2 — Pro Options & Console Workspace",
+      "publishedAt": "2026-11-22T17:04:47Z",
+      "body": "### Highlights in v1.3.2\n- **New 2-column Options & Console workspace**: category sidebar (`Appearance & Language`, `Performance & Game`, `Automation & Data`, `Player Accounts`, `Game Console`), theme preview cards, and **6-language** selector tiles.\n- **Toggle switches, RAM / resolution / JVM presets & auto-save**: smooth controls, quick presets (`2–16 GB`, `720p–1440p`, `G1GC`, `Aikar's Flags`, `ZGC`), diagnostics panel, and filterable log console.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.3.2 — Profesjonalne Menu Opcji i Konsoli",
+          "body": "### Najważniejsze nowości w wersji 1.3.2\n- **Nowy 2-kolumnowy workspace Opcji i Konsoli**: boczna nawigacja kategorii (`Wygląd i Język`, `Wydajność i Gra`, `Automatyzacja i Dane`, `Konta graczy`, `Konsola gry`), karty podglądu motywów oraz kafelki **6 języków**.\n- **Przełączniki toggle, presety RAM / rozdzielczości / JVM i autowzapis**: płynne suwaki i przełączniki, szybkie presety (`2–16 GB`, `720p–1440p`, `G1GC`, `Aikar's Flags`, `ZGC`), panel diagnostyki oraz filtrowana konsola logów."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.3.2",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.3.2.exe",
+          "size": 123360697,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.2/Peak-Launcher-Setup-1.3.2.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.3.2.exe",
+          "size": 112044902,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.2/Peak-Launcher-Portable-1.3.2.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.3.2.exe",
+            "size": 123360697,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.2/Peak-Launcher-Setup-1.3.2.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.3.2.exe",
+            "size": 112044902,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.2/Peak-Launcher-Portable-1.3.2.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.3.1",
+      "name": "Peak Launcher 1.3.1 — Multi-Account Support",
+      "publishedAt": "2026-11-22T16:47:44Z",
+      "body": "### Highlights in v1.3.1\n- **Quick multi-account switcher in the top bar**: clean account dropdown with skin avatars and 1-click switching without leaving the main screen.\n- **Account Manager (`Add`, `Edit`, `Use`, `Delete`)**: new modal with live skin preview, duplicate protection, and full support for **6 languages**.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.3.1 — Obsługa wielu kont",
+          "body": "### Najważniejsze nowości w wersji 1.3.1\n- **Szybki przełącznik wielu kont na górnym pasku**: wygodne menu z listą kont, avatarami skina i przełączaniem 1 kliknięciem bez wychodzenia do opcji.\n- **Menedżer kont (`Dodaj`, `Edytuj`, `Użyj`, `Usuń`)**: nowe okno zarządzania kontami z podglądem skina na żywo, ochroną przed duplikatami i pełną obsługą **6 języków**."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.3.1",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.3.1.exe",
+          "size": 123353573,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.1/Peak-Launcher-Setup-1.3.1.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.3.1.exe",
+          "size": 112037086,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.1/Peak-Launcher-Portable-1.3.1.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.3.1.exe",
+            "size": 123353573,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.1/Peak-Launcher-Setup-1.3.1.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.3.1.exe",
+            "size": 112037086,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.1/Peak-Launcher-Portable-1.3.1.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.3.0",
+      "name": "Peak Launcher 1.3.0 — Taskbar Icon, Modrinth Pro & 6 Languages",
+      "publishedAt": "2026-11-22T16:24:12Z",
+      "body": "### Highlights in v1.3.0\n- **Fixed Windows taskbar application icon**: corrected window and taskbar icon binding (`asarUnpack` + `appIconIndex: 0`) and desktop shortcut.\n- **Expanded Modrinth Mod & Addon Database**: **Mods**, **Shaders**, **Resource Packs**, and **Installed** tabs, sorting & pagination, version picker modal, **1-click mod updates**, **3 curated packs** (`Peak FPS Boost`, `Peak Shaders`, `Peak Survival+ QoL`), and atomic duplicate-free metadata.\n- **6-language UI**: `Polski`, `English`, `Deutsch`, `Español`, `Français`, and `Українська` across both the launcher and download site.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.3.0 — Ikona, Baza Modów Pro & 6 Języków",
+          "body": "### Najważniejsze nowości w wersji 1.3.0\n- **Naprawiona ikona aplikacji na pasku zadań Windows**: poprawione powiązanie ikony okna i paska zadań (`asarUnpack` + `appIconIndex: 0`) oraz zaktualizowany skrót na pulpicie.\n- **Rozbudowana baza modów i dodatków Modrinth**: zakładki **Mody**, **Shadery**, **Paczki zasobów** i **Zainstalowane**, sortowanie i stronicowanie wyników, okno szczegółów z wyborem wersji, **1-klik aktualizacja modów**, **3 gotowe pakiety** (`Peak FPS Boost`, `Peak Shadery`, `Peak Survival+ QoL`) oraz atomowe metadane bez duplikatów.\n- **Obsługa 6 języków**: `Polski`, `English`, `Deutsch`, `Español`, `Français` oraz `Українська` w launcherze i na stronie pobierania."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.3.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.3.0.exe",
+          "size": 123350692,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.0/Peak-Launcher-Setup-1.3.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.3.0.exe",
+          "size": 112032267,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.0/Peak-Launcher-Portable-1.3.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.3.0.exe",
+            "size": 123350692,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.0/Peak-Launcher-Setup-1.3.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.3.0.exe",
+            "size": 112032267,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.3.0/Peak-Launcher-Portable-1.3.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
+      "tag": "v1.2.0",
+      "name": "Peak Launcher 1.2.0 — Peak Cinema GUI",
+      "publishedAt": "2026-11-22T15:49:42Z",
+      "body": "### Highlights in v1.2.0\n- **Cinematic, cleaner interface (`Peak Cinema`)**: removed cluttered sidebars and boxes on the home screen — the PEAK Mountain panorama fills the entire window while views open as frosted depth-of-field overlays.\n- **Minimalist top bar**: fast switching between `Play`, `Mods`, `Versions`, `Java & Fabric`, and `Options`, alongside player avatar and theme toggle.\n- **Full automation preserved**: all 925+ Minecraft versions, Modrinth + `.jar` Drag & Drop, automatic Java `8 / 17 / 21 / 25`, and 1-click Fabric Loader.",
+      "locales": {
+        "pl": {
+          "name": "Peak Launcher 1.2.0 — Peak Cinema GUI",
+          "body": "### Najważniejsze nowości w wersji 1.2.0\n- **Kinowy, prostszy interfejs (`Peak Cinema`)**: usunięto boczną belkę i zbędne ramki na ekranie głównym — panorama Góry PEAK zajmuje cały ekran, a pozostałe widoki otwierają się jako przejrzyste szklane nakładki z efektem głębi ostrości.\n- **Minimalistyczny górny pasek**: szybkie przełączanie widoków `Graj`, `Mody`, `Wersje`, `Java i Fabric` i `Opcje`, z avatarem gracza i przełącznikiem motywu.\n- **Pełna automatyzacja bez zmian**: wszystkie 925+ wersji Minecrafta, Modrinth + Drag & Drop `.jar`, automatyczna Java `8 / 17 / 21 / 25` oraz Fabric Loader jednym kliknięciem."
+        }
+      },
+      "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.2.0",
+      "prerelease": false,
+      "assets": {
+        "installer": {
+          "name": "Peak-Launcher-Setup-1.2.0.exe",
+          "size": 123336295,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.2.0/Peak-Launcher-Setup-1.2.0.exe",
+          "downloadCount": 0
+        },
+        "portable": {
+          "name": "Peak-Launcher-Portable-1.2.0.exe",
+          "size": 112017599,
+          "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.2.0/Peak-Launcher-Portable-1.2.0.exe",
+          "downloadCount": 0
+        },
+        "all": [
+          {
+            "name": "Peak-Launcher-Setup-1.2.0.exe",
+            "size": 123336295,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.2.0/Peak-Launcher-Setup-1.2.0.exe",
+            "downloadCount": 0
+          },
+          {
+            "name": "Peak-Launcher-Portable-1.2.0.exe",
+            "size": 112017599,
+            "downloadUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/download/v1.2.0/Peak-Launcher-Portable-1.2.0.exe",
+            "downloadCount": 0
+          }
+        ]
+      }
+    },
+    {
       "tag": "v1.1.0",
       "name": "Peak Launcher 1.1.0 — Alpine Aurora & Summit Glass GUI",
-      "publishedAt": "2026-11-20T21:30:00Z",
-      "body": "### Highlights in v1.1.0\n- **Live PEAK Mountain Atmosphere (Alpine Aurora)**: flowing northern lights, starfield, and snowfall on a lightweight parallax canvas with cursor spotlight card glow (`spotlight`).\n- **New Summit Cockpit & Floating Dock**: topographic contour lines, mountain peak panorama window, mod preview bar with **FPS Boost (1 click)**, 5-stage launch indicator, and player head avatar.\n- **Expedition Profile Customization**: 4 profile color themes (*Summit*, *Glacier*, *Ridge*, *Aurora*) plus a quick `▶ Play` button directly on profile cards.\n- **Enhanced Mods, Versions & Console**: Modrinth category tags, version type pills, and clear RAM & Java telemetry in the sidebar.",
+      "publishedAt": "2026-11-20T20:39:42Z",
+      "body": "### Highlights in v1.1.0\n- **Live PEAK Mountain Atmosphere (Alpine Aurora)**: flowing northern lights, starfield, and snowfall on a lightweight parallax canvas with cursor spotlight card glow (`spotlight`).\n- **New Summit Cockpit & Floating Dock**: topographic contour lines, mountain peak panorama window, mod preview bar with **FPS Boost (1 click)**, 5-stage launch indicator, and player head avatar.",
       "locales": {
         "pl": {
           "name": "Peak Launcher 1.1.0 — Alpine Aurora & Summit Glass GUI",
-          "body": "### Najważniejsze nowości w wersji 1.1.0\n- **Żywa atmosfera Góry PEAK (Alpine Aurora)**: płynąca zorza polarna, gwiazdozbiór i śnieg na lekkim płótnie z paralaksą oraz podświetlenie kart pod kursorem (`spotlight`).\n- **Nowy kokpit Szczytu i pływający dock**: kontury topograficzne, okno panoramy szczytu, pasek podglądu modów z przyciskiem **Boost FPS (1 klik)**, 5-etapowy wskaźnik startu oraz awatar głowy gracza.\n- **Personalizacja profili ekspedycji**: 4 motywy kolorystyczne profili (*Szczyt*, *Lodowiec*, *Grań*, *Zorza*) oraz szybki przycisk `▶ Graj` bezpośrednio na kartach.\n- **Ulepszone Mody, Wersje i Konsola**: tagi kategorii modów Modrinth, pigułki typów wersji oraz czytelna telemetria RAM i Javy w panelu bocznym."
+          "body": "### Najważniejsze nowości w wersji 1.1.0\n- **Żywa atmosfera Góry PEAK (Alpine Aurora)**: płynąca zorza polarna, gwiazdozbiór i śnieg na lekkim płótnie z paralaksą oraz podświetlenie kart pod kursorem (`spotlight`).\n- **Nowy kokpit Szczytu i pływający dock**: kontury topograficzne, okno panoramy szczytu, pasek podglądu modów z przyciskiem **Boost FPS (1 klik)**, 5-etapowy wskaźnik startu oraz awatar głowy gracza."
         }
       },
       "htmlUrl": "https://github.com/latajoncy82-svg/peak-launcher/releases/tag/v1.1.0",
@@ -173,7 +593,7 @@
     {
       "tag": "v1.0.0",
       "name": "Peak Launcher 1.0.0 — First Mountain Summit Release",
-      "publishedAt": "2026-11-20T20:00:00Z",
+      "publishedAt": "2026-11-20T20:11:45Z",
       "body": "### Key Features in v1.0.0\n- **PEAK Mountain Theme (Night Summit & Glacial Day)**: cohesive alpine interface with mountain panoramas and layered ridge silhouettes.\n- **All Minecraft Versions**: complete Mojang catalog (`925+` releases from Alpha and Beta to `26.3` and the latest snapshots) with isolated profiles.\n- **Easy Mod Management**: built-in Modrinth catalog with automatic dependency resolution (`Fabric API`), one-click **Peak FPS Boost Pack**, and convenient `.jar` **Drag & Drop**.\n- **Automatic Java (8 / 17 / 21 / 25) & Fabric Loader Installer**: automatically detects the required Java runtime for your Minecraft version and downloads official Eclipse Temurin and Fabric packages.",
       "locales": {
         "pl": {
