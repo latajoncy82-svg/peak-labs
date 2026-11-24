@@ -27,11 +27,9 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
-
-  <!-- Minimalist Floating Header -->
+  <!-- Floating Peak Cinema Dock -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-dock">
       <a href="#start" class="brand" aria-label="PEAK LABS — home page" data-i18n-aria="brand.ariaLabel">
         <img src="./assets/peaklabs-logo.svg" alt="PEAK LABS logo" class="brand-icon" />
         <span class="brand-wordmark notranslate" translate="no">
@@ -41,11 +39,11 @@
       </a>
 
       <nav class="header-nav" aria-label="Main navigation" data-i18n-aria="nav.ariaLabel">
-        <a href="#o-firmie" data-i18n="nav.about">About</a>
-        <a href="#projekty" data-i18n="nav.projects">Projects</a>
-        <a href="#ekosystem" data-i18n="nav.ecosystem">Ecosystem</a>
-        <a href="#wydania" data-i18n="nav.releases">Releases</a>
-        <a href="#tworca" data-i18n="nav.creator">Creator</a>
+        <a href="#o-firmie" data-section="o-firmie" data-i18n="nav.about">About</a>
+        <a href="#projekty" data-section="projekty" data-i18n="nav.projects">Projects</a>
+        <a href="#ekosystem" data-section="ekosystem" data-i18n="nav.ecosystem">Ecosystem</a>
+        <a href="#wydania" data-section="wydania" data-i18n="nav.releases">Releases</a>
+        <a href="#tworca" data-section="tworca" data-i18n="nav.creator">Creator</a>
       </nav>
 
       <div class="header-actions">
@@ -104,11 +102,20 @@
           target="_blank"
           rel="noopener noreferrer"
           class="github-link"
+          title="GitHub"
+          aria-label="GitHub"
         >
           <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
             <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
           </svg>
           <span class="notranslate" translate="no">GitHub</span>
+        </a>
+
+        <a href="#wydania" class="header-cta">
+          <span data-i18n="header.downloadCta">Download</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 3v8.5M4.8 8.3L8 11.5l3.2-3.2" />
+          </svg>
         </a>
 
         <button
@@ -162,6 +169,78 @@
       </div>
     </div>
   </div>
+
+  <!-- Side Section Waypoint Rail -->
+  <nav id="section-rail" class="section-rail" aria-label="Section navigation" data-i18n-aria="rail.aria">
+    <div class="rail-header">
+      <span id="rail-step-counter" class="rail-counter notranslate" translate="no">01 / 06</span>
+    </div>
+    <div class="rail-list">
+      <div class="rail-track" aria-hidden="true">
+        <div id="rail-track-fill" class="rail-track-fill"></div>
+      </div>
+      <a href="#start" class="rail-item is-active" data-section="start" aria-current="location">
+        <span class="rail-copy">
+          <span class="rail-title-row">
+            <span class="rail-index notranslate" translate="no">01</span>
+            <span class="rail-name" data-i18n="rail.startName">Start</span>
+          </span>
+          <span class="rail-desc-wrap"><span class="rail-desc" data-i18n="rail.startDesc">PEAK LABS overview</span></span>
+        </span>
+        <span class="rail-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#o-firmie" class="rail-item" data-section="o-firmie">
+        <span class="rail-copy">
+          <span class="rail-title-row">
+            <span class="rail-index notranslate" translate="no">02</span>
+            <span class="rail-name" data-i18n="rail.aboutName">About</span>
+          </span>
+          <span class="rail-desc-wrap"><span class="rail-desc" data-i18n="rail.aboutDesc">Design &amp; zero telemetry</span></span>
+        </span>
+        <span class="rail-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#projekty" class="rail-item" data-section="projekty">
+        <span class="rail-copy">
+          <span class="rail-title-row">
+            <span class="rail-index notranslate" translate="no">03</span>
+            <span class="rail-name" data-i18n="rail.projectsName">Projects</span>
+          </span>
+          <span class="rail-desc-wrap"><span class="rail-desc" data-i18n="rail.projectsDesc">Browser &amp; Launcher</span></span>
+        </span>
+        <span class="rail-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#ekosystem" class="rail-item" data-section="ekosystem">
+        <span class="rail-copy">
+          <span class="rail-title-row">
+            <span class="rail-index notranslate" translate="no">04</span>
+            <span class="rail-name" data-i18n="rail.ecosystemName">Ecosystem</span>
+          </span>
+          <span class="rail-desc-wrap"><span class="rail-desc" data-i18n="rail.ecosystemDesc">Unified desktop suite</span></span>
+        </span>
+        <span class="rail-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#wydania" class="rail-item" data-section="wydania">
+        <span class="rail-copy">
+          <span class="rail-title-row">
+            <span class="rail-index notranslate" translate="no">05</span>
+            <span class="rail-name" data-i18n="rail.releasesName">Releases</span>
+          </span>
+          <span class="rail-desc-wrap"><span class="rail-desc" data-i18n="rail.releasesDesc">v1.2.1 &amp; v1.5.1 builds</span></span>
+        </span>
+        <span class="rail-dot" aria-hidden="true"></span>
+      </a>
+      <a href="#tworca" class="rail-item" data-section="tworca">
+        <span class="rail-copy">
+          <span class="rail-title-row">
+            <span class="rail-index notranslate" translate="no">06</span>
+            <span class="rail-name" data-i18n="rail.creatorName">Creator</span>
+          </span>
+          <span class="rail-desc-wrap"><span class="rail-desc" data-i18n="rail.creatorDesc">Mikołaj Grynienko</span></span>
+        </span>
+        <span class="rail-dot" aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
 
   <main>
     <!-- Hero Section (Centered Peak Cinema Luxury) -->

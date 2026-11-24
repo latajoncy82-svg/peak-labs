@@ -158,17 +158,143 @@
     );
   }
 
-  function setupScrollProgress() {
-    const bar = document.getElementById('scroll-progress');
-    if (!bar) return;
+  let refreshNavFn = () => {};
 
-    const update = () => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docHeight > 0 ? Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100)) : 0;
-      bar.style.width = `${pct.toFixed(2)}%`;
-    };
+  function setupSectionNavigation() {
+    const header = document.querySelector('.site-header');
+    const rail = document.getElementById('section-rail');
+    const railList = rail ? rail.querySelector('.rail-list') : null;
+    const railTrack = rail ? rail.querySelector('.rail-track') : null;
+    const railFill = document.getElementById('rail-track-fill');
+    const railCounter = document.getElementById('rail-step-counter');
+    const railItems = Array.from(document.querySelectorAll('.rail-item'));
+    const railDots = railItems.map((item) => item.querySelector('.rail-dot'));
+    const navLinks = Array.from(document.querySelectorAll('.header-nav a[data-section]'));
 
-    window.addEventListener('scroll', update, { passive: true });
+    const sectionIds = ['start', 'o-firmie', 'projekty', 'ekosystem', 'wydania', 'tworca'];
+    const sections = sectionIds
+      .map((id) => ({ id, el: document.getElementById(id) }))
+      .filter((entry) => Boolean(entry.el));
+
+    if (sections.length === 0) return;
+
+    let rafPending = false;
+    let lastProgress = 0;
+
+    function syncRailTrack(dotProgress) {
+      if (!rail || !railList || !railTrack || !railFill || railDots.length < 2) return;
+      if (getComputedStyle(rail).display === 'none') return;
+
+      const listRect = railList.getBoundingClientRect();
+      const centers = railDots.map((dot) => {
+        if (!dot) return 0;
+        const r = dot.getBoundingClientRect();
+        return r.top + r.height / 2 - listRect.top;
+      });
+
+      const firstCenter = centers[0];
+      const lastCenter = centers[centers.length - 1];
+      const trackHeight = Math.max(0, lastCenter - firstCenter);
+
+      railTrack.style.top = `${firstCenter.toFixed(2)}px`;
+      railTrack.style.height = `${trackHeight.toFixed(2)}px`;
+
+      const clamped = Math.max(0, Math.min(centers.length - 1, dotProgress));
+      const lo = Math.floor(clamped);
+      const hi = Math.min(centers.length - 1, lo + 1);
+      const frac = clamped - lo;
+      const targetY = centers[lo] + (centers[hi] - centers[lo]) * frac;
+      const fillHeight = Math.max(0, Math.min(trackHeight, targetY - firstCenter));
+
+      railFill.style.height = `${fillHeight.toFixed(2)}px`;
+    }
+
+    function update() {
+      rafPending = false;
+      const scrollY = window.scrollY;
+
+      if (header) {
+        header.classList.toggle('is-scrolled', scrollY > 24);
+      }
+
+      const tops = sections.map((entry) => entry.el.getBoundingClientRect().top + scrollY);
+      const docHeight = document.documentElement.scrollHeight;
+      const atBottom = scrollY + window.innerHeight >= docHeight - 36;
+      const focusY = scrollY + window.innerHeight * 0.34;
+
+      let activeIdx = 0;
+      if (atBottom) {
+        activeIdx = sections.length - 1;
+      } else if (scrollY >= 80) {
+        for (let i = 0; i < tops.length; i++) {
+          if (tops[i] <= focusY) {
+            activeIdx = i;
+          }
+        }
+      }
+
+      let dotProgress = activeIdx;
+      if (atBottom) {
+        dotProgress = sections.length - 1;
+      } else if (scrollY <= 4) {
+        dotProgress = 0;
+      } else if (activeIdx < sections.length - 1) {
+        const span = Math.max(1, tops[activeIdx + 1] - tops[activeIdx]);
+        const frac = Math.min(1, Math.max(0, (focusY - tops[activeIdx]) / span));
+        dotProgress = activeIdx + frac;
+      }
+
+      lastProgress = dotProgress;
+      const activeId = sections[activeIdx].id;
+
+      railItems.forEach((item, i) => {
+        const isActive = i === activeIdx;
+        const isPassed = i < activeIdx;
+        item.classList.toggle('is-active', isActive);
+        item.classList.toggle('is-passed', isPassed);
+        if (isActive) {
+          item.setAttribute('aria-current', 'location');
+        } else {
+          item.removeAttribute('aria-current');
+        }
+      });
+
+      if (railCounter) {
+        railCounter.textContent = `${String(activeIdx + 1).padStart(2, '0')} / 0${sections.length}`;
+      }
+
+      navLinks.forEach((link) => {
+        const match = link.dataset.section === activeId;
+        link.classList.toggle('is-active', match);
+        if (match) {
+          link.setAttribute('aria-current', 'location');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+
+      syncRailTrack(dotProgress);
+    }
+
+    function scheduleUpdate() {
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    window.addEventListener('hashchange', scheduleUpdate);
+
+    if (railList) {
+      railList.addEventListener('transitionend', () => syncRailTrack(lastProgress));
+      if ('ResizeObserver' in window) {
+        const ro = new ResizeObserver(() => syncRailTrack(lastProgress));
+        ro.observe(railList);
+      }
+    }
+
+    refreshNavFn = update;
     update();
   }
 
@@ -268,8 +394,12 @@
       }
 
       setupSpotlights();
-      setupScrollProgress();
+      setupSectionNavigation();
       setupReveals();
+    },
+
+    refreshNav() {
+      refreshNavFn();
     },
 
     setTheme(nextTheme) {
